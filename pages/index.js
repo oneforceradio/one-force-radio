@@ -66,7 +66,7 @@ height: "11%",
         }}
       >
         <source
-          src="https://sky.doscast.com/stream/oneforce"
+          src="https://sky.doscast.com/proxy/oneforce/stream"
           type="audio/mpeg"
         />
       </audio>
