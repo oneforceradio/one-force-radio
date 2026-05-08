@@ -46,7 +46,7 @@ export default function Home() {
           style={{
             position: "absolute",
 left: "29%",
-top: "58%",
+top: "61%",
 width: "41%",
 height: "11%",
             cursor: "pointer",
