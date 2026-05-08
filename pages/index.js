@@ -21,6 +21,63 @@ export default function Home() {
         fontFamily: "Arial, sans-serif",
       }}
     >
+      {/* LIVE STATUS */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "15px",
+          marginBottom: "20px",
+          color: "white",
+        }}
+      >
+        {/* Live Dot */}
+        <div
+          style={{
+            width: "14px",
+            height: "14px",
+            backgroundColor: "red",
+            borderRadius: "50%",
+            boxShadow: "0 0 12px red",
+          }}
+        />
+
+        {/* Text */}
+        <div
+          style={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            letterSpacing: "1px",
+          }}
+        >
+          ON AIR NOW
+        </div>
+
+        {/* Equalizer */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-end",
+            gap: "4px",
+            height: "30px",
+          }}
+        >
+          {[1, 2, 3, 4].map((bar) => (
+            <div
+              key={bar}
+              style={{
+                width: "6px",
+                height: "100%",
+                background: "#00ff99",
+                borderRadius: "3px",
+                animation: `bounce 1s infinite ease-in-out`,
+                animationDelay: `${bar * 0.15}s`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
       {/* Banner */}
       <div
         style={{
@@ -53,79 +110,6 @@ export default function Home() {
         />
       </div>
 
-      {/* LIVE STATUS */}
-      <div
-        style={{
-          marginTop: "25px",
-          textAlign: "center",
-          color: "white",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "10px",
-            marginBottom: "10px",
-          }}
-        >
-          <div
-            style={{
-              width: "14px",
-              height: "14px",
-              borderRadius: "50%",
-              backgroundColor: "red",
-              boxShadow: "0 0 15px red",
-            }}
-          />
-
-          <h2
-            style={{
-              margin: 0,
-              fontSize: "28px",
-              letterSpacing: "1px",
-            }}
-          >
-            ON AIR NOW
-          </h2>
-        </div>
-
-        {/* Equalizer */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-end",
-            gap: "5px",
-            height: "30px",
-            marginBottom: "15px",
-          }}
-        >
-          {[12, 20, 16, 28, 18].map((h, i) => (
-            <div
-              key={i}
-              style={{
-                width: "6px",
-                height: `${h}px`,
-                backgroundColor: "#1DB954",
-                borderRadius: "4px",
-              }}
-            />
-          ))}
-        </div>
-
-        <p
-          style={{
-            color: "#aaa",
-            marginTop: "5px",
-            fontSize: "16px",
-          }}
-        >
-          Worldwide 24/7 Dancehall • Reggae • Afrobeats • Gam-Vibes • Hip Hop
-        </p>
-      </div>
-
       {/* Audio Player */}
       <audio
         ref={audioRef}
@@ -142,6 +126,15 @@ export default function Home() {
           type="audio/mpeg"
         />
       </audio>
+
+      {/* Equalizer Animation */}
+      <style>{`
+        @keyframes bounce {
+          0% { transform: scaleY(0.4); }
+          50% { transform: scaleY(1); }
+          100% { transform: scaleY(0.4); }
+        }
+      `}</style>
     </div>
   );
 }
