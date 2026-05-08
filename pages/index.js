@@ -45,10 +45,10 @@ export default function Home() {
           onClick={playRadio}
           style={{
             position: "absolute",
-            left: "31%",
-            top: "49%",
-            width: "46%",
-            height: "13%",
+left: "27%",
+top: "52%",
+width: "50%",
+height: "12%",
             cursor: "pointer",
           }}
         />
