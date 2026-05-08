@@ -17,24 +17,44 @@ export default function Home() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "flex-start",
         padding: "20px",
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <img
-        src="/banner.png"
-        alt="OneForce Radio"
-        onClick={playRadio}
+      {/* Banner Container */}
+      <div
         style={{
+          position: "relative",
           width: "100%",
           maxWidth: "1100px",
-          borderRadius: "20px",
-          cursor: "pointer",
-          boxShadow: "0 0 30px rgba(0,0,0,0.6)",
         }}
-      />
+      >
+        {/* Main Banner */}
+        <img
+          src="/banner.png"
+          alt="OneForce Radio"
+          style={{
+            width: "100%",
+            borderRadius: "12px",
+            display: "block",
+          }}
+        />
 
+        {/* Invisible Click Area */}
+        <div
+          onClick={playRadio}
+          style={{
+            position: "absolute",
+            left: "31%",
+            top: "49%",
+            width: "46%",
+            height: "13%",
+            cursor: "pointer",
+          }}
+        />
+      </div>
+
+      {/* Audio Player */}
       <audio
         ref={audioRef}
         controls
@@ -46,10 +66,9 @@ export default function Home() {
         }}
       >
         <source
-          src="https://sky.doscast.com/proxy/oneforce/stream"
+          src="https://sky.doscast.com/stream/oneforce"
           type="audio/mpeg"
         />
-        Your browser does not support the audio player.
       </audio>
     </div>
   );
