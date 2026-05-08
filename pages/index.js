@@ -1,45 +1,48 @@
+import { useRef } from "react";
+
 export default function Home() {
+  const audioRef = useRef(null);
+
+  const playRadio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   return (
     <div
       style={{
         backgroundColor: "#111",
-        color: "white",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
+        justifyContent: "flex-start",
+        padding: "20px",
         fontFamily: "Arial, sans-serif",
-        padding: 20,
-        textAlign: "center",
       }}
     >
       <img
         src="/banner.png"
-        alt="OneForce Radio Banner"
+        alt="OneForce Radio"
+        onClick={playRadio}
         style={{
           width: "100%",
-          maxWidth: "1000px",
+          maxWidth: "1100px",
           borderRadius: "20px",
-          marginBottom: "40px",
-          boxShadow: "0 0 25px rgba(0,0,0,0.5)",
+          cursor: "pointer",
+          boxShadow: "0 0 30px rgba(0,0,0,0.6)",
         }}
       />
 
-      <h1 style={{ fontSize: "56px", marginBottom: "10px" }}>
-        OneForce Radio
-      </h1>
-
-      <p style={{ marginBottom: "30px", color: "#aaa", fontSize: "20px" }}>
-        Live 24/7 Dancehall • Reggae • Afrobeats • Gam-Vibes • Hip Hop & More
-      </p>
-
       <audio
+        ref={audioRef}
         controls
         preload="none"
         style={{
           width: "100%",
           maxWidth: "700px",
+          marginTop: "20px",
         }}
       >
         <source
