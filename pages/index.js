@@ -24,7 +24,7 @@ export default function Home() {
 
       <audio controls autoPlay style={{ width: "100%", maxWidth: "500px" }}>
         <source
-          src="http://sky.doscast.com:8207/live"
+          src="https://sky.doscast.com/stream/oneforce/stream.pls"
           type="audio/mpeg"
         />
       </audio>
