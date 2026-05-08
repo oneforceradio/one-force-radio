@@ -31,7 +31,7 @@ export default function Home() {
         }}
       >
         <source
-          src="https://sky.doscast.com/stream/oneforce"
+          src="https://sky.doscast.com/proxy/oneforce/stream"
           type="audio/mpeg"
         />
         Your browser does not support the audio player.
