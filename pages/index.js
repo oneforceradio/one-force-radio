@@ -16,7 +16,7 @@ export default function Home() {
     >
       {/* Banner */}
       <img
-        src="/banner.jpg"
+        src="/banner.png"
         alt="OneForce Radio Banner"
         style={{
           width: "100%",
