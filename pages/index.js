@@ -14,7 +14,6 @@ export default function Home() {
         textAlign: "center",
       }}
     >
-      {/* Banner */}
       <img
         src="/banner.png"
         alt="OneForce Radio Banner"
@@ -27,22 +26,11 @@ export default function Home() {
         }}
       />
 
-      <h1
-        style={{
-          fontSize: "56px",
-          marginBottom: "10px",
-        }}
-      >
+      <h1 style={{ fontSize: "56px", marginBottom: "10px" }}>
         OneForce Radio
       </h1>
 
-      <p
-        style={{
-          marginBottom: "30px",
-          color: "#aaa",
-          fontSize: "20px",
-        }}
-      >
+      <p style={{ marginBottom: "30px", color: "#aaa", fontSize: "20px" }}>
         Live 24/7 Dancehall • Reggae • Afrobeats • Gam-Vibes • Hip Hop & More
       </p>
 
@@ -55,7 +43,7 @@ export default function Home() {
         }}
       >
         <source
-          src="https://sky.doscast.com/stream/oneforce/"
+          src="https://sky.doscast.com/proxy/oneforce/stream"
           type="audio/mpeg"
         />
         Your browser does not support the audio player.
