@@ -15,16 +15,12 @@ export default function Home() {
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
   const sendRequest = (e) => {
     e.preventDefault();
-
     const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
-
     window.open(`https://wa.me/2207408888?text=${text}`, "_blank");
   };
 
@@ -36,16 +32,13 @@ export default function Home() {
 
       <div className="navbar">
         <div className="logoText">ONEFORCE RADIO</div>
-
         <div className="navLinks">
           <button onClick={() => scrollToSection("home")}>HOME</button>
           <button onClick={() => scrollToSection("djs")}>DJS</button>
           <button onClick={() => scrollToSection("schedule")}>SCHEDULE</button>
           <button onClick={() => scrollToSection("request")}>REQUEST</button>
           <button onClick={() => scrollToSection("contact")}>CONTACT</button>
-          <button className="listenBtn" onClick={playRadio}>
-            LISTEN LIVE
-          </button>
+          <button className="listenBtn" onClick={playRadio}>LISTEN LIVE</button>
         </div>
       </div>
 
@@ -53,7 +46,6 @@ export default function Home() {
         <div className="onAir">
           <div className="liveDot" />
           <div className="onAirText">ON AIR NOW</div>
-
           <div className="equalizer">
             {[1, 2, 3, 4].map((bar) => (
               <div key={bar} style={{ animationDelay: `${bar * 0.15}s` }} />
@@ -63,7 +55,6 @@ export default function Home() {
 
         <div className="bannerWrap">
           <img src="/banner1.png" alt="OneForce Radio" className="banner" />
-
           <div className="speakerPulse pulseLogo" />
           <div onClick={playRadio} className="playClickArea" />
 
@@ -81,7 +72,7 @@ export default function Home() {
       </section>
 
       <section id="djs" className="sectionBox">
-        <h2>ONEFORCE DJS</h2>
+        <h2>ONEFORCE RADIO DJS</h2>
         <p>Meet the selectors and DJs bringing vibes from around the world.</p>
 
         <div className="djGrid">
@@ -91,23 +82,24 @@ export default function Home() {
             </div>
 
             <div className="djContent">
-              <h3>DJ Lashes (OneForce Sound)</h3>
+              <h3>DJ Lashes</h3>
+              <div className="djSubName">OneForce Sound</div>
 
               <div className="djLocation">
                 Based In Europe & The Gambia • UK-born • Jamaican roots
               </div>
 
               <div className="djGenre">
-                Dancehall • Reggae • Afrobeat • Club Bangers
+                Dancehall • Reggae • Afrobeat
               </div>
 
               <p className="djBio">
                 International DJ and founder of OneForce Sound, known for high-energy
-                dancehall sets and crowd control across Europe and Africa.
+                dancehall sets blazing the stage across Europe and Africa.
               </p>
 
               <a
-                href="https://www.instagram.com/oneforceradio"
+                href="https://www.instagram.com/djlashes/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="djSocialBtn"
@@ -153,33 +145,15 @@ export default function Home() {
         <p>Send a song request, birthday shoutout, big-up, or message to the station.</p>
 
         <form onSubmit={sendRequest} className="requestForm">
-          <input
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <input
-            type="text"
-            placeholder="Song request"
-            value={song}
-            onChange={(e) => setSong(e.target.value)}
-          />
-
-          <textarea
-            placeholder="Your shoutout / message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-
+          <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" placeholder="Song request" value={song} onChange={(e) => setSong(e.target.value)} />
+          <textarea placeholder="Your shoutout / message" value={message} onChange={(e) => setMessage(e.target.value)} />
           <button type="submit">SEND REQUEST VIA WHATSAPP</button>
         </form>
       </section>
 
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
-
         <p>WhatsApp: +220 7408888</p>
         <p>Email: info@oneforceradio.com</p>
 
@@ -219,37 +193,11 @@ export default function Home() {
           pointer-events: none;
         }
 
-        .orb1 {
-          width: 260px;
-          height: 260px;
-          background: #f7c600;
-          top: 12%;
-          left: 6%;
-          animation: floatOrb1 16s ease-in-out infinite;
-        }
+        .orb1 { width: 260px; height: 260px; background: #f7c600; top: 12%; left: 6%; animation: floatOrb1 16s ease-in-out infinite; }
+        .orb2 { width: 300px; height: 300px; background: #00ff99; bottom: 12%; right: 6%; animation: floatOrb2 20s ease-in-out infinite; }
+        .orb3 { width: 220px; height: 220px; background: #ff0033; top: 45%; right: 20%; animation: floatOrb3 24s ease-in-out infinite; }
 
-        .orb2 {
-          width: 300px;
-          height: 300px;
-          background: #00ff99;
-          bottom: 12%;
-          right: 6%;
-          animation: floatOrb2 20s ease-in-out infinite;
-        }
-
-        .orb3 {
-          width: 220px;
-          height: 220px;
-          background: #ff0033;
-          top: 45%;
-          right: 20%;
-          animation: floatOrb3 24s ease-in-out infinite;
-        }
-
-        .navbar,
-        .sectionBox,
-        #home,
-        .footer {
+        .navbar, .sectionBox, #home, .footer {
           position: relative;
           z-index: 2;
         }
@@ -306,9 +254,7 @@ export default function Home() {
           transform: translateY(-2px) scale(1.06);
         }
 
-        .listenBtn {
-          color: #00ff99 !important;
-        }
+        .listenBtn { color: #00ff99 !important; }
 
         .listenBtn:hover {
           color: #00ffcc !important;
@@ -372,14 +318,8 @@ export default function Home() {
           border-radius: 50%;
           pointer-events: none;
           z-index: 3;
-          background:
-            radial-gradient(circle,
-            rgba(0,255,80,0.40) 0%,
-            rgba(0,255,80,0.14) 35%,
-            rgba(0,255,80,0) 72%);
-          box-shadow:
-            0 0 16px rgba(0,255,80,0.7),
-            0 0 28px rgba(247,198,0,0.32);
+          background: radial-gradient(circle, rgba(0,255,80,0.40) 0%, rgba(0,255,80,0.14) 35%, rgba(0,255,80,0) 72%);
+          box-shadow: 0 0 16px rgba(0,255,80,0.7), 0 0 28px rgba(247,198,0,0.32);
           animation: speakerBass 1.15s ease-in-out infinite;
           mix-blend-mode: screen;
         }
@@ -392,15 +332,7 @@ export default function Home() {
           animation-delay: 0.1s;
         }
 
-        .playClickArea {
-          position: absolute;
-          left: 31%;
-          top: 66%;
-          width: 39%;
-          height: 10%;
-          cursor: pointer;
-          z-index: 5;
-        }
+        .playClickArea { position: absolute; left: 31%; top: 66%; width: 39%; height: 10%; cursor: pointer; z-index: 5; }
 
         .igLink { position: absolute; right: 22.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
         .fbLink { position: absolute; right: 17.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
@@ -456,9 +388,7 @@ export default function Home() {
 
         .djCard:hover {
           transform: translateY(-8px);
-          box-shadow:
-            0 0 20px rgba(247,198,0,0.25),
-            0 0 40px rgba(0,255,153,0.15);
+          box-shadow: 0 0 20px rgba(247,198,0,0.25), 0 0 40px rgba(0,255,153,0.15);
         }
 
         .djImageWrap {
@@ -482,12 +412,19 @@ export default function Home() {
 
         .djCard h3 {
           margin: 0;
-          font-size: 26px;
+          font-size: 28px;
           color: #f7c600;
         }
 
+        .djSubName {
+          margin-top: 4px;
+          color: #00ff99;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
         .djLocation {
-          margin-top: 10px;
+          margin-top: 12px;
           color: #00ff99;
           font-size: 15px;
           line-height: 1.5;
@@ -535,21 +472,6 @@ export default function Home() {
           font-size: 28px;
           font-weight: bold;
           letter-spacing: 2px;
-        }
-
-        .cardGrid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 20px;
-          margin-top: 25px;
-        }
-
-        .infoCard {
-          padding: 25px;
-          background: #181818;
-          border-radius: 14px;
-          color: white;
-          box-shadow: 0 0 15px rgba(0,0,0,0.4);
         }
 
         .requestForm {
