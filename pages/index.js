@@ -562,18 +562,18 @@ export default function Home() {
           mix-blend-mode: screen;
         }
 
-      /* LEFT TOP */
+/* LEFT TOP */
 .pulseLeftTop {
-  left: 6.1%;
-  top: 17.7%;
+  left: 5.5%;
+  top: 16.9%;
   width: 3.6%;
   height: 5%;
 }
 
 /* LEFT BOTTOM */
 .pulseLeftBottom {
-  left: 4.2%;
-  top: 29.7%;
+  left: 3.6%;
+  top: 28.9%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.2s;
@@ -581,8 +581,8 @@ export default function Home() {
 
 /* CENTER LOGO */
 .pulseLogo {
-  left: 30.2%;
-  top: 16.7%;
+  left: 29.6%;
+  top: 15.9%;
   width: 5.4%;
   height: 7.5%;
   animation-delay: 0.1s;
@@ -590,8 +590,8 @@ export default function Home() {
 
 /* RIGHT TOP */
 .pulseRightTop {
-  right: 6.1%;
-  top: 17.7%;
+  right: 5.5%;
+  top: 16.9%;
   width: 3.6%;
   height: 5%;
   animation-delay: 0.18s;
@@ -599,8 +599,8 @@ export default function Home() {
 
 /* RIGHT BOTTOM */
 .pulseRightBottom {
-  right: 4.2%;
-  top: 29.7%;
+  right: 3.6%;
+  top: 28.9%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.28s;
