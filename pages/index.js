@@ -581,8 +581,8 @@ export default function Home() {
 
 /* CENTER LOGO */
 .pulseLogo {
-  left: 28.6%;
-  top: 15.1%;
+  left: 28.0%;
+  top: 15.9%;
   width: 5.4%;
   height: 7.5%;
   animation-delay: 0.1s;
