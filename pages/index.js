@@ -93,7 +93,7 @@ export default function Home() {
           }}
         />
 
-        {/* PLAY BUTTON CLICK AREA */}
+        {/* PLAY BUTTON */}
         <div
           onClick={playRadio}
           style={{
@@ -113,7 +113,7 @@ export default function Home() {
           rel="noopener noreferrer"
           style={{
             position: "absolute",
-            right: "19.5%",
+            right: "20.5%",
             top: "58%",
             width: "4%",
             height: "7%",
@@ -127,7 +127,7 @@ export default function Home() {
           rel="noopener noreferrer"
           style={{
             position: "absolute",
-            right: "14.5%",
+            right: "15.5%",
             top: "58%",
             width: "4%",
             height: "7%",
@@ -141,7 +141,7 @@ export default function Home() {
           rel="noopener noreferrer"
           style={{
             position: "absolute",
-            right: "9.5%",
+            right: "10.5%",
             top: "58%",
             width: "4%",
             height: "7%",
@@ -155,7 +155,7 @@ export default function Home() {
           rel="noopener noreferrer"
           style={{
             position: "absolute",
-            right: "4.5%",
+            right: "5.5%",
             top: "58%",
             width: "4%",
             height: "7%",
