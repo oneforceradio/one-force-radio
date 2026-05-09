@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div
       style={{
-        backgroundColor: "#111",
+        backgroundColor: "#0d0d0d",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Banner */}
+      {/* Banner Section */}
       <div
         style={{
           position: "relative",
@@ -86,31 +86,109 @@ export default function Home() {
           maxWidth: "1100px",
         }}
       >
+        {/* Banner Image */}
         <img
           src="/banner.png"
           alt="OneForce Radio"
           style={{
             width: "100%",
-            borderRadius: "12px",
+            borderRadius: "14px",
             display: "block",
           }}
         />
 
-        {/* Click Area */}
+        {/* CLICK TO PLAY AREA */}
         <div
           onClick={playRadio}
           style={{
             position: "absolute",
-            left: "29%",
-            top: "61%",
-            width: "41%",
-            height: "11%",
+            left: "31%",
+            top: "66%",
+            width: "39%",
+            height: "10%",
             cursor: "pointer",
           }}
         />
+
+        {/* SOCIAL ICONS */}
+        <div
+          style={{
+            position: "absolute",
+            right: "4%",
+            top: "58%",
+            display: "flex",
+            gap: "14px",
+          }}
+        >
+          <a
+            href="https://www.instagram.com/oneforceradio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              width="42"
+            />
+          </a>
+
+          <a
+            href="https://www.facebook.com/oneforceradio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              width="42"
+            />
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@oneforce_radio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+              width="42"
+            />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@oneforceradio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+              width="42"
+            />
+          </a>
+
+          <a
+            href="https://www.twitch.tv/oneforceradio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png"
+              width="42"
+            />
+          </a>
+
+          <a
+            href="https://wa.me/2207408888"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+              width="42"
+            />
+          </a>
+        </div>
       </div>
 
-      {/* Audio Player */}
+      {/* AUDIO PLAYER */}
       <audio
         ref={audioRef}
         controls
@@ -119,6 +197,7 @@ export default function Home() {
           width: "100%",
           maxWidth: "700px",
           marginTop: "20px",
+          borderRadius: "12px",
         }}
       >
         <source
@@ -127,7 +206,19 @@ export default function Home() {
         />
       </audio>
 
-      {/* Equalizer Animation */}
+      {/* FOOTER */}
+      <div
+        style={{
+          marginTop: "25px",
+          color: "#777",
+          fontSize: "14px",
+          textAlign: "center",
+        }}
+      >
+        © 2026 OneForce Radio — Live Worldwide 24/7
+      </div>
+
+      {/* ANIMATION */}
       <style>{`
         @keyframes bounce {
           0% { transform: scaleY(0.4); }
