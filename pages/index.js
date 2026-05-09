@@ -564,69 +564,44 @@ export default function Home() {
 
         /* LEFT TOP */
 
-        .pulseLeftTop {
-          left: 6.9%;
+     .pulseLeftTop {
+  left: 6.7%;
+  top: 18.5%;
+  width: 3.6%;
+  height: 5%;
+}
 
-          top: 19.2%;
+.pulseLeftBottom {
+  left: 5.5%;
+  top: 28.5%;
+  width: 6.8%;
+  height: 9.5%;
+  animation-delay: 0.2s;
+}
 
-          width: 3.8%;
+.pulseLogo {
+  left: 30.8%;
+  top: 17.5%;
+  width: 5.4%;
+  height: 7.5%;
+  animation-delay: 0.1s;
+}
 
-          height: 5.3%;
-        }
+.pulseRightTop {
+  right: 6.8%;
+  top: 18.5%;
+  width: 3.6%;
+  height: 5%;
+  animation-delay: 0.18s;
+}
 
-        /* LEFT BOTTOM */
-
-        .pulseLeftBottom {
-          left: 5.9%;
-
-          top: 42.8%;
-
-          width: 6%;
-
-          height: 8.5%;
-
-          animation-delay: 0.2s;
-        }
-
-        /* CENTER LOGO */
-
-        .pulseLogo {
-          left: 30.9%;
-
-          top: 18.3%;
-
-          width: 5.2%;
-
-          height: 7.3%;
-
-          animation-delay: 0.1s;
-        }
-
-        /* RIGHT TOP */
-
-        .pulseRightTop {
-          right: 7.1%;
-
-          top: 19.2%;
-
-          width: 3.8%;
-
-          height: 5.3%;
-
-          animation-delay: 0.18s;
-        }
-
-        /* RIGHT BOTTOM */
-
-        .pulseRightBottom {
-          right: 5.8%;
-
-          top: 42.8%;
-
-          width: 6%;
-
-          height: 8.5%;
-
+.pulseRightBottom {
+  right: 5.5%;
+  top: 28.5%;
+  width: 6.8%;
+  height: 9.5%;
+  animation-delay: 0.28s;
+}
           animation-delay: 0.28s;
         }
 
