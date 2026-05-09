@@ -1,7 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const audioRef = useRef(null);
+
+  const [name, setName] = useState("");
+  const [song, setSong] = useState("");
+  const [message, setMessage] = useState("");
 
   const playRadio = () => {
     if (audioRef.current) {
@@ -19,6 +23,14 @@ export default function Home() {
     }
   };
 
+  const sendRequest = (e) => {
+    e.preventDefault();
+
+    const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
+
+    window.open(`https://wa.me/2207408888?text=${text}`, "_blank");
+  };
+
   return (
     <div
       style={{
@@ -33,47 +45,15 @@ export default function Home() {
       }}
     >
       {/* NAVBAR */}
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "12px 20px",
-          marginBottom: "20px",
-          borderRadius: "14px",
-          background: "#111",
-          boxShadow: "0 0 20px rgba(0,0,0,0.4)",
-          position: "sticky",
-          top: "10px",
-          zIndex: 50,
-        }}
-      >
-        <div
-          style={{
-            color: "#f7c600",
-            fontWeight: "bold",
-            fontSize: "24px",
-            letterSpacing: "1px",
-          }}
-        >
-          ONEFORCE RADIO
-        </div>
+      <div className="navbar">
+        <div className="logoText">ONEFORCE RADIO</div>
 
         <div className="navLinks">
           <button onClick={() => scrollToSection("home")}>HOME</button>
-
           <button onClick={() => scrollToSection("djs")}>DJS</button>
-
-          <button onClick={() => scrollToSection("schedule")}>
-            SCHEDULE
-          </button>
-
-          <button onClick={() => scrollToSection("contact")}>
-            CONTACT
-          </button>
-
+          <button onClick={() => scrollToSection("schedule")}>SCHEDULE</button>
+          <button onClick={() => scrollToSection("request")}>REQUEST</button>
+          <button onClick={() => scrollToSection("contact")}>CONTACT</button>
           <button className="listenBtn" onClick={playRadio}>
             LISTEN LIVE
           </button>
@@ -81,61 +61,16 @@ export default function Home() {
       </div>
 
       {/* HOME */}
-      <section
-        id="home"
-        style={{
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        {/* ON AIR */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "15px",
-            marginBottom: "18px",
-            color: "white",
-          }}
-        >
-          <div
-            style={{
-              width: "14px",
-              height: "14px",
-              borderRadius: "50%",
-              background: "red",
-              boxShadow: "0 0 10px red",
-            }}
-          />
+      <section id="home" style={{ width: "100%", textAlign: "center" }}>
+        <div className="onAir">
+          <div className="liveDot" />
+          <div className="onAirText">ON AIR NOW</div>
 
-          <div
-            style={{
-              fontSize: "22px",
-              fontWeight: "bold",
-              letterSpacing: "1px",
-            }}
-          >
-            ON AIR NOW
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "4px",
-              alignItems: "flex-end",
-              height: "30px",
-            }}
-          >
+          <div className="equalizer">
             {[1, 2, 3, 4].map((bar) => (
               <div
                 key={bar}
                 style={{
-                  width: "6px",
-                  height: "100%",
-                  background: "#00ff99",
-                  borderRadius: "3px",
-                  animation: "bounce 1s infinite ease-in-out",
                   animationDelay: `${bar * 0.15}s`,
                 }}
               />
@@ -143,141 +78,20 @@ export default function Home() {
           </div>
         </div>
 
-        {/* BANNER */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "1100px",
-            margin: "0 auto",
-          }}
-        >
-          <img
-            src="/banner1.png"
-            alt="OneForce Radio"
-            style={{
-              width: "100%",
-              borderRadius: "14px",
-              display: "block",
-            }}
-          />
+        <div className="bannerWrap">
+          <img src="/banner1.png" alt="OneForce Radio" className="banner" />
 
-          {/* PLAY BUTTON */}
-          <div
-            onClick={playRadio}
-            style={{
-              position: "absolute",
-              left: "31%",
-              top: "66%",
-              width: "39%",
-              height: "10%",
-              cursor: "pointer",
-            }}
-          />
+          <div onClick={playRadio} className="playClickArea" />
 
-          {/* INSTAGRAM */}
-          <a
-            href="https://www.instagram.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "22.5%",
-              top: "62%",
-              width: "4%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
-
-          {/* FACEBOOK */}
-          <a
-            href="https://www.facebook.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "17.5%",
-              top: "62%",
-              width: "4%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
-
-          {/* TIKTOK */}
-          <a
-            href="https://www.tiktok.com/@oneforce_radio"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "11.5%",
-              top: "60%",
-              width: "4%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
-
-          {/* WHATSAPP */}
-          <a
-            href="https://wa.me/2207408888"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "6.5%",
-              top: "60%",
-              width: "4%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
-
-          {/* YOUTUBE */}
-          <a
-            href="https://www.youtube.com/@oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "16.5%",
-              top: "68%",
-              width: "5%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
-
-          {/* TWITCH */}
-          <a
-            href="https://www.twitch.tv/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              right: "10.5%",
-              top: "68%",
-              width: "5%",
-              height: "7%",
-              cursor: "pointer",
-            }}
-          />
+          <a href="https://www.instagram.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="igLink" />
+          <a href="https://www.facebook.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="fbLink" />
+          <a href="https://www.tiktok.com/@oneforce_radio" target="_blank" rel="noopener noreferrer" className="ttLink" />
+          <a href="https://wa.me/2207408888" target="_blank" rel="noopener noreferrer" className="waLink" />
+          <a href="https://www.youtube.com/@oneforceradio" target="_blank" rel="noopener noreferrer" className="ytLink" />
+          <a href="https://www.twitch.tv/oneforceradio" target="_blank" rel="noopener noreferrer" className="twLink" />
         </div>
 
-        {/* PLAYER */}
-        <audio
-          ref={audioRef}
-          controls
-          preload="none"
-          style={{
-            width: "100%",
-            maxWidth: "700px",
-            marginTop: "20px",
-            borderRadius: "12px",
-          }}
-        >
+        <audio ref={audioRef} controls preload="none" className="audioPlayer">
           <source
             src="https://sky.doscast.com/proxy/oneforce/stream"
             type="audio/mpeg"
@@ -288,16 +102,11 @@ export default function Home() {
       {/* DJS */}
       <section id="djs" className="sectionBox">
         <h2>ONEFORCE DJS</h2>
-
-        <p>
-          Meet the selectors and DJs bringing vibes from around the world.
-        </p>
+        <p>Meet the selectors and DJs bringing vibes from around the world.</p>
 
         <div className="cardGrid">
           <div className="infoCard">DJ Profiles Coming Soon</div>
-
           <div className="infoCard">Worldwide Guest DJs</div>
-
           <div className="infoCard">Live Shows & Events</div>
         </div>
       </section>
@@ -305,68 +114,87 @@ export default function Home() {
       {/* SCHEDULE */}
       <section id="schedule" className="sectionBox">
         <h2>SHOW SCHEDULE</h2>
-
         <p>Live programming and special broadcasts coming soon.</p>
+      </section>
+
+      {/* REQUEST */}
+      <section id="request" className="sectionBox">
+        <h2>REQUEST / SHOUTOUT</h2>
+        <p>Send a song request, birthday shoutout, big-up, or message to the station.</p>
+
+        <form onSubmit={sendRequest} className="requestForm">
+          <input
+            type="text"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <input
+            type="text"
+            placeholder="Song request"
+            value={song}
+            onChange={(e) => setSong(e.target.value)}
+          />
+
+          <textarea
+            placeholder="Your shoutout / message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+
+          <button type="submit">SEND REQUEST VIA WHATSAPP</button>
+        </form>
       </section>
 
       {/* CONTACT */}
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
 
-        <p
-          style={{
-            marginTop: "15px",
-            color: "#ccc",
-            fontSize: "18px",
-          }}
-        >
-          WhatsApp: +220 7408888
-        </p>
+        <p>WhatsApp: +220 7408888</p>
+        <p>Email: info@oneforceradio.com</p>
 
-        <p
-          style={{
-            marginTop: "10px",
-            color: "#ccc",
-            fontSize: "18px",
-          }}
-        >
-          Email: info@oneforceradio.com
-        </p>
-
-        <a
-          className="contactBtn"
-          href="https://wa.me/2207408888"
-          target="_blank"
-        >
+        <a className="contactBtn" href="https://wa.me/2207408888" target="_blank">
           CONTACT VIA WHATSAPP
         </a>
 
         <a
-          className="contactBtn"
+          className="contactBtn emailBtn"
           href="mailto:info@oneforceradio.com"
           target="_blank"
-          style={{
-            marginLeft: "12px",
-            background: "#f7c600",
-          }}
         >
           SEND EMAIL
         </a>
       </section>
 
-      {/* FOOTER */}
-      <div
-        style={{
-          marginTop: "25px",
-          color: "#777",
-          fontSize: "14px",
-          textAlign: "center",
-        }}
-      >
+      <div className="footer">
         © 2026 OneForce Radio — Live Worldwide 24/7
       </div>
 
       <style>{`
+        .navbar {
+          width: 100%;
+          max-width: 1200px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 20px;
+          margin-bottom: 20px;
+          border-radius: 14px;
+          background: #111;
+          box-shadow: 0 0 20px rgba(0,0,0,0.4);
+          position: sticky;
+          top: 10px;
+          z-index: 50;
+        }
+
+        .logoText {
+          color: #f7c600;
+          font-weight: bold;
+          font-size: 24px;
+          letter-spacing: 1px;
+        }
+
         .navLinks {
           display: flex;
           gap: 20px;
@@ -390,12 +218,8 @@ export default function Home() {
         .navLinks button:hover {
           color: #f7c600;
           background: rgba(247, 198, 0, 0.12);
-          text-shadow:
-            0 0 5px #f7c600,
-            0 0 10px #f7c600,
-            0 0 18px #f7c600;
-          box-shadow:
-            0 0 12px rgba(247,198,0,0.25);
+          text-shadow: 0 0 5px #f7c600, 0 0 10px #f7c600, 0 0 18px #f7c600;
+          box-shadow: 0 0 12px rgba(247,198,0,0.25);
           transform: translateY(-2px) scale(1.06);
         }
 
@@ -405,12 +229,81 @@ export default function Home() {
 
         .listenBtn:hover {
           color: #00ffcc !important;
-          text-shadow:
-            0 0 6px #00ff99,
-            0 0 12px #00ff99,
-            0 0 20px #00ff99 !important;
-          box-shadow:
-            0 0 15px rgba(0,255,153,0.3);
+          text-shadow: 0 0 6px #00ff99, 0 0 12px #00ff99, 0 0 20px #00ff99 !important;
+          box-shadow: 0 0 15px rgba(0,255,153,0.3);
+        }
+
+        .onAir {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 18px;
+        }
+
+        .liveDot {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: red;
+          box-shadow: 0 0 10px red;
+        }
+
+        .onAirText {
+          font-size: 22px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+        .equalizer {
+          display: flex;
+          gap: 4px;
+          align-items: flex-end;
+          height: 30px;
+        }
+
+        .equalizer div {
+          width: 6px;
+          height: 100%;
+          background: #00ff99;
+          border-radius: 3px;
+          animation: bounce 1s infinite ease-in-out;
+        }
+
+        .bannerWrap {
+          position: relative;
+          width: 100%;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+
+        .banner {
+          width: 100%;
+          border-radius: 14px;
+          display: block;
+        }
+
+        .playClickArea {
+          position: absolute;
+          left: 31%;
+          top: 66%;
+          width: 39%;
+          height: 10%;
+          cursor: pointer;
+        }
+
+        .igLink { position: absolute; right: 22.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; }
+        .fbLink { position: absolute; right: 17.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; }
+        .ttLink { position: absolute; right: 11.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; }
+        .waLink { position: absolute; right: 6.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; }
+        .ytLink { position: absolute; right: 16.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; }
+        .twLink { position: absolute; right: 10.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; }
+
+        .audioPlayer {
+          width: 100%;
+          max-width: 700px;
+          margin-top: 20px;
+          border-radius: 12px;
         }
 
         .sectionBox {
@@ -450,48 +343,97 @@ export default function Home() {
           box-shadow: 0 0 15px rgba(0,0,0,0.4);
         }
 
+        .requestForm {
+          margin: 25px auto 0;
+          max-width: 650px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .requestForm input,
+        .requestForm textarea {
+          width: 100%;
+          padding: 14px;
+          border-radius: 12px;
+          border: 1px solid #333;
+          background: #181818;
+          color: white;
+          font-size: 16px;
+          outline: none;
+        }
+
+        .requestForm textarea {
+          min-height: 120px;
+          resize: vertical;
+        }
+
+        .requestForm input:focus,
+        .requestForm textarea:focus {
+          border-color: #f7c600;
+          box-shadow: 0 0 12px rgba(247,198,0,0.25);
+        }
+
+        .requestForm button,
         .contactBtn {
           display: inline-block;
-          margin-top: 20px;
+          margin-top: 10px;
           padding: 14px 24px;
           border-radius: 30px;
           background: #00ff99;
           color: #000;
           font-weight: bold;
           text-decoration: none;
+          border: none;
           cursor: pointer;
           transition: all 0.25s ease;
         }
 
+        .requestForm button:hover,
         .contactBtn:hover {
           transform: scale(1.05);
           box-shadow: 0 0 18px #00ff99;
         }
 
+        .emailBtn {
+          margin-left: 12px;
+          background: #f7c600;
+        }
+
+        .footer {
+          margin-top: 25px;
+          color: #777;
+          font-size: 14px;
+          text-align: center;
+        }
+
         @keyframes bounce {
-          0% {
-            transform: scaleY(0.4);
-          }
-          50% {
-            transform: scaleY(1);
-          }
-          100% {
-            transform: scaleY(0.4);
-          }
+          0% { transform: scaleY(0.4); }
+          50% { transform: scaleY(1); }
+          100% { transform: scaleY(0.4); }
         }
 
         @media (max-width: 700px) {
+          .navbar {
+            flex-direction: column;
+          }
+
           .navLinks {
-            gap: 12px;
+            gap: 8px;
             margin-top: 12px;
           }
 
           .navLinks button {
-            font-size: 13px;
+            font-size: 12px;
+            padding: 8px 9px;
           }
 
           .sectionBox h2 {
             font-size: 26px;
+          }
+
+          .emailBtn {
+            margin-left: 0;
           }
         }
       `}</style>
