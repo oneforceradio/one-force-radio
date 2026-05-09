@@ -572,8 +572,8 @@ export default function Home() {
 }
 
 .pulseLeftBottom {
-  left: 5.5%;
-  top: 28.5%;
+  left: 4.8%;
+  top: 30.5%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.2s;
@@ -596,8 +596,8 @@ export default function Home() {
 }
 
 .pulseRightBottom {
-  right: 5.5%;
-  top: 28.5%;
+  right: 4.8%;
+  top: 30.5%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.28s;
