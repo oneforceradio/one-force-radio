@@ -32,21 +32,11 @@ export default function Home() {
   };
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(-45deg, #050505, #111111, #161616, #0d0d0d)",
-        backgroundSize: "400% 400%",
-        animation: "gradientMove 18s ease infinite",
-        minHeight: "100vh",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        fontFamily: "Arial, sans-serif",
-        color: "white",
-      }}
-    >
+    <div className="pageWrap">
+      <div className="glowOrb orb1" />
+      <div className="glowOrb orb2" />
+      <div className="glowOrb orb3" />
+
       {/* NAVBAR */}
       <div className="navbar">
         <div className="logoText">ONEFORCE RADIO</div>
@@ -56,9 +46,7 @@ export default function Home() {
           <button onClick={() => scrollToSection("djs")}>DJS</button>
           <button onClick={() => scrollToSection("schedule")}>SCHEDULE</button>
           <button onClick={() => scrollToSection("request")}>REQUEST</button>
-          <button onClick={() => scrollToSection("contact")}>
-            CONTACT
-          </button>
+          <button onClick={() => scrollToSection("contact")}>CONTACT</button>
 
           <button className="listenBtn" onClick={playRadio}>
             LISTEN LIVE
@@ -67,93 +55,32 @@ export default function Home() {
       </div>
 
       {/* HOME */}
-      <section
-        id="home"
-        style={{
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        {/* ON AIR */}
+      <section id="home" style={{ width: "100%", textAlign: "center", zIndex: 2 }}>
         <div className="onAir">
           <div className="liveDot" />
-
           <div className="onAirText">ON AIR NOW</div>
 
           <div className="equalizer">
             {[1, 2, 3, 4].map((bar) => (
-              <div
-                key={bar}
-                style={{
-                  animationDelay: `${bar * 0.15}s`,
-                }}
-              />
+              <div key={bar} style={{ animationDelay: `${bar * 0.15}s` }} />
             ))}
           </div>
         </div>
 
-        {/* BANNER */}
         <div className="bannerWrap">
-          <img
-            src="/banner1.png"
-            alt="OneForce Radio"
-            className="banner"
-          />
+          <img src="/banner1.png" alt="OneForce Radio" className="banner" />
 
-          {/* PLAY BUTTON */}
           <div onClick={playRadio} className="playClickArea" />
 
-          {/* SOCIAL LINKS */}
-          <a
-            href="https://www.instagram.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="igLink"
-          />
-
-          <a
-            href="https://www.facebook.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fbLink"
-          />
-
-          <a
-            href="https://www.tiktok.com/@oneforce_radio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ttLink"
-          />
-
-          <a
-            href="https://wa.me/2207408888"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="waLink"
-          />
-
-          <a
-            href="https://www.youtube.com/@oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ytLink"
-          />
-
-          <a
-            href="https://www.twitch.tv/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="twLink"
-          />
+          <a href="https://www.instagram.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="igLink" />
+          <a href="https://www.facebook.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="fbLink" />
+          <a href="https://www.tiktok.com/@oneforce_radio" target="_blank" rel="noopener noreferrer" className="ttLink" />
+          <a href="https://wa.me/2207408888" target="_blank" rel="noopener noreferrer" className="waLink" />
+          <a href="https://www.youtube.com/@oneforceradio" target="_blank" rel="noopener noreferrer" className="ytLink" />
+          <a href="https://www.twitch.tv/oneforceradio" target="_blank" rel="noopener noreferrer" className="twLink" />
         </div>
 
-        {/* PLAYER */}
-        <audio
-          ref={audioRef}
-          controls
-          preload="none"
-          className="audioPlayer"
-        >
+        <audio ref={audioRef} controls preload="none" className="audioPlayer">
           <source
             src="https://sky.doscast.com/proxy/oneforce/stream"
             type="audio/mpeg"
@@ -161,39 +88,25 @@ export default function Home() {
         </audio>
       </section>
 
-      {/* DJS */}
       <section id="djs" className="sectionBox">
         <h2>ONEFORCE DJS</h2>
-
-        <p>
-          Meet the selectors and DJs bringing vibes from around the
-          world.
-        </p>
+        <p>Meet the selectors and DJs bringing vibes from around the world.</p>
 
         <div className="cardGrid">
           <div className="infoCard">DJ Profiles Coming Soon</div>
-
           <div className="infoCard">Worldwide Guest DJs</div>
-
           <div className="infoCard">Live Shows & Events</div>
         </div>
       </section>
 
-      {/* SCHEDULE */}
       <section id="schedule" className="sectionBox">
         <h2>SHOW SCHEDULE</h2>
-
         <p>Live programming and special broadcasts coming soon.</p>
       </section>
 
-      {/* REQUEST */}
       <section id="request" className="sectionBox">
         <h2>REQUEST / SHOUTOUT</h2>
-
-        <p>
-          Send a song request, birthday shoutout, big-up, or message to
-          the station.
-        </p>
+        <p>Send a song request, birthday shoutout, big-up, or message to the station.</p>
 
         <form onSubmit={sendRequest} className="requestForm">
           <input
@@ -216,55 +129,84 @@ export default function Home() {
             onChange={(e) => setMessage(e.target.value)}
           />
 
-          <button type="submit">
-            SEND REQUEST VIA WHATSAPP
-          </button>
+          <button type="submit">SEND REQUEST VIA WHATSAPP</button>
         </form>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
 
         <p>WhatsApp: +220 7408888</p>
-
         <p>Email: info@oneforceradio.com</p>
 
-        <a
-          className="contactBtn"
-          href="https://wa.me/2207408888"
-          target="_blank"
-        >
+        <a className="contactBtn" href="https://wa.me/2207408888" target="_blank">
           CONTACT VIA WHATSAPP
         </a>
 
-        <a
-          className="contactBtn emailBtn"
-          href="mailto:info@oneforceradio.com"
-          target="_blank"
-        >
+        <a className="contactBtn emailBtn" href="mailto:info@oneforceradio.com" target="_blank">
           SEND EMAIL
         </a>
       </section>
 
-      {/* FOOTER */}
       <div className="footer">
         © 2026 OneForce Radio — Live Worldwide 24/7
       </div>
 
       <style>{`
-        @keyframes gradientMove {
-          0% {
-            background-position: 0% 50%;
-          }
+        .pageWrap {
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(-45deg, #050505, #111111, #161616, #0d0d0d);
+          background-size: 400% 400%;
+          animation: gradientMove 18s ease infinite;
+          min-height: 100vh;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: Arial, sans-serif;
+          color: white;
+        }
 
-          50% {
-            background-position: 100% 50%;
-          }
+        .glowOrb {
+          position: fixed;
+          border-radius: 50%;
+          filter: blur(55px);
+          opacity: 0.22;
+          z-index: 0;
+          pointer-events: none;
+        }
 
-          100% {
-            background-position: 0% 50%;
-          }
+        .orb1 {
+          width: 260px;
+          height: 260px;
+          background: #f7c600;
+          top: 12%;
+          left: 6%;
+          animation: floatOrb1 16s ease-in-out infinite;
+        }
+
+        .orb2 {
+          width: 300px;
+          height: 300px;
+          background: #00ff99;
+          bottom: 12%;
+          right: 6%;
+          animation: floatOrb2 20s ease-in-out infinite;
+        }
+
+        .orb3 {
+          width: 220px;
+          height: 220px;
+          background: #ff0033;
+          top: 45%;
+          right: 20%;
+          animation: floatOrb3 24s ease-in-out infinite;
+        }
+
+        .navbar, .sectionBox, #home, .footer {
+          position: relative;
+          z-index: 2;
         }
 
         .navbar {
@@ -314,12 +256,8 @@ export default function Home() {
         .navLinks button:hover {
           color: #f7c600;
           background: rgba(247, 198, 0, 0.12);
-          text-shadow:
-            0 0 5px #f7c600,
-            0 0 10px #f7c600,
-            0 0 18px #f7c600;
-          box-shadow:
-            0 0 12px rgba(247,198,0,0.25);
+          text-shadow: 0 0 5px #f7c600, 0 0 10px #f7c600, 0 0 18px #f7c600;
+          box-shadow: 0 0 12px rgba(247,198,0,0.25);
           transform: translateY(-2px) scale(1.06);
         }
 
@@ -329,12 +267,8 @@ export default function Home() {
 
         .listenBtn:hover {
           color: #00ffcc !important;
-          text-shadow:
-            0 0 6px #00ff99,
-            0 0 12px #00ff99,
-            0 0 20px #00ff99 !important;
-          box-shadow:
-            0 0 15px rgba(0,255,153,0.3);
+          text-shadow: 0 0 6px #00ff99, 0 0 12px #00ff99, 0 0 20px #00ff99 !important;
+          box-shadow: 0 0 15px rgba(0,255,153,0.3);
         }
 
         .onAir {
@@ -513,18 +447,34 @@ export default function Home() {
           text-align: center;
         }
 
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatOrb1 {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(70px, 60px) scale(1.15); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes floatOrb2 {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(-80px, -50px) scale(1.2); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes floatOrb3 {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(-40px, 80px) scale(1.1); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+
         @keyframes bounce {
-          0% {
-            transform: scaleY(0.4);
-          }
-
-          50% {
-            transform: scaleY(1);
-          }
-
-          100% {
-            transform: scaleY(0.4);
-          }
+          0% { transform: scaleY(0.4); }
+          50% { transform: scaleY(1); }
+          100% { transform: scaleY(0.4); }
         }
 
         @media (max-width: 700px) {
@@ -548,6 +498,10 @@ export default function Home() {
 
           .emailBtn {
             margin-left: 0;
+          }
+
+          .glowOrb {
+            opacity: 0.16;
           }
         }
       `}</style>
