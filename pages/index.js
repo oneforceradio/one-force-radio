@@ -565,7 +565,7 @@ export default function Home() {
 /* LEFT TOP */
 .pulseLeftTop {
   left: 5.5%;
-  top: 16.9%;
+  top: 16.1%;
   width: 3.6%;
   height: 5%;
 }
@@ -573,7 +573,7 @@ export default function Home() {
 /* LEFT BOTTOM */
 .pulseLeftBottom {
   left: 3.6%;
-  top: 28.9%;
+  top: 28.1%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.2s;
@@ -581,8 +581,8 @@ export default function Home() {
 
 /* CENTER LOGO */
 .pulseLogo {
-  left: 29.6%;
-  top: 15.9%;
+  left: 28.6%;
+  top: 15.1%;
   width: 5.4%;
   height: 7.5%;
   animation-delay: 0.1s;
@@ -591,7 +591,7 @@ export default function Home() {
 /* RIGHT TOP */
 .pulseRightTop {
   right: 5.5%;
-  top: 16.9%;
+  top: 16.1%;
   width: 3.6%;
   height: 5%;
   animation-delay: 0.18s;
@@ -600,7 +600,7 @@ export default function Home() {
 /* RIGHT BOTTOM */
 .pulseRightBottom {
   right: 3.6%;
-  top: 28.9%;
+  top: 28.1%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.28s;
