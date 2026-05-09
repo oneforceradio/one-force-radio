@@ -562,49 +562,49 @@ export default function Home() {
           mix-blend-mode: screen;
         }
 
-        /* LEFT TOP */
-
-     .pulseLeftTop {
-  left: 6.7%;
-  top: 18.5%;
+      /* LEFT TOP */
+.pulseLeftTop {
+  left: 6.1%;
+  top: 17.7%;
   width: 3.6%;
   height: 5%;
 }
 
+/* LEFT BOTTOM */
 .pulseLeftBottom {
-  left: 4.8%;
-  top: 30.5%;
+  left: 4.2%;
+  top: 29.7%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.2s;
 }
 
+/* CENTER LOGO */
 .pulseLogo {
-  left: 30.8%;
-  top: 17.5%;
+  left: 30.2%;
+  top: 16.7%;
   width: 5.4%;
   height: 7.5%;
   animation-delay: 0.1s;
 }
 
+/* RIGHT TOP */
 .pulseRightTop {
-  right: 6.8%;
-  top: 18.5%;
+  right: 6.1%;
+  top: 17.7%;
   width: 3.6%;
   height: 5%;
   animation-delay: 0.18s;
 }
 
+/* RIGHT BOTTOM */
 .pulseRightBottom {
-  right: 4.8%;
-  top: 30.5%;
+  right: 4.2%;
+  top: 29.7%;
   width: 6.8%;
   height: 9.5%;
   animation-delay: 0.28s;
 }
-          animation-delay: 0.28s;
-        }
-
         /* CLICK AREAS */
 
         .playClickArea {
