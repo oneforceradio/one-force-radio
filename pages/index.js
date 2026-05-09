@@ -5,8 +5,8 @@
   rel="noopener noreferrer"
   style={{
     position: "absolute",
-    right: "21.5%",
-    top: "60%",
+    right: "22.5%",
+    top: "62%",
     width: "4%",
     height: "7%",
   }}
@@ -19,8 +19,8 @@
   rel="noopener noreferrer"
   style={{
     position: "absolute",
-    right: "16.5%",
-    top: "60%",
+    right: "17.5%",
+    top: "62%",
     width: "4%",
     height: "7%",
   }}
