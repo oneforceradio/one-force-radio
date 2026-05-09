@@ -70,6 +70,13 @@ export default function Home() {
         <div className="bannerWrap">
           <img src="/banner1.png" alt="OneForce Radio" className="banner" />
 
+          {/* SPEAKER PULSE OVERLAYS */}
+          <div className="speakerPulse pulseLeftTop" />
+          <div className="speakerPulse pulseLeftBottom" />
+          <div className="speakerPulse pulseLogo" />
+          <div className="speakerPulse pulseRightTop" />
+          <div className="speakerPulse pulseRightBottom" />
+
           <div onClick={playRadio} className="playClickArea" />
 
           <a href="https://www.instagram.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="igLink" />
@@ -322,6 +329,56 @@ export default function Home() {
           box-shadow: 0 0 40px rgba(0,0,0,0.5);
         }
 
+        .speakerPulse {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 3;
+          background: radial-gradient(circle, rgba(0,255,80,0.38) 0%, rgba(0,255,80,0.15) 35%, rgba(0,255,80,0) 70%);
+          box-shadow: 0 0 18px rgba(0,255,80,0.8), 0 0 35px rgba(247,198,0,0.45);
+          animation: speakerBass 1.15s ease-in-out infinite;
+          mix-blend-mode: screen;
+        }
+
+        .pulseLeftTop {
+          left: 6.5%;
+          top: 15.5%;
+          width: 5.2%;
+          height: 7.2%;
+        }
+
+        .pulseLeftBottom {
+          left: 5.4%;
+          top: 31%;
+          width: 7.3%;
+          height: 10%;
+          animation-delay: 0.2s;
+        }
+
+        .pulseLogo {
+          left: 31.5%;
+          top: 13.5%;
+          width: 7%;
+          height: 9.4%;
+          animation-delay: 0.1s;
+        }
+
+        .pulseRightTop {
+          right: 6.7%;
+          top: 15.5%;
+          width: 5.2%;
+          height: 7.2%;
+          animation-delay: 0.18s;
+        }
+
+        .pulseRightBottom {
+          right: 5.5%;
+          top: 31%;
+          width: 7.3%;
+          height: 10%;
+          animation-delay: 0.28s;
+        }
+
         .playClickArea {
           position: absolute;
           left: 31%;
@@ -329,14 +386,15 @@ export default function Home() {
           width: 39%;
           height: 10%;
           cursor: pointer;
+          z-index: 5;
         }
 
-        .igLink { position: absolute; right: 22.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; }
-        .fbLink { position: absolute; right: 17.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; }
-        .ttLink { position: absolute; right: 11.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; }
-        .waLink { position: absolute; right: 6.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; }
-        .ytLink { position: absolute; right: 16.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; }
-        .twLink { position: absolute; right: 10.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; }
+        .igLink { position: absolute; right: 22.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
+        .fbLink { position: absolute; right: 17.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
+        .ttLink { position: absolute; right: 11.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
+        .waLink { position: absolute; right: 6.5%; top: 60%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
+        .ytLink { position: absolute; right: 16.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; z-index: 5; }
+        .twLink { position: absolute; right: 10.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; z-index: 5; }
 
         .audioPlayer {
           width: 100%;
@@ -447,6 +505,25 @@ export default function Home() {
           text-align: center;
         }
 
+        @keyframes speakerBass {
+          0% {
+            transform: scale(0.82);
+            opacity: 0.25;
+          }
+          40% {
+            transform: scale(1.12);
+            opacity: 0.85;
+          }
+          70% {
+            transform: scale(0.95);
+            opacity: 0.45;
+          }
+          100% {
+            transform: scale(0.82);
+            opacity: 0.25;
+          }
+        }
+
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -502,6 +579,10 @@ export default function Home() {
 
           .glowOrb {
             opacity: 0.16;
+          }
+
+          .speakerPulse {
+            opacity: 0.5;
           }
         }
       `}</style>
