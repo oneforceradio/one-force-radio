@@ -110,82 +110,91 @@ export default function Home() {
           }}
         />
 
-        {/* SOCIAL ICONS */}
-        <div
+        {/* INVISIBLE SOCIAL CLICK AREAS */}
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/oneforceradio"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "absolute",
+            right: "28%",
+            top: "60%",
+            width: "4%",
+            height: "8%",
+          }}
+        />
+
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/oneforceradio"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "absolute",
+            right: "22%",
+            top: "60%",
+            width: "4%",
+            height: "8%",
+          }}
+        />
+
+        {/* TikTok */}
+        <a
+          href="https://www.tiktok.com/@oneforce_radio"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "absolute",
+            right: "16%",
+            top: "60%",
+            width: "4%",
+            height: "8%",
+          }}
+        />
+
+        {/* YouTube */}
+        <a
+          href="https://www.youtube.com/@oneforceradio"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "absolute",
+            right: "10%",
+            top: "60%",
+            width: "4%",
+            height: "8%",
+          }}
+        />
+
+        {/* Twitch */}
+        <a
+          href="https://www.twitch.tv/oneforceradio"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             position: "absolute",
             right: "4%",
-            top: "58%",
-            display: "flex",
-            gap: "14px",
+            top: "60%",
+            width: "4%",
+            height: "8%",
           }}
-        >
-          <a
-            href="https://www.instagram.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-              width="42"
-            />
-          </a>
+        />
 
-          <a
-            href="https://www.facebook.com/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-              width="42"
-            />
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@oneforce_radio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
-              width="42"
-            />
-          </a>
-
-          <a
-            href="https://www.youtube.com/@oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-              width="42"
-            />
-          </a>
-
-          <a
-            href="https://www.twitch.tv/oneforceradio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png"
-              width="42"
-            />
-          </a>
-
-          <a
-            href="https://wa.me/2207408888"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-              width="42"
-            />
-          </a>
-        </div>
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/2207408888"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "absolute",
+            right: "0%",
+            top: "60%",
+            width: "4%",
+            height: "8%",
+          }}
+        />
       </div>
 
       {/* AUDIO PLAYER */}
