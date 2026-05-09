@@ -44,13 +44,17 @@ export default function Home() {
 
         <div className="navLinks">
           <button onClick={() => scrollToSection("home")}>HOME</button>
+
           <button onClick={() => scrollToSection("djs")}>DJS</button>
+
           <button onClick={() => scrollToSection("schedule")}>
             SCHEDULE
           </button>
+
           <button onClick={() => scrollToSection("request")}>
             REQUEST
           </button>
+
           <button onClick={() => scrollToSection("contact")}>
             CONTACT
           </button>
@@ -96,12 +100,8 @@ export default function Home() {
             className="banner"
           />
 
-          {/* SPEAKER EFFECTS */}
-          <div className="speakerPulse pulseLeftTop" />
-          <div className="speakerPulse pulseLeftBottom" />
+          {/* CENTER LOGO PULSE */}
           <div className="speakerPulse pulseLogo" />
-          <div className="speakerPulse pulseRightTop" />
-          <div className="speakerPulse pulseRightBottom" />
 
           {/* PLAY BUTTON */}
           <div onClick={playRadio} className="playClickArea" />
@@ -536,7 +536,7 @@ export default function Home() {
           box-shadow: 0 0 40px rgba(0,0,0,0.5);
         }
 
-        /* SPEAKER EFFECTS */
+        /* CENTER PULSE */
 
         .speakerPulse {
           position: absolute;
@@ -562,49 +562,18 @@ export default function Home() {
           mix-blend-mode: screen;
         }
 
-/* LEFT TOP */
-.pulseLeftTop {
-  left: 5.5%;
-  top: 16.1%;
-  width: 3.6%;
-  height: 5%;
-}
+        .pulseLogo {
+          left: 28.3%;
 
-/* LEFT BOTTOM */
-.pulseLeftBottom {
-  left: 3.6%;
-  top: 28.1%;
-  width: 6.8%;
-  height: 9.5%;
-  animation-delay: 0.2s;
-}
+          top: 15.5%;
 
-/* CENTER LOGO */
-.pulseLogo {
-  left: 28.3%;
-  top: 15.5%;
-  width: 5.4%;
-  height: 7.5%;
-  animation-delay: 0.1s;
-}
+          width: 5.4%;
 
-/* RIGHT TOP */
-.pulseRightTop {
-  right: 5.5%;
-  top: 16.1%;
-  width: 3.6%;
-  height: 5%;
-  animation-delay: 0.18s;
-}
+          height: 7.5%;
 
-/* RIGHT BOTTOM */
-.pulseRightBottom {
-  right: 3.6%;
-  top: 28.1%;
-  width: 6.8%;
-  height: 9.5%;
-  animation-delay: 0.28s;
-}
+          animation-delay: 0.1s;
+        }
+
         /* CLICK AREAS */
 
         .playClickArea {
@@ -981,7 +950,7 @@ export default function Home() {
           }
 
           .speakerPulse {
-            opacity: 0.5;
+            opacity: 0.7;
           }
         }
       `}</style>
