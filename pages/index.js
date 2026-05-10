@@ -205,6 +205,68 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="events" className="sectionBox">
+        <h2>UPCOMING EVENTS</h2>
+        <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
+
+        <div className="eventsGrid">
+          {activeFlyer && (
+            <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
+              <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
+            </div>
+          )}
+
+          {events.map((event, index) => {
+            const activeSlide = eventSlide[index] || 0;
+            const hasMultipleFlyers = event.flyers.length > 1;
+
+            return (
+              <div className="eventCard" key={event.title}>
+                <div className="eventFlyerWrap">
+                  <img
+                    src={event.flyers[activeSlide]}
+                    alt={`${event.title} flyer`}
+                    className="eventFlyer"
+                    onClick={() => setActiveFlyer(event.flyers[activeSlide])}
+                  />
+
+                  {hasMultipleFlyers && (
+                    <>
+                      <button
+                        className="flyerArrow flyerArrowLeft"
+                        onClick={() => changeEventSlide(index, "prev")}
+                        aria-label="Previous flyer"
+                      >
+                        ‹
+                      </button>
+
+                      <button
+                        className="flyerArrow flyerArrowRight"
+                        onClick={() => changeEventSlide(index, "next")}
+                        aria-label="Next flyer"
+                      >
+                        ›
+                      </button>
+
+                      <div className="flyerCounter">
+                        {activeSlide + 1} / {event.flyers.length}
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div className="eventContent">
+                  <div className="eventDate">{event.date}</div>
+                  <h3>{event.title}</h3>
+                  <div className="eventLocation">{event.location}</div>
+                  <p>{event.info}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       <section id="djs" className="sectionBox">
         <h2>ONEFORCE RADIO DJS</h2>
         <p>Meet the selectors and DJs bringing vibes from around the world.</p>
@@ -323,68 +385,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="events" className="sectionBox">
-        <h2>UPCOMING EVENTS</h2>
-        <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
-
-        <div className="eventsGrid">
-          {activeFlyer && (
-            <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
-              <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
-            </div>
-          )}
-
-          {events.map((event, index) => {
-            const activeSlide = eventSlide[index] || 0;
-            const hasMultipleFlyers = event.flyers.length > 1;
-
-            return (
-              <div className="eventCard" key={event.title}>
-                <div className="eventFlyerWrap">
-                  <img
-                    src={event.flyers[activeSlide]}
-                    alt={`${event.title} flyer`}
-                    className="eventFlyer"
-                    onClick={() => setActiveFlyer(event.flyers[activeSlide])}
-                  />
-
-                  {hasMultipleFlyers && (
-                    <>
-                      <button
-                        className="flyerArrow flyerArrowLeft"
-                        onClick={() => changeEventSlide(index, "prev")}
-                        aria-label="Previous flyer"
-                      >
-                        ‹
-                      </button>
-
-                      <button
-                        className="flyerArrow flyerArrowRight"
-                        onClick={() => changeEventSlide(index, "next")}
-                        aria-label="Next flyer"
-                      >
-                        ›
-                      </button>
-
-                      <div className="flyerCounter">
-                        {activeSlide + 1} / {event.flyers.length}
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div className="eventContent">
-                  <div className="eventDate">{event.date}</div>
-                  <h3>{event.title}</h3>
-                  <div className="eventLocation">{event.location}</div>
-                  <p>{event.info}</p>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </section>
 
