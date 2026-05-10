@@ -1052,23 +1052,35 @@ export default function Home() {
 
         .flyerModal {
           position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.88);
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.9);
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 9999;
-          padding: 20px;
+          z-index: 99999;
+          padding: 18px;
           cursor: pointer;
           backdrop-filter: blur(8px);
           animation: fadeIn 0.25s ease;
+          box-sizing: border-box;
+          overflow: auto;
         }
 
         .flyerModalImage {
-          max-width: 92%;
+          display: block;
+          max-width: min(94vw, 900px);
           max-height: 92vh;
+          width: auto;
+          height: auto;
+          object-fit: contain;
           border-radius: 18px;
           box-shadow: 0 0 40px rgba(0,0,0,0.7);
+          margin: auto;
         }
 
         .requestForm {
