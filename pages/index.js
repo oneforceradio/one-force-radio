@@ -59,6 +59,14 @@ export default function Home() {
   const [eventSlide, setEventSlide] = useState({});
   const [activeFlyer, setActiveFlyer] = useState(null);
 
+  const shoutouts = [
+    "Big up everyone locked in from The Gambia 🇬🇲",
+    "Napoli crew tuned in loud 🇮🇹",
+    "Bristol family inside 🔥",
+    "OneForce Radio live worldwide 24/7 🌍",
+    "Dancehall Showcase family locked in 🔊",
+  ];
+
   const playRadio = () => {
     if (audioRef.current) {
       audioRef.current.play();
@@ -184,6 +192,23 @@ export default function Home() {
               <h3>{liveShow.show}</h3>
               <p>{liveShow.genre}</p>
               <div className="broadcastText">Broadcasting Worldwide 24/7</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="shoutTicker">
+          <div className="tickerLabel">
+            <span></span>
+            LIVE SHOUTS
+          </div>
+
+          <div className="tickerTrackWrap">
+            <div className="tickerTrack">
+              {[...shoutouts, ...shoutouts].map((shout, index) => (
+                <div className="tickerItem" key={index}>
+                  {shout}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -614,6 +639,68 @@ export default function Home() {
 
         .hiddenAudioPlayer {
           display: none;
+        }
+
+        .shoutTicker {
+          width: 100%;
+          max-width: 900px;
+          margin: 25px auto 0;
+          padding: 12px 16px;
+          border-radius: 18px;
+          background: rgba(17,17,17,0.92);
+          border: 1px solid rgba(247,198,0,0.22);
+          box-shadow: 0 0 22px rgba(0,0,0,0.35), 0 0 20px rgba(247,198,0,0.08);
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          overflow: hidden;
+          box-sizing: border-box;
+        }
+
+        .tickerLabel {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #f7c600;
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          white-space: nowrap;
+        }
+
+        .tickerLabel span {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: red;
+          box-shadow: 0 0 10px red;
+          animation: liveBlink 1s infinite;
+        }
+
+        .tickerTrackWrap {
+          flex: 1;
+          overflow: hidden;
+          min-width: 0;
+        }
+
+        .tickerTrack {
+          display: flex;
+          width: max-content;
+          animation: tickerScroll 30s linear infinite;
+        }
+
+        .tickerTrack:hover {
+          animation-play-state: paused;
+        }
+
+        .tickerItem {
+          flex: 0 0 auto;
+          padding-right: 42px;
+          color: #ddd;
+          font-size: 15px;
+          font-weight: bold;
+          white-space: nowrap;
         }
 
         .liveStatusCard {
@@ -1063,6 +1150,11 @@ export default function Home() {
           100% { transform: translate(0, 0) scale(1); }
         }
 
+        @keyframes tickerScroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
@@ -1104,6 +1196,21 @@ export default function Home() {
 
           .liveStatusContent h3 {
             font-size: 18px;
+          }
+
+          .shoutTicker {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+          }
+
+          .tickerLabel {
+            justify-content: center;
+          }
+
+          .tickerItem {
+            font-size: 14px;
+            padding-right: 34px;
           }
 
           .emailBtn {
