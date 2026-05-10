@@ -157,6 +157,10 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <button className="tickerRequestBtn" onClick={() => scrollToSection("request")}>
+            SEND SHOUTOUT
+          </button>
         </div>
 
         <div className="bannerWrap">
@@ -700,6 +704,27 @@ export default function Home() {
           white-space: nowrap;
         }
 
+        .tickerRequestBtn {
+          flex: 0 0 auto;
+          border: none;
+          border-radius: 999px;
+          padding: 9px 15px;
+          background: #00ff99;
+          color: #000;
+          font-size: 12px;
+          font-weight: 900;
+          letter-spacing: 0.8px;
+          cursor: pointer;
+          box-shadow: 0 0 14px rgba(0,255,153,0.35);
+          transition: all 0.25s ease;
+          white-space: nowrap;
+        }
+
+        .tickerRequestBtn:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 18px rgba(0,255,153,0.65);
+        }
+
         .liveStatusCard {
           width: 100%;
           max-width: 760px;
@@ -1208,6 +1233,10 @@ export default function Home() {
           .tickerItem {
             font-size: 14px;
             padding-right: 34px;
+          }
+
+          .tickerRequestBtn {
+            align-self: center;
           }
 
           .emailBtn {
