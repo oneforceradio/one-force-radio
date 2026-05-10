@@ -57,6 +57,7 @@ export default function Home() {
   ];
 
   const [eventSlide, setEventSlide] = useState({});
+  const [activeFlyer, setActiveFlyer] = useState(null);
 
   const playRadio = () => {
     if (audioRef.current) {
@@ -281,6 +282,12 @@ export default function Home() {
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
         <div className="eventsGrid">
+          {activeFlyer && (
+            <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
+              <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
+            </div>
+          )}
+
           {events.map((event, index) => {
             const activeSlide = eventSlide[index] || 0;
             const hasMultipleFlyers = event.flyers.length > 1;
@@ -292,6 +299,7 @@ export default function Home() {
                     src={event.flyers[activeSlide]}
                     alt={`${event.title} flyer`}
                     className="eventFlyer"
+                    onClick={() => setActiveFlyer(event.flyers[activeSlide])}
                   />
 
                   {hasMultipleFlyers && (
@@ -324,15 +332,6 @@ export default function Home() {
                   <h3>{event.title}</h3>
                   <div className="eventLocation">{event.location}</div>
                   <p>{event.info}</p>
-
-                  <a
-                    href={event.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="eventBtn"
-                  >
-                    EVENT INFO
-                  </a>
                 </div>
               </div>
             );
@@ -935,21 +934,25 @@ export default function Home() {
           line-height: 1.6;
         }
 
-        .eventBtn {
-          display: inline-block;
-          margin-top: 15px;
-          padding: 11px 20px;
-          border-radius: 24px;
-          background: #f7c600;
-          color: #000;
-          text-decoration: none;
-          font-weight: bold;
-          transition: all 0.25s ease;
+        .flyerModal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.88);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          padding: 20px;
+          cursor: pointer;
+          backdrop-filter: blur(8px);
+          animation: fadeIn 0.25s ease;
         }
 
-        .eventBtn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 16px rgba(247,198,0,0.6);
+        .flyerModalImage {
+          max-width: 92%;
+          max-height: 92vh;
+          border-radius: 18px;
+          box-shadow: 0 0 40px rgba(0,0,0,0.7);
         }
 
         .requestForm {
@@ -1058,6 +1061,11 @@ export default function Home() {
           0% { transform: translate(0, 0) scale(1); }
           50% { transform: translate(-40px, 80px) scale(1.1); }
           100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         @keyframes bounce {
