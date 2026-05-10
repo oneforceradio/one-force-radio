@@ -289,6 +289,39 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="djCard">
+            <div className="djImageWrap">
+              <img src="/JnrForce.jpg" alt="DJ Jnr Force" className="djImage" />
+            </div>
+
+            <div className="djContent">
+              <h3>DJ Jnr Force</h3>
+              <div className="djSubName">OneForce Sound</div>
+
+              <div className="djLocation">
+                Based In The Gambia • West Africa
+              </div>
+
+              <div className="djGenre">
+                Gam-Vibes • Afrobeats • Amapiano
+              </div>
+
+              <p className="djBio">
+                Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide
+                for rocking crowds with nonstop hits and keeping the clubs pumping with energy.
+              </p>
+
+              <a
+                href="https://www.instagram.com/juniorforce/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="djSocialBtn"
+              >
+                INSTAGRAM
+              </a>
+            </div>
+          </div>
+
           <div className="djCard placeholderCard">
             <div className="djPlaceholder">COMING SOON</div>
 
