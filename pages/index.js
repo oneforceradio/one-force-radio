@@ -7,6 +7,14 @@ export default function Home() {
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
 
+  const liveShow = {
+    dj: "DJ Lashes",
+    show: "Dancehall Madness",
+    genre: "Dancehall • Reggae • Afrobeat",
+    image: "/djlashes.jpg",
+    status: "LIVE NOW",
+  };
+
   const playRadio = () => {
     if (audioRef.current) {
       audioRef.current.play();
@@ -74,6 +82,24 @@ export default function Home() {
         <audio ref={audioRef} controls preload="none" className="audioPlayer">
           <source src="https://sky.doscast.com/proxy/oneforce/stream" type="audio/mpeg" />
         </audio>
+
+        <div className="liveStatusCard">
+          <div className="liveBadge">
+            <span></span>
+            {liveShow.status}
+          </div>
+
+          <div className="liveStatusContent">
+            <img src={liveShow.image} alt={liveShow.dj} className="liveDjImage" />
+
+            <div>
+              <h2>{liveShow.dj}</h2>
+              <h3>{liveShow.show}</h3>
+              <p>{liveShow.genre}</p>
+              <div className="broadcastText">Broadcasting Worldwide 24/7</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="djs" className="sectionBox">
@@ -186,11 +212,11 @@ export default function Home() {
         <p>WhatsApp: +220 7408888</p>
         <p>Email: info@oneforceradio.com</p>
 
-        <a className="contactBtn" href="https://wa.me/2207408888" target="_blank">
+        <a className="contactBtn" href="https://wa.me/2207408888" target="_blank" rel="noopener noreferrer">
           CONTACT VIA WHATSAPP
         </a>
 
-        <a className="contactBtn emailBtn" href="mailto:info@oneforceradio.com" target="_blank">
+        <a className="contactBtn emailBtn" href="mailto:info@oneforceradio.com" target="_blank" rel="noopener noreferrer">
           SEND EMAIL
         </a>
       </section>
@@ -377,6 +403,79 @@ export default function Home() {
           border-radius: 12px;
         }
 
+        .liveStatusCard {
+          width: 100%;
+          max-width: 760px;
+          margin: 25px auto 0;
+          padding: 22px;
+          border-radius: 20px;
+          background: rgba(17,17,17,0.95);
+          border: 1px solid rgba(0,255,153,0.3);
+          box-shadow: 0 0 25px rgba(0,255,153,0.18), inset 0 0 18px rgba(247,198,0,0.05);
+          box-sizing: border-box;
+          animation: liveCardGlow 2.2s ease-in-out infinite;
+        }
+
+        .liveBadge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #00ff99;
+          font-weight: bold;
+          margin-bottom: 18px;
+          letter-spacing: 1px;
+        }
+
+        .liveBadge span {
+          width: 10px;
+          height: 10px;
+          background: red;
+          border-radius: 50%;
+          box-shadow: 0 0 10px red;
+          animation: liveBlink 1s infinite;
+        }
+
+        .liveStatusContent {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 22px;
+        }
+
+        .liveDjImage {
+          width: 95px;
+          height: 95px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center top;
+          border: 3px solid #f7c600;
+          box-shadow: 0 0 18px rgba(247,198,0,0.4);
+        }
+
+        .liveStatusContent h2 {
+          margin: 0;
+          color: #f7c600;
+          font-size: 30px;
+        }
+
+        .liveStatusContent h3 {
+          margin: 6px 0;
+          color: white;
+          font-size: 20px;
+        }
+
+        .liveStatusContent p {
+          margin: 0;
+          color: #ccc;
+          font-size: 16px;
+        }
+
+        .broadcastText {
+          margin-top: 10px;
+          color: #00ff99;
+          font-weight: bold;
+        }
+
         .sectionBox {
           width: 100%;
           max-width: 1100px;
@@ -387,6 +486,7 @@ export default function Home() {
           backdrop-filter: blur(10px);
           box-shadow: 0 0 25px rgba(0,0,0,0.45);
           text-align: center;
+          box-sizing: border-box;
         }
 
         .sectionBox h2 {
@@ -521,6 +621,7 @@ export default function Home() {
           color: white;
           font-size: 16px;
           outline: none;
+          box-sizing: border-box;
         }
 
         .requestForm textarea {
@@ -574,6 +675,18 @@ export default function Home() {
           100% { transform: scale(0.82); opacity: 0.25; }
         }
 
+        @keyframes liveBlink {
+          0% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.45; transform: scale(1.25); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes liveCardGlow {
+          0% { box-shadow: 0 0 20px rgba(0,255,153,0.14), inset 0 0 18px rgba(247,198,0,0.05); }
+          50% { box-shadow: 0 0 32px rgba(0,255,153,0.26), inset 0 0 22px rgba(247,198,0,0.08); }
+          100% { box-shadow: 0 0 20px rgba(0,255,153,0.14), inset 0 0 18px rgba(247,198,0,0.05); }
+        }
+
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -621,6 +734,19 @@ export default function Home() {
 
           .sectionBox h2 {
             font-size: 26px;
+          }
+
+          .liveStatusContent {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .liveStatusContent h2 {
+            font-size: 26px;
+          }
+
+          .liveStatusContent h3 {
+            font-size: 18px;
           }
 
           .emailBtn {
