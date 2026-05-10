@@ -230,11 +230,6 @@ export default function Home() {
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
         <div className="eventsGrid">
-          {activeFlyer && (
-            <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
-              <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
-            </div>
-          )}
 
           {events.map((event, index) => {
             const activeSlide = eventSlide[index] || 0;
@@ -461,6 +456,12 @@ export default function Home() {
           <div className="miniShow">{liveShow.show}</div>
         </div>
       </div>
+
+      {activeFlyer && (
+        <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
+          <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
+        </div>
+      )}
 
       <div className="footer">© 2026 OneForce Radio — Live Worldwide 24/7</div>
 
