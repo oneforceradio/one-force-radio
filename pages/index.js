@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const audioRef = useRef(null);
@@ -58,6 +58,7 @@ export default function Home() {
 
   const [eventSlide, setEventSlide] = useState({});
   const [activeFlyer, setActiveFlyer] = useState(null);
+  const [hoveredEvent, setHoveredEvent] = useState(null);
 
   const shoutouts = [
     "Big up everyone locked in from The Gambia 🇬🇲",
@@ -107,6 +108,25 @@ export default function Home() {
 
     setEventSlide({ ...eventSlide, [eventIndex]: nextSlide });
   };
+
+  useEffect(() => {
+    const slider = setInterval(() => {
+      setEventSlide((currentSlides) => {
+        const updatedSlides = { ...currentSlides };
+
+        events.forEach((event, index) => {
+          if (event.flyers.length > 1 && hoveredEvent !== index && !activeFlyer) {
+            const currentSlide = currentSlides[index] || 0;
+            updatedSlides[index] = (currentSlide + 1) % event.flyers.length;
+          }
+        });
+
+        return updatedSlides;
+      });
+    }, 4000);
+
+    return () => clearInterval(slider);
+  }, [hoveredEvent, activeFlyer]);
 
   return (
     <div className="pageWrap">
@@ -200,189 +220,6 @@ export default function Home() {
               <h3>{liveShow.show}</h3>
               <p>{liveShow.genre}</p>
               <div className="broadcastText">Broadcasting Worldwide 24/7</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="events" className="sectionBox">
-        <h2>UPCOMING EVENTS</h2>
-        <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
-
-        <div className="eventsGrid">
-          {activeFlyer && (
-            <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
-              <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
-            </div>
-          )}
-
-          {events.map((event, index) => {
-            const activeSlide = eventSlide[index] || 0;
-            const hasMultipleFlyers = event.flyers.length > 1;
-
-            return (
-              <div className="eventCard" key={event.title}>
-                <div className="eventFlyerWrap">
-                  <img
-                    src={event.flyers[activeSlide]}
-                    alt={`${event.title} flyer`}
-                    className="eventFlyer"
-                    onClick={() => setActiveFlyer(event.flyers[activeSlide])}
-                  />
-
-                  {hasMultipleFlyers && (
-                    <>
-                      <button
-                        className="flyerArrow flyerArrowLeft"
-                        onClick={() => changeEventSlide(index, "prev")}
-                        aria-label="Previous flyer"
-                      >
-                        ‹
-                      </button>
-
-                      <button
-                        className="flyerArrow flyerArrowRight"
-                        onClick={() => changeEventSlide(index, "next")}
-                        aria-label="Next flyer"
-                      >
-                        ›
-                      </button>
-
-                      <div className="flyerCounter">
-                        {activeSlide + 1} / {event.flyers.length}
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div className="eventContent">
-                  <div className="eventDate">{event.date}</div>
-                  <h3>{event.title}</h3>
-                  <div className="eventLocation">{event.location}</div>
-                  <p>{event.info}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section id="djs" className="sectionBox">
-        <h2>ONEFORCE RADIO DJS</h2>
-        <p>Meet the selectors and DJs bringing vibes from around the world.</p>
-
-        <div className="djGrid">
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/djlashes.jpg" alt="DJ Lashes" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>DJ Lashes</h3>
-              <div className="djSubName">OneForce Sound</div>
-
-              <div className="djLocation">
-                Based In Europe & The Gambia • UK-born • Jamaican roots
-              </div>
-
-              <div className="djGenre">
-                Dancehall • Reggae • Afrobeat
-              </div>
-
-              <p className="djBio">
-                International DJ and founder of OneForce Sound, known for high-energy
-                dancehall sets blazing the stage across Europe and Africa.
-              </p>
-
-              <a
-                href="https://www.instagram.com/djlashes/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-          </div>
-
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/djleon.jpg" alt="The 8th Wonder" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>The 8th Wonder</h3>
-              <div className="djSubName">Gorilla Mvmts Sound System</div>
-
-              <div className="djLocation">
-                Based In The United Kingdom • British & Jamaican Heritage
-              </div>
-
-              <div className="djGenre">
-                Multi Genre
-              </div>
-
-              <p className="djBio">
-                UK-based selector and founder of Gorilla Mvmts Sound System,
-                bringing versatile multi-genre energy and authentic sound system
-                culture to every session.
-              </p>
-
-              <a
-                href="https://www.instagram.com/gorillamovements/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-          </div>
-
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/JnrForce.jpg" alt="DJ Jnr Force" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>DJ Jnr Force</h3>
-              <div className="djSubName">OneForce Sound</div>
-
-              <div className="djLocation">
-                Based In The Gambia • West Africa
-              </div>
-
-              <div className="djGenre">
-                Gam-Vibes • Afrobeats • Amapiano
-              </div>
-
-              <p className="djBio">
-                Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide
-                for rocking crowds with nonstop hits and keeping the clubs pumping with energy.
-              </p>
-
-              <a
-                href="https://www.instagram.com/juniorforce/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-          </div>
-
-          <div className="djCard placeholderCard">
-            <div className="djPlaceholder">COMING SOON</div>
-
-            <div className="djContent">
-              <h3>New DJ Slot</h3>
-              <div className="djLocation">Worldwide</div>
-              <div className="djGenre">Future Resident DJ</div>
-
-              <p className="djBio">
-                More live DJs, selectors and radio personalities will be added soon.
-              </p>
             </div>
           </div>
         </div>
