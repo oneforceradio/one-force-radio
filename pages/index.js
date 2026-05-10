@@ -242,7 +242,7 @@ export default function Home() {
 
             return (
               <div
-                className="eventCard"
+                className={`eventCard ${!hasMultipleFlyers ? "singleFlyerCard" : ""}`}
                 key={event.title}
                 onMouseEnter={() => setHoveredEvent(index)}
                 onMouseLeave={() => setHoveredEvent(null)}
@@ -929,6 +929,7 @@ export default function Home() {
         }
 
         .eventCard {
+          position: relative;
           background: rgba(24,24,24,0.96);
           border-radius: 20px;
           overflow: hidden;
@@ -957,6 +958,16 @@ export default function Home() {
           object-fit: cover;
           object-position: center top;
           display: block;
+          cursor: pointer;
+          transition: transform 0.45s ease;
+        }
+
+        .eventCard:hover .eventFlyer {
+          transform: scale(1.03);
+        }
+
+        .singleFlyerCard .eventFlyer {
+          animation: slowFlyerZoom 7s ease-in-out infinite;
         }
 
         .flyerArrow {
@@ -1251,6 +1262,22 @@ export default function Home() {
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        @keyframes slowFlyerZoom {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.045); }
+          100% { transform: scale(1); }
+        }
+
+        @keyframes flyerGlow {
+          0% { box-shadow: 0 0 18px rgba(0,255,153,0.12); }
+          50% { box-shadow: 0 0 28px rgba(247,198,0,0.22); }
+          100% { box-shadow: 0 0 18px rgba(0,255,153,0.12); }
+        }
+
+        .singleFlyerCard {
+          animation: flyerGlow 4s ease-in-out infinite;
         }
 
         @keyframes bounce {
