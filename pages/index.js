@@ -6,6 +6,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const liveShow = {
@@ -146,13 +147,50 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="navLinks">
-          <button onClick={() => scrollToSection("home")}>HOME</button>
-          <button onClick={() => scrollToSection("djs")}>DJS</button>
-          <button onClick={() => scrollToSection("events")}>EVENTS</button>
-          <button onClick={() => scrollToSection("schedule")}>SCHEDULE</button>
-          <button onClick={() => scrollToSection("request")}>REQUEST</button>
-          <button onClick={() => scrollToSection("contact")}>CONTACT</button>
+        <button
+          className="mobileMenuBtn"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          ☰
+        </button>
+
+        <div className={`navLinks ${mobileMenuOpen ? "navLinksOpen" : ""}`}>
+          <button onClick={() => {
+            scrollToSection("home");
+            setMobileMenuOpen(false);
+          }}>
+            HOME
+          </button>
+          <button onClick={() => {
+            scrollToSection("djs");
+            setMobileMenuOpen(false);
+          }}>
+            DJS
+          </button>
+          <button onClick={() => {
+            scrollToSection("events");
+            setMobileMenuOpen(false);
+          }}>
+            EVENTS
+          </button>
+          <button onClick={() => {
+            scrollToSection("schedule");
+            setMobileMenuOpen(false);
+          }}>
+            SCHEDULE
+          </button>
+          <button onClick={() => {
+            scrollToSection("request");
+            setMobileMenuOpen(false);
+          }}>
+            REQUEST
+          </button>
+          <button onClick={() => {
+            scrollToSection("contact");
+            setMobileMenuOpen(false);
+          }}>
+            CONTACT
+          </button>
           <button className="listenBtn" onClick={playRadio}>
             LISTEN LIVE
           </button>
@@ -518,6 +556,15 @@ export default function Home() {
 
         .navbarOnAir {
           margin-bottom: 0;
+        }
+
+        .mobileMenuBtn {
+          display: none;
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 28px;
+          cursor: pointer;
         }
 
         .navLinks {
@@ -1300,6 +1347,23 @@ export default function Home() {
         }
 
         @media (max-width: 700px) {
+          .mobileMenuBtn {
+            display: block;
+          }
+
+          .navLinks {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 14px;
+            gap: 10px;
+            padding-top: 10px;
+          }
+
+          .navLinksOpen {
+            display: flex;
+          }
           .navbar {
             flex-direction: column;
           }
