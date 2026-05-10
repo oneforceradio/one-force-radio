@@ -140,28 +140,6 @@ export default function Home() {
       </div>
 
       <section id="home" style={{ width: "100%", textAlign: "center", zIndex: 2 }}>
-        
-
-        <div className="shoutTicker">
-          <div className="tickerLabel">
-            <span></span>
-            LIVE SHOUTS
-          </div>
-
-          <div className="tickerTrackWrap">
-            <div className="tickerTrack">
-              {[...shoutouts, ...shoutouts].map((shout, index) => (
-                <div className="tickerItem" key={index}>
-                  {shout}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button className="tickerRequestBtn" onClick={() => scrollToSection("request")}>
-            SEND SHOUTOUT
-          </button>
-        </div>
 
         <div className="bannerWrap">
           <img src="/banner1.png" alt="OneForce Radio" className="banner" />
@@ -198,6 +176,27 @@ export default function Home() {
         >
           <source src="https://sky.doscast.com/proxy/oneforce/stream" type="audio/mpeg" />
         </audio>
+
+        <div className="shoutTicker">
+          <div className="tickerLabel">
+            <span></span>
+            LIVE SHOUTS
+          </div>
+
+          <div className="tickerTrackWrap">
+            <div className="tickerTrack">
+              {[...shoutouts, ...shoutouts].map((shout, index) => (
+                <div className="tickerItem" key={index}>
+                  {shout}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button className="tickerRequestBtn" onClick={() => scrollToSection("request")}>
+            SEND SHOUTOUT
+          </button>
+        </div>
 
         <div className="liveStatusCard">
           <div className="liveBadge">
