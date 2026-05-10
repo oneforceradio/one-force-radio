@@ -17,6 +17,36 @@ export default function Home() {
     status: "LIVE NOW",
   };
 
+  const djs = [
+    {
+      name: "DJ Lashes",
+      brand: "OneForce Sound",
+      image: "/djlashes.jpg",
+      location: "Based In Europe & The Gambia • UK-born • Jamaican roots",
+      genres: "Dancehall • Reggae • Afrobeat",
+      bio: "International DJ and founder of OneForce Sound, known for high-energy dancehall sets blazing the stage across Europe and Africa.",
+      instagram: "https://www.instagram.com/djlashes/",
+    },
+    {
+      name: "The 8th Wonder",
+      brand: "Gorilla Mvmts Sound System",
+      image: "/djleon.jpg",
+      location: "Based In The United Kingdom • British & Jamaican Heritage",
+      genres: "Multi Genre",
+      bio: "UK-based selector and founder of Gorilla Mvmts Sound System, bringing versatile multi-genre energy and authentic sound system culture to every session.",
+      instagram: "https://www.instagram.com/gorillamovements/",
+    },
+    {
+      name: "DJ Jnr Force",
+      brand: "OneForce Sound",
+      image: "/JnrForce.jpg",
+      location: "Based In The Gambia • West Africa",
+      genres: "Gam-Vibes • Afrobeats • Amapiano",
+      bio: "Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide for rocking crowds with nonstop hits and keeping the clubs pumping with energy.",
+      instagram: "https://www.instagram.com/juniorforce/",
+    },
+  ];
+
   const events = [
     {
       title: "Tobaski Special",
@@ -330,105 +360,30 @@ export default function Home() {
         <p>Meet the selectors and DJs bringing vibes from around the world.</p>
 
         <div className="djGrid">
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/djlashes.jpg" alt="DJ Lashes" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>DJ Lashes</h3>
-              <div className="djSubName">OneForce Sound</div>
-
-              <div className="djLocation">
-                Based In Europe & The Gambia • UK-born • Jamaican roots
+          {djs.map((dj) => (
+            <div className="djCard" key={dj.name}>
+              <div className="djImageWrap">
+                <img src={dj.image} alt={dj.name} className="djImage" />
               </div>
 
-              <div className="djGenre">
-                Dancehall • Reggae • Afrobeat
+              <div className="djContent">
+                <h3>{dj.name}</h3>
+                <div className="djSubName">{dj.brand}</div>
+                <div className="djLocation">{dj.location}</div>
+                <div className="djGenre">{dj.genres}</div>
+                <p className="djBio">{dj.bio}</p>
+
+                <a
+                  href={dj.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="djSocialBtn"
+                >
+                  INSTAGRAM
+                </a>
               </div>
-
-              <p className="djBio">
-                International DJ and founder of OneForce Sound, known for high-energy
-                dancehall sets blazing the stage across Europe and Africa.
-              </p>
-
-              <a
-                href="https://www.instagram.com/djlashes/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
             </div>
-          </div>
-
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/djleon.jpg" alt="The 8th Wonder" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>The 8th Wonder</h3>
-              <div className="djSubName">Gorilla Mvmts Sound System</div>
-
-              <div className="djLocation">
-                Based In The United Kingdom • British & Jamaican Heritage
-              </div>
-
-              <div className="djGenre">
-                Multi Genre
-              </div>
-
-              <p className="djBio">
-                UK-based selector and founder of Gorilla Mvmts Sound System,
-                bringing versatile multi-genre energy and authentic sound system
-                culture to every session.
-              </p>
-
-              <a
-                href="https://www.instagram.com/gorillamovements/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-          </div>
-
-          <div className="djCard">
-            <div className="djImageWrap">
-              <img src="/JnrForce.jpg" alt="DJ Jnr Force" className="djImage" />
-            </div>
-
-            <div className="djContent">
-              <h3>DJ Jnr Force</h3>
-              <div className="djSubName">OneForce Sound</div>
-
-              <div className="djLocation">
-                Based In The Gambia • West Africa
-              </div>
-
-              <div className="djGenre">
-                Gam-Vibes • Afrobeats • Amapiano
-              </div>
-
-              <p className="djBio">
-                Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide
-                for rocking crowds with nonstop hits and keeping the clubs pumping with energy.
-              </p>
-
-              <a
-                href="https://www.instagram.com/juniorforce/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="djSocialBtn"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-          </div>
+          ))}
 
           <div className="djCard placeholderCard">
             <div className="djPlaceholder">COMING SOON</div>
