@@ -536,7 +536,7 @@ export default function Home() {
           animation-delay: 0.1s;
         }
 
-        .playClickArea { position: absolute; left: 31%; top: 66%; width: 39%; height: 10%; cursor: pointer; z-index: 5; }
+        .playClickArea { position: absolute; left: 30.5%; top: 64%; width: 39%; height: 10%; cursor: pointer; z-index: 5; }
 
         .igLink { position: absolute; right: 22.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
         .fbLink { position: absolute; right: 17.5%; top: 62%; width: 4%; height: 7%; cursor: pointer; z-index: 5; }
