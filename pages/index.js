@@ -431,6 +431,24 @@ export default function Home() {
         </a>
       </section>
 
+      <div className="miniPlayer">
+        <div className="miniPlayerTop">
+          <div className="miniLiveBadge">
+            <span></span>
+            LIVE
+          </div>
+
+          <button className="miniPlayerBtn" onClick={toggleRadio}>
+            {isPlaying ? "❚❚" : "▶"}
+          </button>
+        </div>
+
+        <div className="miniPlayerInfo">
+          <div className="miniDj">{liveShow.dj}</div>
+          <div className="miniShow">{liveShow.show}</div>
+        </div>
+      </div>
+
       <div className="footer">© 2026 OneForce Radio — Live Worldwide 24/7</div>
 
       <style>{`
@@ -1154,6 +1172,81 @@ export default function Home() {
           background: #f7c600;
         }
 
+        .miniPlayer {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          width: 220px;
+          padding: 14px;
+          border-radius: 20px;
+          background: rgba(12,12,12,0.92);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(0,255,153,0.22);
+          box-shadow: 0 0 25px rgba(0,0,0,0.45), 0 0 20px rgba(0,255,153,0.12);
+          z-index: 999;
+        }
+
+        .miniPlayerTop {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .miniLiveBadge {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          color: #00ff99;
+          font-size: 12px;
+          font-weight: 900;
+          letter-spacing: 1px;
+        }
+
+        .miniLiveBadge span {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: red;
+          box-shadow: 0 0 10px red;
+          animation: liveBlink 1s infinite;
+        }
+
+        .miniPlayerBtn {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          border: none;
+          background: linear-gradient(135deg, #00ff99, #f7c600);
+          color: #000;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          box-shadow: 0 0 16px rgba(0,255,153,0.24);
+        }
+
+        .miniPlayerBtn:hover {
+          transform: scale(1.08);
+          box-shadow: 0 0 20px rgba(0,255,153,0.45);
+        }
+
+        .miniPlayerInfo {
+          text-align: left;
+        }
+
+        .miniDj {
+          color: #f7c600;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .miniShow {
+          margin-top: 3px;
+          color: #ccc;
+          font-size: 13px;
+        }
+
         .footer {
           margin-top: 25px;
           color: #777;
@@ -1269,6 +1362,21 @@ export default function Home() {
 
           .tickerRequestBtn {
             align-self: center;
+          }
+
+          .miniPlayer {
+            right: 12px;
+            bottom: 12px;
+            width: 185px;
+            padding: 12px;
+          }
+
+          .miniDj {
+            font-size: 14px;
+          }
+
+          .miniShow {
+            font-size: 12px;
           }
 
           .emailBtn {
