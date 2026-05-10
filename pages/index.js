@@ -142,6 +142,23 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="shoutTicker">
+          <div className="tickerLabel">
+            <span></span>
+            LIVE SHOUTS
+          </div>
+
+          <div className="tickerTrackWrap">
+            <div className="tickerTrack">
+              {[...shoutouts, ...shoutouts].map((shout, index) => (
+                <div className="tickerItem" key={index}>
+                  {shout}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="bannerWrap">
           <img src="/banner1.png" alt="OneForce Radio" className="banner" />
 
@@ -192,23 +209,6 @@ export default function Home() {
               <h3>{liveShow.show}</h3>
               <p>{liveShow.genre}</p>
               <div className="broadcastText">Broadcasting Worldwide 24/7</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="shoutTicker">
-          <div className="tickerLabel">
-            <span></span>
-            LIVE SHOUTS
-          </div>
-
-          <div className="tickerTrackWrap">
-            <div className="tickerTrack">
-              {[...shoutouts, ...shoutouts].map((shout, index) => (
-                <div className="tickerItem" key={index}>
-                  {shout}
-                </div>
-              ))}
             </div>
           </div>
         </div>
