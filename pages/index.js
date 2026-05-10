@@ -10,11 +10,53 @@ export default function Home() {
 
   const liveShow = {
     dj: "DJ Lashes",
-    show: "Dancehall Madness",
+    show: "Dancehall Showcase",
     genre: "Dancehall • Reggae • Afrobeat",
     image: "/djlashes.jpg",
     status: "LIVE NOW",
   };
+
+  const events = [
+    {
+      title: "Tobaski Special",
+      date: "30 May 2026",
+      location: "Vienna, Austria",
+      info: "OneForce Sound live in Vienna with DJ Lashes.",
+      flyers: ["/events/vienna-30-may.jpeg"],
+      link: "https://wa.me/2207408888",
+    },
+    {
+      title: "More Fire Resurrection",
+      date: "13 June 2026",
+      location: "Hannover, Germany",
+      info: "Dancehall, reggae and sound system energy live in Hannover.",
+      flyers: [
+        "/events/hannover-13-june-1.jpeg",
+        "/events/hannover-13-june-2.jpeg",
+        "/events/hannover-13-june-3.jpeg",
+        "/events/hannover-13-june-4.jpeg",
+      ],
+      link: "https://wa.me/2207408888",
+    },
+    {
+      title: "Luv In The House",
+      date: "4 July 2026",
+      location: "Bristol, United Kingdom",
+      info: "A live event experience with DJ Lashes and special guests.",
+      flyers: ["/events/bristol-04-july.jpg"],
+      link: "https://wa.me/2207408888",
+    },
+    {
+      title: "Feels Like Home",
+      date: "1 August 2026",
+      location: "Hannover, Germany",
+      info: "In and outdoor festival with reggae, dancehall, soca, afrobeat and amapiano vibes.",
+      flyers: ["/events/hannover-01-august.jpg"],
+      link: "https://wa.me/2207408888",
+    },
+  ];
+
+  const [eventSlide, setEventSlide] = useState({});
 
   const playRadio = () => {
     if (audioRef.current) {
@@ -46,6 +88,17 @@ export default function Home() {
     window.open(`https://wa.me/2207408888?text=${text}`, "_blank");
   };
 
+  const changeEventSlide = (eventIndex, direction) => {
+    const totalFlyers = events[eventIndex].flyers.length;
+    const currentSlide = eventSlide[eventIndex] || 0;
+    const nextSlide =
+      direction === "next"
+        ? (currentSlide + 1) % totalFlyers
+        : (currentSlide - 1 + totalFlyers) % totalFlyers;
+
+    setEventSlide({ ...eventSlide, [eventIndex]: nextSlide });
+  };
+
   return (
     <div className="pageWrap">
       <div className="glowOrb orb1" />
@@ -58,6 +111,7 @@ export default function Home() {
         <div className="navLinks">
           <button onClick={() => scrollToSection("home")}>HOME</button>
           <button onClick={() => scrollToSection("djs")}>DJS</button>
+          <button onClick={() => scrollToSection("events")}>EVENTS</button>
           <button onClick={() => scrollToSection("schedule")}>SCHEDULE</button>
           <button onClick={() => scrollToSection("request")}>REQUEST</button>
           <button onClick={() => scrollToSection("contact")}>CONTACT</button>
@@ -219,6 +273,70 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="events" className="sectionBox">
+        <h2>UPCOMING EVENTS</h2>
+        <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
+
+        <div className="eventsGrid">
+          {events.map((event, index) => {
+            const activeSlide = eventSlide[index] || 0;
+            const hasMultipleFlyers = event.flyers.length > 1;
+
+            return (
+              <div className="eventCard" key={event.title}>
+                <div className="eventFlyerWrap">
+                  <img
+                    src={event.flyers[activeSlide]}
+                    alt={`${event.title} flyer`}
+                    className="eventFlyer"
+                  />
+
+                  {hasMultipleFlyers && (
+                    <>
+                      <button
+                        className="flyerArrow flyerArrowLeft"
+                        onClick={() => changeEventSlide(index, "prev")}
+                        aria-label="Previous flyer"
+                      >
+                        ‹
+                      </button>
+
+                      <button
+                        className="flyerArrow flyerArrowRight"
+                        onClick={() => changeEventSlide(index, "next")}
+                        aria-label="Next flyer"
+                      >
+                        ›
+                      </button>
+
+                      <div className="flyerCounter">
+                        {activeSlide + 1} / {event.flyers.length}
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div className="eventContent">
+                  <div className="eventDate">{event.date}</div>
+                  <h3>{event.title}</h3>
+                  <div className="eventLocation">{event.location}</div>
+                  <p>{event.info}</p>
+
+                  <a
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="eventBtn"
+                  >
+                    EVENT INFO
+                  </a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -699,6 +817,141 @@ export default function Home() {
           letter-spacing: 2px;
         }
 
+        .eventsGrid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 28px;
+          margin-top: 35px;
+        }
+
+        .eventCard {
+          background: rgba(24,24,24,0.96);
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 0 20px rgba(0,0,0,0.42);
+          border: 1px solid rgba(247,198,0,0.12);
+          transition: all 0.3s ease;
+        }
+
+        .eventCard:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 0 22px rgba(247,198,0,0.24), 0 0 42px rgba(0,255,153,0.14);
+          border-color: rgba(0,255,153,0.28);
+        }
+
+        .eventFlyerWrap {
+          position: relative;
+          width: 100%;
+          height: 430px;
+          background: #090909;
+          overflow: hidden;
+        }
+
+        .eventFlyer {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+          display: block;
+        }
+
+        .flyerArrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,255,255,0.25);
+          background: rgba(0,0,0,0.62);
+          color: white;
+          font-size: 34px;
+          line-height: 1;
+          cursor: pointer;
+          z-index: 4;
+          transition: all 0.25s ease;
+        }
+
+        .flyerArrow:hover {
+          background: #f7c600;
+          color: #000;
+          box-shadow: 0 0 16px rgba(247,198,0,0.65);
+        }
+
+        .flyerArrowLeft {
+          left: 12px;
+        }
+
+        .flyerArrowRight {
+          right: 12px;
+        }
+
+        .flyerCounter {
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          padding: 6px 11px;
+          border-radius: 999px;
+          background: rgba(0,0,0,0.68);
+          color: #00ff99;
+          font-size: 13px;
+          font-weight: bold;
+          z-index: 4;
+        }
+
+        .eventContent {
+          padding: 22px 24px 28px;
+        }
+
+        .eventDate {
+          display: inline-block;
+          margin-bottom: 10px;
+          padding: 6px 12px;
+          border-radius: 999px;
+          background: rgba(0,255,153,0.12);
+          color: #00ff99;
+          font-size: 13px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+        .eventContent h3 {
+          margin: 0;
+          color: #f7c600;
+          font-size: 26px;
+        }
+
+        .eventLocation {
+          margin-top: 9px;
+          color: #00ff99;
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .eventContent p {
+          margin-top: 14px;
+          color: #bbb;
+          font-size: 15px;
+          line-height: 1.6;
+        }
+
+        .eventBtn {
+          display: inline-block;
+          margin-top: 15px;
+          padding: 11px 20px;
+          border-radius: 24px;
+          background: #f7c600;
+          color: #000;
+          text-decoration: none;
+          font-weight: bold;
+          transition: all 0.25s ease;
+        }
+
+        .eventBtn:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 16px rgba(247,198,0,0.6);
+        }
+
         .requestForm {
           margin: 25px auto 0;
           max-width: 650px;
@@ -860,6 +1113,20 @@ export default function Home() {
           .djImageWrap,
           .djPlaceholder {
             height: 300px;
+          }
+
+          .eventFlyerWrap {
+            height: 380px;
+          }
+
+          .eventContent h3 {
+            font-size: 23px;
+          }
+
+          .flyerArrow {
+            width: 36px;
+            height: 36px;
+            font-size: 28px;
           }
         }
       `}</style>
