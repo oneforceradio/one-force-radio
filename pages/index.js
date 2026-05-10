@@ -6,10 +6,11 @@ export default function Home() {
   const [name, setName] = useState("");
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const liveShow = {
     dj: "DJ Lashes",
-    show: "Dancehall Showcase",
+    show: "Dancehall Madness",
     genre: "Dancehall • Reggae • Afrobeat",
     image: "/djlashes.jpg",
     status: "LIVE NOW",
@@ -18,6 +19,19 @@ export default function Home() {
   const playRadio = () => {
     if (audioRef.current) {
       audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleRadio = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
     }
   };
 
@@ -79,7 +93,25 @@ export default function Home() {
           <a href="https://www.twitch.tv/oneforceradio" target="_blank" rel="noopener noreferrer" className="twLink" />
         </div>
 
-        <audio ref={audioRef} controls preload="none" className="audioPlayer">
+        <div className="customPlayer">
+          <button className="mainPlayButton" onClick={toggleRadio}>
+            <span className="playIcon">{isPlaying ? "❚❚" : "▶"}</span>
+            <span>{isPlaying ? "PAUSE STREAM" : "LISTEN LIVE"}</span>
+          </button>
+
+          <div className="playerStatus">
+            <span className={isPlaying ? "statusDot active" : "statusDot"}></span>
+            {isPlaying ? "STREAM PLAYING" : "READY TO PLAY"}
+          </div>
+        </div>
+
+        <audio
+          ref={audioRef}
+          preload="none"
+          className="hiddenAudioPlayer"
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        >
           <source src="https://sky.doscast.com/proxy/oneforce/stream" type="audio/mpeg" />
         </audio>
 
@@ -396,11 +428,75 @@ export default function Home() {
         .ytLink { position: absolute; right: 16.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; z-index: 5; }
         .twLink { position: absolute; right: 10.5%; top: 68%; width: 5%; height: 7%; cursor: pointer; z-index: 5; }
 
-        .audioPlayer {
+        .customPlayer {
           width: 100%;
           max-width: 700px;
-          margin-top: 20px;
-          border-radius: 12px;
+          margin: 22px auto 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .mainPlayButton {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding: 16px 34px;
+          border-radius: 999px;
+          border: 1px solid rgba(0,255,153,0.45);
+          background: linear-gradient(135deg, #00ff99, #f7c600);
+          color: #000;
+          font-size: 18px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          cursor: pointer;
+          box-shadow: 0 0 20px rgba(0,255,153,0.28), 0 0 35px rgba(247,198,0,0.16);
+          transition: all 0.25s ease;
+        }
+
+        .mainPlayButton:hover {
+          transform: translateY(-2px) scale(1.04);
+          box-shadow: 0 0 28px rgba(0,255,153,0.42), 0 0 45px rgba(247,198,0,0.28);
+        }
+
+        .playIcon {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.18);
+          font-size: 14px;
+        }
+
+        .playerStatus {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #ccc;
+          font-size: 13px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+        .statusDot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: #777;
+        }
+
+        .statusDot.active {
+          background: red;
+          box-shadow: 0 0 10px red;
+          animation: liveBlink 1s infinite;
+        }
+
+        .hiddenAudioPlayer {
+          display: none;
         }
 
         .liveStatusCard {
