@@ -9,7 +9,7 @@ export default function Home() {
 
   const liveShow = {
     dj: "DJ Lashes",
-    show: "Dancehall Madness",
+    show: "Dancehall Showcase",
     genre: "Dancehall • Reggae • Afrobeat",
     image: "/djlashes.jpg",
     status: "LIVE NOW",
