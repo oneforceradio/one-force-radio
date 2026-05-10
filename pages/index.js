@@ -115,9 +115,15 @@ export default function Home() {
       <div className="glowOrb orb3" />
 
       <div className="navbar">
-        <div className="logoLiveWrap">
-          <div className="liveDot navbarLiveDot" />
-          <div className="logoText">ON AIR NOW</div>
+        <div className="onAir navbarOnAir">
+          <div className="liveDot" />
+          <div className="onAirText">ON AIR NOW</div>
+
+          <div className="equalizer">
+            {[1, 2, 3, 4].map((bar) => (
+              <div key={bar} style={{ animationDelay: `${bar * 0.15}s` }} />
+            ))}
+          </div>
         </div>
 
         <div className="navLinks">
@@ -134,16 +140,7 @@ export default function Home() {
       </div>
 
       <section id="home" style={{ width: "100%", textAlign: "center", zIndex: 2 }}>
-        <div className="onAir">
-          <div className="liveDot" />
-          <div className="onAirText">ON AIR NOW</div>
-
-          <div className="equalizer">
-            {[1, 2, 3, 4].map((bar) => (
-              <div key={bar} style={{ animationDelay: `${bar * 0.15}s` }} />
-            ))}
-          </div>
-        </div>
+        
 
         <div className="shoutTicker">
           <div className="tickerLabel">
@@ -451,24 +448,8 @@ export default function Home() {
           z-index: 50;
         }
 
-        .logoLiveWrap {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .logoText {
-          color: #f7c600;
-          font-weight: bold;
-          font-size: 24px;
-          letter-spacing: 1px;
-        }
-
-        .navbarLiveDot {
-          width: 12px;
-          height: 12px;
-          box-shadow: 0 0 12px red;
-          animation: liveBlink 1s infinite;
+        .navbarOnAir {
+          margin-bottom: 0;
         }
 
         .navLinks {
