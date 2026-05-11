@@ -104,6 +104,15 @@ export default function Home() {
       bio: "Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide for rocking crowds with nonstop hits and keeping the clubs pumping with energy.",
       instagram: "https://www.instagram.com/juniorforce/",
     },
+    {
+      name: "DJ Priest",
+      brand: "Shashamane Intl Sound",
+      image: "/DjPriest.jpg",
+      location: "Based in Rome, Italy",
+      genres: "Dancehall • Reggae • Bashment",
+      bio: "Selector of international sound Shashamane — The African Zulu Warrior from Kenya, Africa.",
+      instagram: "https://www.instagram.com/djpriest_shashamane/",
+    },
   ];
 
   const events = [
