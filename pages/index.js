@@ -10,11 +10,11 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const liveShow = {
-    dj: "DJ Lashes",
-    show: "Dancehall Showcase",
-    genre: "Dancehall • Reggae • Afrobeat",
-    image: "/djlashes.jpg",
-    status: "LIVE NOW",
+    dj: "ONEFORCE RADIO LIVE",
+    show: "24/7 Nonstop Music",
+    genre: "Dancehall • Reggae • Afrobeat • Amapiano",
+    image: "/banner1.png",
+    status: "AUTO DJ ACTIVE",
   };
 
   const djs = [
