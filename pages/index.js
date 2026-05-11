@@ -155,7 +155,7 @@ export default function Home() {
       dateTime: "2026-07-04T22:00:00",
       location: "Bristol, United Kingdom",
       info: "A live event experience with DJ Lashes and special guests.",
-      flyers: ["/events/bristol-04-july.jpg"],
+      flyers: ["/events/bristol-04-july.jpg", "/events/bristol-04b-july.jpg"],
       link: "https://wa.me/393516232824",
     },
     {
