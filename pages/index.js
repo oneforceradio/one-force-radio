@@ -418,6 +418,95 @@ export default function Home() {
         </form>
       </section>
 
+      <section id="workwithus" className="sectionBox">
+        <h2>WORK WITH ONEFORCE RADIO</h2>
+        <p>
+          Music promotion, interviews, radio advertising and opportunities to join the movement.
+        </p>
+
+        <div className="eventsGrid">
+          <div className="eventCard">
+            <div className="eventContent">
+              <div className="eventDate">MUSIC SUBMISSION</div>
+              <h3>Feature Your Music</h3>
+              <div className="eventLocation">Artists • Producers • Labels</div>
+              <p>
+                Send your latest music, exclusives, mixtapes and projects for possible rotation and feature on OneForce Radio.
+              </p>
+
+              <a
+                className="djSocialBtn"
+                href="https://wa.me/2207408888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SUBMIT MUSIC
+              </a>
+            </div>
+          </div>
+
+          <div className="eventCard">
+            <div className="eventContent">
+              <div className="eventDate">INTERVIEWS</div>
+              <h3>Book An Interview</h3>
+              <div className="eventLocation">Artists • Brands • Businesses</div>
+              <p>
+                Want to promote your brand, business, event or music? Request a live interview or featured segment.
+              </p>
+
+              <a
+                className="djSocialBtn"
+                href="https://wa.me/2207408888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                REQUEST INTERVIEW
+              </a>
+            </div>
+          </div>
+
+          <div className="eventCard">
+            <div className="eventContent">
+              <div className="eventDate">RADIO ADS</div>
+              <h3>Promote Your Event</h3>
+              <div className="eventLocation">Flyers • Voice Ads • Promotion</div>
+              <p>
+                Promote your upcoming event, business or campaign with flyer placement, voice ads and radio exposure.
+              </p>
+
+              <a
+                className="djSocialBtn"
+                href="https://wa.me/2207408888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PROMOTE NOW
+              </a>
+            </div>
+          </div>
+
+          <div className="eventCard">
+            <div className="eventContent">
+              <div className="eventDate">JOIN THE TEAM</div>
+              <h3>Become Part Of OneForce</h3>
+              <div className="eventLocation">DJs • Hosts • Selectors</div>
+              <p>
+                Interested in joining OneForce Radio? Apply to become a resident DJ, host or radio personality.
+              </p>
+
+              <a
+                className="djSocialBtn"
+                href="https://wa.me/2207408888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                APPLY NOW
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
         <p>WhatsApp: +220 7408888</p>
