@@ -11,7 +11,7 @@ export default function Home() {
   const stationInfo = {
     name: "ONEFORCE RADIO",
     tagline: "24/7 Nonstop Music",
-    whatsapp: "https://wa.me/2207408888",
+    whatsapp: "https://wa.me/393516232824",
     email: "info@oneforceradio.com",
   };
 
@@ -19,7 +19,7 @@ export default function Home() {
     instagram: "https://www.instagram.com/oneforceradio",
     facebook: "https://www.facebook.com/oneforceradio",
     tiktok: "https://www.tiktok.com/@oneforce_radio",
-    whatsapp: "https://wa.me/2207408888",
+    whatsapp: "https://wa.me/393516232824",
     youtube: "https://www.youtube.com/@oneforceradio",
     twitch: "https://www.twitch.tv/oneforceradio",
   };
@@ -133,7 +133,7 @@ export default function Home() {
       location: "Vienna, Austria",
       info: "OneForce Sound live in Vienna with DJ Lashes.",
       flyers: ["/events/vienna-30-may.jpeg"],
-      link: "https://wa.me/2207408888",
+      link: "https://wa.me/393516232824",
     },
     {
       title: "More Fire Resurrection",
@@ -147,7 +147,7 @@ export default function Home() {
         "/events/hannover-13-june-3.jpeg",
         "/events/hannover-13-june-4.jpeg",
       ],
-      link: "https://wa.me/2207408888",
+      link: "https://wa.me/393516232824",
     },
     {
       title: "Luv In The House",
@@ -156,7 +156,7 @@ export default function Home() {
       location: "Bristol, United Kingdom",
       info: "A live event experience with DJ Lashes and special guests.",
       flyers: ["/events/bristol-04-july.jpg"],
-      link: "https://wa.me/2207408888",
+      link: "https://wa.me/393516232824",
     },
     {
       title: "Feels Like Home",
@@ -165,7 +165,7 @@ export default function Home() {
       location: "Hannover, Germany",
       info: "In and outdoor festival with reggae, dancehall, soca, afrobeat and amapiano vibes.",
       flyers: ["/events/hannover-01-august.jpg"],
-      link: "https://wa.me/2207408888",
+      link: "https://wa.me/393516232824",
     },
   ];
 
@@ -213,7 +213,7 @@ export default function Home() {
   const sendRequest = (e) => {
     e.preventDefault();
     const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
-    window.open(`https://wa.me/2207408888?text=${text}`, "_blank");
+    window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
   };
 
   const changeEventSlide = (eventIndex, direction) => {
@@ -663,7 +663,7 @@ export default function Home() {
 
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
-        <p>WhatsApp: +220 7408888</p>
+        <p>WhatsApp: +39 351 6232824</p>
         <p>Email: info@oneforceradio.com</p>
 
         <a className="contactBtn" href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer">
