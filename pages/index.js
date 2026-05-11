@@ -590,7 +590,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href={socialLinks.whatsapp}
+                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I would like to submit music for possible feature or rotation.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -610,7 +610,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href={socialLinks.whatsapp}
+                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I would like to request an interview or featured segment.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -630,7 +630,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href={socialLinks.whatsapp}
+                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I would like information about promoting my event, flyer, business or radio advert.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -650,7 +650,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href={socialLinks.whatsapp}
+                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I am interested in joining the team as a DJ, host or selector.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
