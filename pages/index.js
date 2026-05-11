@@ -202,6 +202,14 @@ export default function Home() {
       <div className="glowOrb orb1" />
       <div className="glowOrb orb2" />
       <div className="glowOrb orb3" />
+      <div className="radioWave wave1" />
+      <div className="radioWave wave2" />
+      <div className="radioWave wave3" />
+      <div className="particleField">
+        {Array.from({ length: 18 }).map((_, index) => (
+          <span key={index} className={`particle particle${index + 1}`} />
+        ))}
+      </div>
 
       <div className="navbar">
         <div className="onAir navbarOnAir">
@@ -654,6 +662,81 @@ export default function Home() {
           z-index: 0;
           pointer-events: none;
         }
+
+        .radioWave {
+          position: fixed;
+          border-radius: 50%;
+          border: 1px solid rgba(0,255,153,0.12);
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0;
+          animation: radioWavePulse 7s ease-out infinite;
+        }
+
+        .wave1 {
+          width: 260px;
+          height: 260px;
+          top: 22%;
+          left: 8%;
+        }
+
+        .wave2 {
+          width: 420px;
+          height: 420px;
+          top: 14%;
+          right: 5%;
+          animation-delay: 1.7s;
+        }
+
+        .wave3 {
+          width: 520px;
+          height: 520px;
+          bottom: 8%;
+          left: 35%;
+          animation-delay: 3.2s;
+        }
+
+        .particleField {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: 1;
+          overflow: hidden;
+        }
+
+        .particle {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: rgba(247,198,0,0.55);
+          box-shadow: 0 0 10px rgba(247,198,0,0.6);
+          animation: floatParticle 12s linear infinite;
+        }
+
+        .particle:nth-child(even) {
+          background: rgba(0,255,153,0.5);
+          box-shadow: 0 0 10px rgba(0,255,153,0.55);
+        }
+
+        .particle1 { left: 8%; top: 92%; animation-delay: 0s; }
+        .particle2 { left: 15%; top: 88%; animation-delay: 2s; }
+        .particle3 { left: 22%; top: 95%; animation-delay: 5s; }
+        .particle4 { left: 31%; top: 89%; animation-delay: 1s; }
+        .particle5 { left: 39%; top: 94%; animation-delay: 7s; }
+        .particle6 { left: 47%; top: 91%; animation-delay: 3s; }
+        .particle7 { left: 55%; top: 96%; animation-delay: 6s; }
+        .particle8 { left: 63%; top: 90%; animation-delay: 4s; }
+        .particle9 { left: 71%; top: 94%; animation-delay: 8s; }
+        .particle10 { left: 79%; top: 89%; animation-delay: 2.5s; }
+        .particle11 { left: 86%; top: 95%; animation-delay: 6.5s; }
+        .particle12 { left: 92%; top: 90%; animation-delay: 9s; }
+        .particle13 { left: 12%; top: 98%; animation-delay: 10s; }
+        .particle14 { left: 28%; top: 97%; animation-delay: 11s; }
+        .particle15 { left: 44%; top: 99%; animation-delay: 1.5s; }
+        .particle16 { left: 60%; top: 98%; animation-delay: 4.5s; }
+        .particle17 { left: 76%; top: 97%; animation-delay: 7.5s; }
+        .particle18 { left: 90%; top: 99%; animation-delay: 12s; }
 
         .orb1 { width: 260px; height: 260px; background: #f7c600; top: 12%; left: 6%; animation: floatOrb1 16s ease-in-out infinite; }
         .orb2 { width: 300px; height: 300px; background: #00ff99; bottom: 12%; right: 6%; animation: floatOrb2 20s ease-in-out infinite; }
@@ -1491,6 +1574,18 @@ export default function Home() {
           text-align: center;
         }
 
+        @keyframes radioWavePulse {
+          0% { transform: scale(0.55); opacity: 0; }
+          25% { opacity: 0.35; }
+          100% { transform: scale(1.45); opacity: 0; }
+        }
+
+        @keyframes floatParticle {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          12% { opacity: 0.8; }
+          100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+        }
+
         @keyframes speakerBass {
           0% { transform: scale(0.82); opacity: 0.25; }
           40% { transform: scale(1.12); opacity: 0.85; }
@@ -1655,6 +1750,14 @@ export default function Home() {
 
           .glowOrb {
             opacity: 0.16;
+          }
+
+          .particle {
+            opacity: 0.6;
+          }
+
+          .radioWave {
+            opacity: 0.08;
           }
 
           .speakerPulse {
