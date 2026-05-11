@@ -113,6 +113,16 @@ export default function Home() {
       bio: "Selector of international sound Shashamane — The African Zulu Warrior from Kenya, Africa.",
       instagram: "https://www.instagram.com/djpriest_shashamane/",
     },
+    {
+      name: "COMING SOON",
+      brand: "New DJ Slot",
+      image: "",
+      location: "Worldwide",
+      genres: "Future Resident DJ",
+      bio: "More DJs, selectors and radio personalities will be added soon.",
+      instagram: "#",
+      placeholder: true,
+    },
   ];
 
   const events = [
@@ -175,13 +185,6 @@ export default function Home() {
     seconds: 0,
   });
 
-  const shoutouts = [
-    "Big up everyone locked in from The Gambia 🇬🇲",
-    "Napoli crew tuned in loud 🇮🇹",
-    "Bristol family inside 🔥",
-    "OneForce Radio live worldwide 24/7 🌍",
-    "Dancehall Showcase family locked in 🔊",
-  ];
 
   const playRadio = () => {
     if (audioRef.current) {
@@ -520,10 +523,14 @@ export default function Home() {
 
         <div className="djGrid">
           {djs.map((dj) => (
-            <div className="djCard" key={dj.name}>
-              <div className="djImageWrap">
-                <img src={dj.image} alt={dj.name} className="djImage" />
-              </div>
+            <div className={`djCard ${dj.placeholder ? "placeholderCard" : ""}`} key={dj.name}>
+              {dj.placeholder ? (
+                <div className="djPlaceholder">COMING SOON</div>
+              ) : (
+                <div className="djImageWrap">
+                  <img src={dj.image} alt={dj.name} className="djImage" />
+                </div>
+              )}
 
               <div className="djContent">
                 <h3>{dj.name}</h3>
@@ -532,31 +539,19 @@ export default function Home() {
                 <div className="djGenre">{dj.genres}</div>
                 <p className="djBio">{dj.bio}</p>
 
-                <a
-                  href={dj.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="djSocialBtn"
-                >
-                  INSTAGRAM
-                </a>
+                {!dj.placeholder && (
+                  <a
+                    href={dj.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="djSocialBtn"
+                  >
+                    INSTAGRAM
+                  </a>
+                )}
               </div>
             </div>
           ))}
-
-          <div className="djCard placeholderCard">
-            <div className="djPlaceholder">COMING SOON</div>
-
-            <div className="djContent">
-              <h3>New DJ Slot</h3>
-              <div className="djLocation">Worldwide</div>
-              <div className="djGenre">Future Resident DJ</div>
-
-              <p className="djBio">
-                More live DJs, selectors and radio personalities will be added soon.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
