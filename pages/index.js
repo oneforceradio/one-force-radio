@@ -333,23 +333,8 @@ export default function Home() {
 
       <section id="events" className="sectionBox">
         <div className="countdownCard">
-          <div className="countdownLabel">NEXT EVENT COUNTDOWN</div>
-
-          <h3>{nextEvent ? nextEvent.title : "More Events Coming Soon"}</h3>
-          <div className="countdownLocation">
-            {nextEvent ? `${nextEvent.location} • ${nextEvent.date}` : "Stay locked to OneForce Radio"}
-          </div>
-
-          {nextEvent && (
-            <img
-              src={nextEvent.flyers[0]}
-              alt={`${nextEvent.title} flyer`}
-              className="countdownFlyer"
-              onClick={() => setActiveFlyer(nextEvent.flyers[0])}
-            />
-          )}
-
-          <div className="countdownGrid">
+          <div className="countdownInner">
+            <div className="countdownGrid">
             <div className="countdownBox">
               <span>{countdown.days}</span>
               DAYS
@@ -370,7 +355,10 @@ export default function Home() {
               SECONDS
             </div>
           </div>
+            </div>
+          </div>
         </div>
+
         <h2>UPCOMING EVENTS</h2>
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
@@ -1090,6 +1078,16 @@ export default function Home() {
           letter-spacing: 2px;
         }
 
+        .countdownInner {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .countdownInfoWrap {
+          flex: 1;
+        }
+
         .countdownCard {
           margin: 0 auto 40px;
           max-width: 850px;
@@ -1655,6 +1653,10 @@ export default function Home() {
 
           .countdownGrid {
             grid-template-columns: repeat(2, 1fr);
+          }
+
+          .countdownInner {
+            flex-direction: column;
           }
 
           .countdownCard h3 {
