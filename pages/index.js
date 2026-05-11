@@ -334,27 +334,45 @@ export default function Home() {
       <section id="events" className="sectionBox">
         <div className="countdownCard">
           <div className="countdownInner">
-            <div className="countdownGrid">
-            <div className="countdownBox">
-              <span>{countdown.days}</span>
-              DAYS
-            </div>
+            {nextEvent && (
+              <img
+                src={nextEvent.flyers[0]}
+                alt={`${nextEvent.title} flyer`}
+                className="countdownFlyer"
+                onClick={() => setActiveFlyer(nextEvent.flyers[0])}
+              />
+            )}
 
-            <div className="countdownBox">
-              <span>{countdown.hours}</span>
-              HOURS
-            </div>
+            <div className="countdownInfoWrap">
+              <div className="countdownLabel">NEXT EVENT COUNTDOWN</div>
 
-            <div className="countdownBox">
-              <span>{countdown.minutes}</span>
-              MINUTES
-            </div>
+              <h3>{nextEvent ? nextEvent.title : "More Events Coming Soon"}</h3>
 
-            <div className="countdownBox">
-              <span>{countdown.seconds}</span>
-              SECONDS
-            </div>
-          </div>
+              <div className="countdownLocation">
+                {nextEvent ? `${nextEvent.location} • ${nextEvent.date}` : "Stay locked to OneForce Radio"}
+              </div>
+
+              <div className="countdownGrid">
+                <div className="countdownBox">
+                  <span>{countdown.days}</span>
+                  DAYS
+                </div>
+
+                <div className="countdownBox">
+                  <span>{countdown.hours}</span>
+                  HOURS
+                </div>
+
+                <div className="countdownBox">
+                  <span>{countdown.minutes}</span>
+                  MINUTES
+                </div>
+
+                <div className="countdownBox">
+                  <span>{countdown.seconds}</span>
+                  SECONDS
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1082,13 +1100,14 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 32px;
+          gap: 34px;
           text-align: left;
         }
 
         .countdownInfoWrap {
           flex: 1;
-          max-width: 650px;
+          max-width: 680px;
+          min-width: 0;
         }
 
         .countdownCard {
@@ -1125,8 +1144,8 @@ export default function Home() {
 
         .countdownFlyer {
           flex: 0 0 auto;
-          width: 135px;
-          height: 170px;
+          width: 155px;
+          height: 195px;
           object-fit: cover;
           object-position: center top;
           border-radius: 16px;
@@ -1147,7 +1166,7 @@ export default function Home() {
         .countdownGrid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
+          gap: 14px;
           margin-top: 24px;
         }
 
