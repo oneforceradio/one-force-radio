@@ -51,6 +51,7 @@ export default function Home() {
     {
       title: "Tobaski Special",
       date: "30 May 2026",
+      dateTime: "2026-05-30T22:00:00",
       location: "Vienna, Austria",
       info: "OneForce Sound live in Vienna with DJ Lashes.",
       flyers: ["/events/vienna-30-may.jpeg"],
@@ -59,6 +60,7 @@ export default function Home() {
     {
       title: "More Fire Resurrection",
       date: "13 June 2026",
+      dateTime: "2026-06-13T22:00:00",
       location: "Hannover, Germany",
       info: "Dancehall, reggae and sound system energy live in Hannover.",
       flyers: [
@@ -72,6 +74,7 @@ export default function Home() {
     {
       title: "Luv In The House",
       date: "4 July 2026",
+      dateTime: "2026-07-04T22:00:00",
       location: "Bristol, United Kingdom",
       info: "A live event experience with DJ Lashes and special guests.",
       flyers: ["/events/bristol-04-july.jpg"],
@@ -80,6 +83,7 @@ export default function Home() {
     {
       title: "Feels Like Home",
       date: "1 August 2026",
+      dateTime: "2026-08-01T22:00:00",
       location: "Hannover, Germany",
       info: "In and outdoor festival with reggae, dancehall, soca, afrobeat and amapiano vibes.",
       flyers: ["/events/hannover-01-august.jpg"],
@@ -91,7 +95,11 @@ export default function Home() {
   const [activeFlyer, setActiveFlyer] = useState(null);
   const [hoveredEvent, setHoveredEvent] = useState(null);
 
-  const nextEventDate = new Date("2026-08-01T22:00:00");
+  const nextEvent = events
+    .filter((event) => new Date(event.dateTime).getTime() > Date.now())
+    .sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))[0];
+
+  const nextEventDate = nextEvent ? new Date(nextEvent.dateTime) : null;
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -151,6 +159,7 @@ export default function Home() {
   useEffect(() => {
     const countdownTimer = setInterval(() => {
       const now = new Date().getTime();
+      if (!nextEventDate) return;
       const distance = nextEventDate.getTime() - now;
 
       if (distance <= 0) {
@@ -326,8 +335,10 @@ export default function Home() {
         <div className="countdownCard">
           <div className="countdownLabel">NEXT EVENT COUNTDOWN</div>
 
-          <h3>Feels Like Home</h3>
-          <div className="countdownLocation">Hannover, Germany • 1 August 2026</div>
+          <h3>{nextEvent ? nextEvent.title : "More Events Coming Soon"}</h3>
+          <div className="countdownLocation">
+            {nextEvent ? `${nextEvent.location} • ${nextEvent.date}` : "Stay locked to OneForce Radio"}
+          </div>
 
           <div className="countdownGrid">
             <div className="countdownBox">
