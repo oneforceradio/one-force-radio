@@ -340,6 +340,15 @@ export default function Home() {
             {nextEvent ? `${nextEvent.location} • ${nextEvent.date}` : "Stay locked to OneForce Radio"}
           </div>
 
+          {nextEvent && (
+            <img
+              src={nextEvent.flyers[0]}
+              alt={`${nextEvent.title} flyer`}
+              className="countdownFlyer"
+              onClick={() => setActiveFlyer(nextEvent.flyers[0])}
+            />
+          )}
+
           <div className="countdownGrid">
             <div className="countdownBox">
               <span>{countdown.days}</span>
@@ -1113,6 +1122,26 @@ export default function Home() {
           font-size: 16px;
         }
 
+        .countdownFlyer {
+          width: 150px;
+          height: 190px;
+          object-fit: cover;
+          object-position: center top;
+          border-radius: 16px;
+          margin: 22px auto 0;
+          display: block;
+          cursor: pointer;
+          border: 2px solid rgba(247,198,0,0.45);
+          box-shadow: 0 0 20px rgba(247,198,0,0.18);
+          transition: all 0.25s ease;
+        }
+
+        .countdownFlyer:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 26px rgba(0,255,153,0.28);
+          border-color: rgba(0,255,153,0.65);
+        }
+
         .countdownGrid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -1630,6 +1659,11 @@ export default function Home() {
 
           .countdownCard h3 {
             font-size: 30px;
+          }
+
+          .countdownFlyer {
+            width: 130px;
+            height: 165px;
           }
 
           .countdownBox span {
