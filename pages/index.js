@@ -7,6 +7,65 @@ export default function Home() {
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const stationInfo = {
+    name: "ONEFORCE RADIO",
+    tagline: "24/7 Nonstop Music",
+    whatsapp: "https://wa.me/2207408888",
+    email: "info@oneforceradio.com",
+  };
+
+  const socialLinks = {
+    instagram: "https://www.instagram.com/oneforceradio",
+    facebook: "https://www.facebook.com/oneforceradio",
+    tiktok: "https://www.tiktok.com/@oneforce_radio",
+    whatsapp: "https://wa.me/2207408888",
+    youtube: "https://www.youtube.com/@oneforceradio",
+    twitch: "https://www.twitch.tv/oneforceradio",
+  };
+
+  const shoutouts = [
+    "🔥 Welcome to OneForce Radio Worldwide",
+    "🎧 Streaming 24/7 Nonstop Music",
+    "📢 Promote your events with OneForce Radio",
+    "🎤 Artists can submit music & interviews",
+    "🌍 OneForce Radio broadcasting worldwide",
+  ];
+
+  const workWithUsCards = [
+    {
+      label: "MUSIC SUBMISSION",
+      title: "Feature Your Music",
+      subtitle: "Artists • Producers • Labels",
+      description:
+        "Send your latest music, exclusives, mixtapes and projects for possible rotation and feature on OneForce Radio.",
+      button: "SUBMIT MUSIC",
+    },
+    {
+      label: "INTERVIEWS",
+      title: "Book An Interview",
+      subtitle: "Artists • Brands • Businesses",
+      description:
+        "Want to promote your brand, business, event or music? Request a live interview or featured segment.",
+      button: "REQUEST INTERVIEW",
+    },
+    {
+      label: "RADIO ADS",
+      title: "Promote Your Event",
+      subtitle: "Flyers • Voice Ads • Promotion",
+      description:
+        "Promote your upcoming event, business or campaign with flyer placement, voice ads and radio exposure.",
+      button: "PROMOTE NOW",
+    },
+    {
+      label: "JOIN THE TEAM",
+      title: "Become Part Of OneForce",
+      subtitle: "DJs • Hosts • Selectors",
+      description:
+        "Interested in joining OneForce Radio? Apply to become a resident DJ, host or radio personality.",
+      button: "APPLY NOW",
+    },
+  ];
   const [isPlaying, setIsPlaying] = useState(false);
 
   const liveShow = {
@@ -281,12 +340,12 @@ export default function Home() {
           <div className="speakerPulse pulseLogo" />
           <div onClick={playRadio} className="playClickArea" />
 
-          <a href="https://www.instagram.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="igLink" />
-          <a href="https://www.facebook.com/oneforceradio" target="_blank" rel="noopener noreferrer" className="fbLink" />
-          <a href="https://www.tiktok.com/@oneforce_radio" target="_blank" rel="noopener noreferrer" className="ttLink" />
-          <a href="https://wa.me/2207408888" target="_blank" rel="noopener noreferrer" className="waLink" />
-          <a href="https://www.youtube.com/@oneforceradio" target="_blank" rel="noopener noreferrer" className="ytLink" />
-          <a href="https://www.twitch.tv/oneforceradio" target="_blank" rel="noopener noreferrer" className="twLink" />
+          <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="igLink" />
+          <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="fbLink" />
+          <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="ttLink" />
+          <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="waLink" />
+          <a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="ytLink" />
+          <a href={socialLinks.twitch} target="_blank" rel="noopener noreferrer" className="twLink" />
         </div>
 
         <audio
@@ -527,7 +586,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href="https://wa.me/2207408888"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -547,7 +606,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href="https://wa.me/2207408888"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -567,7 +626,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href="https://wa.me/2207408888"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -587,7 +646,7 @@ export default function Home() {
 
               <a
                 className="djSocialBtn"
-                href="https://wa.me/2207408888"
+                href={socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -603,7 +662,7 @@ export default function Home() {
         <p>WhatsApp: +220 7408888</p>
         <p>Email: info@oneforceradio.com</p>
 
-        <a className="contactBtn" href="https://wa.me/2207408888" target="_blank" rel="noopener noreferrer">
+        <a className="contactBtn" href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer">
           CONTACT VIA WHATSAPP
         </a>
 
