@@ -1081,11 +1081,14 @@ export default function Home() {
         .countdownInner {
           display: flex;
           align-items: center;
-          gap: 30px;
+          justify-content: center;
+          gap: 32px;
+          text-align: left;
         }
 
         .countdownInfoWrap {
           flex: 1;
+          max-width: 650px;
         }
 
         .countdownCard {
@@ -1121,12 +1124,13 @@ export default function Home() {
         }
 
         .countdownFlyer {
-          width: 150px;
-          height: 190px;
+          flex: 0 0 auto;
+          width: 135px;
+          height: 170px;
           object-fit: cover;
           object-position: center top;
           border-radius: 16px;
-          margin: 22px auto 0;
+          margin: 0;
           display: block;
           cursor: pointer;
           border: 2px solid rgba(247,198,0,0.45);
@@ -1144,7 +1148,7 @@ export default function Home() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 16px;
-          margin-top: 30px;
+          margin-top: 24px;
         }
 
         .countdownBox {
@@ -1657,6 +1661,12 @@ export default function Home() {
 
           .countdownInner {
             flex-direction: column;
+            text-align: center;
+          }
+
+          .countdownInfoWrap {
+            max-width: none;
+            width: 100%;
           }
 
           .countdownCard h3 {
