@@ -91,6 +91,14 @@ export default function Home() {
   const [activeFlyer, setActiveFlyer] = useState(null);
   const [hoveredEvent, setHoveredEvent] = useState(null);
 
+  const nextEventDate = new Date("2026-08-01T22:00:00");
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
   const shoutouts = [
     "Big up everyone locked in from The Gambia 🇬🇲",
     "Napoli crew tuned in loud 🇮🇹",
@@ -139,6 +147,27 @@ export default function Home() {
 
     setEventSlide({ ...eventSlide, [eventIndex]: nextSlide });
   };
+
+  useEffect(() => {
+    const countdownTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = nextEventDate.getTime() - now;
+
+      if (distance <= 0) {
+        clearInterval(countdownTimer);
+        return;
+      }
+
+      setCountdown({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((distance / (1000 * 60)) % 60),
+        seconds: Math.floor((distance / 1000) % 60),
+      });
+    }, 1000);
+
+    return () => clearInterval(countdownTimer);
+  }, []);
 
   useEffect(() => {
     const slider = setInterval(() => {
@@ -294,6 +323,34 @@ export default function Home() {
       </section>
 
       <section id="events" className="sectionBox">
+        <div className="countdownCard">
+          <div className="countdownLabel">NEXT EVENT COUNTDOWN</div>
+
+          <h3>Feels Like Home</h3>
+          <div className="countdownLocation">Hannover, Germany • 1 August 2026</div>
+
+          <div className="countdownGrid">
+            <div className="countdownBox">
+              <span>{countdown.days}</span>
+              DAYS
+            </div>
+
+            <div className="countdownBox">
+              <span>{countdown.hours}</span>
+              HOURS
+            </div>
+
+            <div className="countdownBox">
+              <span>{countdown.minutes}</span>
+              MINUTES
+            </div>
+
+            <div className="countdownBox">
+              <span>{countdown.seconds}</span>
+              SECONDS
+            </div>
+          </div>
+        </div>
         <h2>UPCOMING EVENTS</h2>
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
@@ -1013,6 +1070,64 @@ export default function Home() {
           letter-spacing: 2px;
         }
 
+        .countdownCard {
+          margin: 0 auto 40px;
+          max-width: 850px;
+          padding: 28px;
+          border-radius: 24px;
+          background: linear-gradient(135deg, rgba(0,255,153,0.08), rgba(247,198,0,0.08));
+          border: 1px solid rgba(0,255,153,0.22);
+          box-shadow: 0 0 30px rgba(0,255,153,0.08);
+          text-align: center;
+          animation: liveCardGlow 3s ease-in-out infinite;
+        }
+
+        .countdownLabel {
+          color: #00ff99;
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: 1.5px;
+          margin-bottom: 12px;
+        }
+
+        .countdownCard h3 {
+          margin: 0;
+          color: #f7c600;
+          font-size: 38px;
+        }
+
+        .countdownLocation {
+          margin-top: 10px;
+          color: #ccc;
+          font-size: 16px;
+        }
+
+        .countdownGrid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+          margin-top: 30px;
+        }
+
+        .countdownBox {
+          padding: 18px 12px;
+          border-radius: 18px;
+          background: rgba(0,0,0,0.32);
+          border: 1px solid rgba(247,198,0,0.12);
+          color: #ccc;
+          font-size: 12px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+        .countdownBox span {
+          display: block;
+          color: #00ff99;
+          font-size: 34px;
+          font-weight: 900;
+          margin-bottom: 8px;
+        }
+
         .eventsGrid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1496,6 +1611,18 @@ export default function Home() {
 
           .eventContent h3 {
             font-size: 23px;
+          }
+
+          .countdownGrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .countdownCard h3 {
+            font-size: 30px;
+          }
+
+          .countdownBox span {
+            font-size: 28px;
           }
 
           .flyerArrow {
