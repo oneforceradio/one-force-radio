@@ -127,6 +127,15 @@ export default function Home() {
 
   const events = [
     {
+      title: "Upper Tuesday",
+      date: "19 May 2026",
+      dateTime: "2026-05-19T19:00:00",
+      location: "Rome, Italy",
+      info: "Upper Fridays street dancehall vibes live in Rome featuring DJ Priest, Brooks and Miss B-Ranks.",
+      flyers: ["/events/Rome-19-may.jpg"],
+      link: "https://wa.me/393516232824",
+    },
+    {
       title: "Tobaski Special",
       date: "30 May 2026",
       dateTime: "2026-05-30T22:00:00",
