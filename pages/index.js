@@ -52,10 +52,10 @@ export default function Home() {
     {
       label: "SHARE IT",
       title: "Promote Your Event",
-      subtitle: "Flyers • Voice Ads • Promotion",
+      subtitle: "Flyers • Voice-Overs • Promos",
       description:
-        "Share your upcoming events with flyer placement, voice-overs and live on-air promotion.",
-      button: "PROMOTE NOW",
+        "Share your upcoming events with flyer placement, voice-overs and live on-air call-ins.",
+      button: "SHARE NOW",
     },
     {
       label: "JOIN THE TEAM",
