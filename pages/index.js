@@ -43,18 +43,18 @@ export default function Home() {
     },
     {
       label: "INTERVIEWS",
-      title: "Book An Interview",
-      subtitle: "Artists • Brands • Businesses",
+      title: "Live Interview",
+      subtitle: "Artists • Promoters • Deejays",
       description:
-        "Want to promote your brand, business, event or music? Request a live interview or featured segment.",
+        "Want to be heard? Request a live interview or featured segment.",
       button: "REQUEST INTERVIEW",
     },
     {
-      label: "RADIO ADS",
+      label: "SHARE IT",
       title: "Promote Your Event",
       subtitle: "Flyers • Voice Ads • Promotion",
       description:
-        "Promote your upcoming event, business or campaign with flyer placement, voice ads and radio exposure.",
+        "Share your upcoming events with flyer placement, voice-overs and live on-air promotion.",
       button: "PROMOTE NOW",
     },
     {
@@ -582,9 +582,9 @@ export default function Home() {
       </section>
 
       <section id="workwithus" className="sectionBox">
-        <h2>WORK WITH ONEFORCE RADIO</h2>
+        <h2>GROW WITH ONEFORCE RADIO</h2>
         <p>
-          Music promotion, interviews, radio advertising and opportunities to join the movement.
+          Music promotion, interviews, radio promos and opportunities to join the movement.
         </p>
 
         <div className="eventsGrid">
@@ -611,10 +611,10 @@ export default function Home() {
           <div className="eventCard">
             <div className="eventContent">
               <div className="eventDate">INTERVIEWS</div>
-              <h3>Book An Interview</h3>
-              <div className="eventLocation">Artists • Brands • Businesses</div>
+              <h3>Live Interview</h3>
+              <div className="eventLocation">Artists • Promoters • Deejays</div>
               <p>
-                Want to promote your brand, business, event or music? Request a live interview or featured segment.
+                Want to be heard? Request a live interview or featured segment.
               </p>
 
               <a
@@ -630,11 +630,11 @@ export default function Home() {
 
           <div className="eventCard">
             <div className="eventContent">
-              <div className="eventDate">RADIO ADS</div>
+              <div className="eventDate">SHARE IT</div>
               <h3>Promote Your Event</h3>
               <div className="eventLocation">Flyers • Voice Ads • Promotion</div>
               <p>
-                Promote your upcoming event, business or campaign with flyer placement, voice ads and radio exposure.
+                Share your upcoming events with flyer placement, voice-overs and live on-air promotion.
               </p>
 
               <a
