@@ -119,7 +119,7 @@ export default function Home() {
   image: "/djGas.jpg",
   location: "Born in The Gambia • Based in Germany",
   genres: "Afrobeats • Amapiano",
-  bio: "Founder of the successful monthly event Afrovibes Freiburg, bringing high-energy Afrobeats and Amapiano vibes from Germany to OneForce Radio.",
+  bio: "Founder of the successful monthly event Afrovibes Freiburg, bringing vibrant Afrobeats and Amapiano vibes from Germany to OneForce Radio.",
   instagram: "https://www.instagram.com/di_j_gas/",
 },
     
