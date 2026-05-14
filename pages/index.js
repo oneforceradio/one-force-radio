@@ -113,6 +113,16 @@ export default function Home() {
       bio: "Selector of international sound Shashamane — The African Zulu Warrior from Kenya, Africa.",
       instagram: "https://www.instagram.com/djpriest_shashamane/",
     },
+{
+  name: "Di J Gas",
+  brand: "Afrovibes Freiburg",
+  image: "/djGas.jpg",
+  location: "Born in The Gambia • Based in Germany",
+  genres: "Afrobeats • Amapiano",
+  bio: "Founder of the successful monthly event Afrovibes Freiburg, bringing high-energy Afrobeats and Amapiano vibes from Germany to OneForce Radio.",
+  instagram: "https://www.instagram.com/di_j_gas/",
+},
+    
     {
       name: "COMING SOON",
       brand: "New DJ Slot",
