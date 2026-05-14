@@ -632,18 +632,18 @@ export default function Home() {
             <div className="eventContent">
               <div className="eventDate">SHARE IT</div>
               <h3>Promote Your Event</h3>
-              <div className="eventLocation">Flyers • Voice Ads • Promotion</div>
+              <div className="eventLocation">Flyers • Voice-Overs • Promotion</div>
               <p>
-                Share your upcoming events with flyer placement, voice-overs and live on-air promotion.
+                Share your upcoming events with flyer placement, voice-overs and live on-air call-ins.
               </p>
 
               <a
                 className="djSocialBtn"
-                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I would like information about promoting my event, flyer, business or radio advert.")}`}
+                href={`${stationInfo.whatsapp}?text=${encodeURIComponent("Hi OneForce Radio, I would like information about promoting my event, flyer or live on-air promotion.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                PROMOTE NOW
+                SHARE NOW
               </a>
             </div>
           </div>
