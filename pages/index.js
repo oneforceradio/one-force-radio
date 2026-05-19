@@ -114,15 +114,12 @@ export default function Home() {
       instagram: "https://www.instagram.com/djpriest_shashamane/",
     },
     {
-      name: "COMING SOON",
-      brand: "New DJ Slot",
-      image: "",
-      location: "Worldwide",
-      genres: "Future Resident DJ",
-      bio: "More DJs, selectors and radio personalities will be added soon.",
-      instagram: "#",
-      placeholder: true,
-    },
+      name: "Di J Gas",
+      brand: "Afrovibes Freiburg",
+      image: "/djGas.jpg",
+      location: "Gambian Based In Germany",
+      genres: "Afrobeats • Amapiano",
+      bio: "Found
   ];
 
   const events = [
@@ -708,13 +705,11 @@ export default function Home() {
         </div>
       )}
 
-      <div className="footer">
-  © 2026 OneForce Radio — Live Worldwide 24/7
-  <br />
-  Licensed by SIAE for online radio broadcasting and streaming –
-  <br />
-  Codice Licenza SIAE n. 202600000253
-</div>
+      <div className="licenseInfo">
+        Licensed by SIAE for online radio broadcasting and streaming • Licence No. 202600000253
+      </div>
+
+      <div className="footer">© 2026 OneForce Radio — Live Worldwide 24/7</div>
 
       <style>{`
         .pageWrap {
