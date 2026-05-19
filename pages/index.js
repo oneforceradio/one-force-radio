@@ -119,7 +119,19 @@ export default function Home() {
       image: "/djGas.jpg",
       location: "Gambian Based In Germany",
       genres: "Afrobeats • Amapiano",
-      bio: "Found
+      bio: "Founder of the monthly event Afrovibes Freiburg, bringing fresh Afrobeats and Amapiano vibes with energetic selections and authentic party atmosphere to the radio.",
+      instagram: "https://www.instagram.com/di_j_gas/",
+    },
+    {
+      name: "COMING SOON",
+      brand: "New DJ Slot",
+      image: "",
+      location: "Worldwide",
+      genres: "Future Resident DJ",
+      bio: "More DJs, selectors and radio personalities will be added soon.",
+      instagram: "#",
+      placeholder: true,
+    },
   ];
 
   const events = [
