@@ -721,7 +721,17 @@ export default function Home() {
         Licensed by SIAE for online radio broadcasting and streaming • Licence No. 202600000253
       </div>
 
-      <div className="footer">© 2026 OneForce Radio — Live Worldwide 24/7</div>
+      <div className="footer">
+  <div>© 2026 OneForce Radio — Live Worldwide 24/7</div>
+
+  <div className="licenseText">
+    Licensed by SIAE for online radio broadcasting and streaming –
+  </div>
+
+  <div className="licenseNumber">
+    Codice Licenza SIAE n. 202600000253
+  </div>
+</div>
 
       <style>{`
         .pageWrap {
@@ -1662,11 +1672,26 @@ export default function Home() {
         }
 
         .footer {
-          margin-top: 25px;
-          color: #777;
-          font-size: 14px;
-          text-align: center;
-        }
+  margin-top: 25px;
+  padding-bottom: 90px;
+  color: #777;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.licenseText {
+  margin-top: 6px;
+  color: #999;
+  font-size: 12px;
+}
+
+.licenseNumber {
+  color: #f7c600;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
 
         @keyframes radioWavePulse {
           0% { transform: scale(0.55); opacity: 0; }
