@@ -136,6 +136,15 @@ const enterRadio = () => {
       instagram: "https://www.instagram.com/di_j_gas/",
     },
     {
+  name: "DJ Pure Music",
+  brand: "OneForce Radio AI",
+  image: "/djPureMusic.png",
+  location: "Broadcasting Worldwide 24/7",
+  genres: "Dancehall • Reggae • Afrobeats • Amapiano",
+  bio: "Nonstop selections with less talking and continuous vibes streaming worldwide on OneForce Radio.",
+  instagram: "#",
+},
+    {
       name: "COMING SOON",
       brand: "New DJ Slot",
       image: "",
