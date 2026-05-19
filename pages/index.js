@@ -7,7 +7,20 @@ export default function Home() {
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const [showAgeGate, setShowAgeGate] = useState(false);
 
+useEffect(() => {
+  const confirmed = localStorage.getItem("oneforce_age_confirmed");
+
+  if (!confirmed) {
+    setShowAgeGate(true);
+  }
+}, []);
+
+const enterRadio = () => {
+  localStorage.setItem("oneforce_age_confirmed", "yes");
+  setShowAgeGate(false);
+};
   const stationInfo = {
     name: "ONEFORCE RADIO",
     tagline: "24/7 Nonstop Music",
@@ -288,6 +301,27 @@ export default function Home() {
 
   return (
     <div className="pageWrap">
+    {showAgeGate && (
+  <div className="ageGate">
+    <div className="ageGateBox">
+      <div className="ageGateLive">LIVE WORLDWIDE 24/7</div>
+
+      <h1>ONEFORCE RADIO</h1>
+
+      <p>
+        This station may contain explicit language, adult themes and uncensored music.
+      </p>
+
+      <p>You must be 18 years or older to enter.</p>
+
+      <button onClick={enterRadio}>ENTER RADIO</button>
+
+      <span>
+        By entering you confirm you are at least 18 years old.
+      </span>
+    </div>
+  </div>
+)}
       <div className="glowOrb orb1" />
       <div className="glowOrb orb2" />
       <div className="glowOrb orb3" />
@@ -1776,7 +1810,66 @@ export default function Home() {
           50% { transform: scaleY(1); }
           100% { transform: scaleY(0.4); }
         }
+.ageGate {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.94);
+  backdrop-filter: blur(10px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
+.ageGateBox {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(15,15,15,0.96);
+  border: 1px solid rgba(0,255,153,0.25);
+  border-radius: 24px;
+  padding: 45px 35px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,255,153,0.15);
+}
+
+.ageGateLive {
+  color: #00ff99;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+
+.ageGateBox h1 {
+  margin: 0;
+  color: #f7c600;
+  font-size: 44px;
+}
+
+.ageGateBox p {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.ageGateBox button {
+  margin-top: 25px;
+  padding: 16px 34px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00ff99, #f7c600);
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ageGateBox span {
+  display: block;
+  margin-top: 20px;
+  color: #888;
+  font-size: 13px;
+}
         @media (max-width: 700px) {
           .mobileMenuBtn {
             display: block;
