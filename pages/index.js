@@ -113,16 +113,6 @@ export default function Home() {
       bio: "Selector of international sound Shashamane — The African Zulu Warrior from Kenya, Africa.",
       instagram: "https://www.instagram.com/djpriest_shashamane/",
     },
-{
-  name: "Di J Gas",
-  brand: "Afrovibes Freiburg",
-  image: "/djGas.jpg",
-  location: "Born in The Gambia • Based in Germany",
-  genres: "Afrobeats • Amapiano",
-  bio: "Founder of the successful monthly event Afrovibes Freiburg, bringing vibrant Afrobeats and Amapiano vibes from Germany to OneForce Radio.",
-  instagram: "https://www.instagram.com/di_j_gas/",
-},
-    
     {
       name: "COMING SOON",
       brand: "New DJ Slot",
@@ -717,6 +707,10 @@ export default function Home() {
           <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
         </div>
       )}
+
+      <div className="licenseInfo">
+        Licensed by SIAE for online radio broadcasting and streaming • Licence No. 202600000253
+      </div>
 
       <div className="footer">© 2026 OneForce Radio — Live Worldwide 24/7</div>
 
@@ -1647,6 +1641,15 @@ export default function Home() {
           margin-top: 3px;
           color: #ccc;
           font-size: 13px;
+        }
+
+        .licenseInfo {
+          margin-top: 30px;
+          color: #888;
+          font-size: 13px;
+          text-align: center;
+          opacity: 0.8;
+          letter-spacing: 0.5px;
         }
 
         .footer {
