@@ -717,9 +717,6 @@ export default function Home() {
         </div>
       )}
 
-      <div className="licenseInfo">
-        Licensed by SIAE for online radio broadcasting and streaming • Licence No. 202600000253
-      </div>
 
       <div className="footer">
   <div>© 2026 OneForce Radio — Live Worldwide 24/7</div>
