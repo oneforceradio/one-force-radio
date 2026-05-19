@@ -86,7 +86,7 @@ const enterRadio = () => {
     show: "24/7 Nonstop Music",
     genre: "Dancehall • Reggae • Afrobeat • Amapiano",
     image: "/banner1.png",
-    status: "AUTO DJ ACTIVE",
+    status: "PURE MUSIC • LESS TALKING",
   };
 
   const djs = [
