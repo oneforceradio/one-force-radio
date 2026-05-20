@@ -100,6 +100,15 @@ const enterRadio = () => {
       instagram: "https://www.instagram.com/djlashes/",
     },
     {
+  name: "DJ Adda",
+  brand: "Street Roc Sound",
+  image: "/djAdda.jpg",
+  location: "Based In Milton Keynes, United Kingdom • British / Jamaican",
+  genres: "Reggae • Dancehall • Bashment",
+  bio: "Representing Street Roc Sound from Milton Keynes, DJ Adda brings authentic reggae and dancehall energy with heavy juggling, bashment vibes and true sound system culture.",
+  instagram: "https://www.instagram.com/streetrocintl/",
+},
+    {
       name: "The 8th Wonder",
       brand: "Gorilla Mvmts Sound System",
       image: "/djleon.jpg",
@@ -107,15 +116,6 @@ const enterRadio = () => {
       genres: "Multi Genre",
       bio: "UK-based selector and founder of Gorilla Mvmts Sound System, bringing versatile multi-genre energy and authentic sound system culture to every session.",
       instagram: "https://www.instagram.com/gorillamovements/",
-    },
-    {
-      name: "DJ Jnr Force",
-      brand: "OneForce Sound",
-      image: "/JnrForce.jpg",
-      location: "Based In The Gambia • West Africa",
-      genres: "Gam-Vibes • Afrobeats • Amapiano",
-      bio: "Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide for rocking crowds with nonstop hits and keeping the clubs pumping with energy.",
-      instagram: "https://www.instagram.com/juniorforce/",
     },
     {
       name: "DJ Priest",
@@ -134,6 +134,15 @@ const enterRadio = () => {
       genres: "Afrobeats • Amapiano",
       bio: "Founder of the monthly event Afrovibes Freiburg, bringing fresh Afrobeats and Amapiano vibes with energetic selections and authentic party atmosphere to the radio.",
       instagram: "https://www.instagram.com/di_j_gas/",
+    },
+     {
+      name: "DJ Jnr Force",
+      brand: "OneForce Sound",
+      image: "/JnrForce.jpg",
+      location: "Based In The Gambia • West Africa",
+      genres: "Gam-Vibes • Afrobeats • Amapiano",
+      bio: "Born and raised in Tanji, The Gambia, DJ Jnr Force is known nationwide for rocking crowds with nonstop hits and keeping the clubs pumping with energy.",
+      instagram: "https://www.instagram.com/juniorforce/",
     },
     {
   name: "DJ Pure Music",
