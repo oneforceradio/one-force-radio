@@ -2036,13 +2036,16 @@ const [gallerySlide, setGallerySlide] = useState(0);
   font-size: 13px;
 }
 .highlightsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 18px;
   margin-top: 28px;
 }
 
 .highlightCard {
+  max-width: 320px;
+  width: 100%;
   background: rgba(24,24,24,0.96);
   border-radius: 16px;
   overflow: hidden;
@@ -2050,7 +2053,6 @@ const [gallerySlide, setGallerySlide] = useState(0);
   box-shadow: 0 0 16px rgba(0,0,0,0.35);
   transition: all 0.3s ease;
 }
-
 .highlightCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 18px rgba(247,198,0,0.22);
