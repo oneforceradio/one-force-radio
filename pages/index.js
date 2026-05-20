@@ -592,7 +592,7 @@ const enterRadio = () => {
         <h2>UPCOMING EVENTS</h2>
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
-    <div className="highlightsGrid">
+   <div className="eventsGrid">
 
          {upcomingEvents.map((event, index) => {
             const activeSlide = eventSlide[index] || 0;
@@ -656,7 +656,7 @@ const enterRadio = () => {
   Captured moments from events attended and supported by OneForce Radio.
 </p>
 
-          <div className="eventsGrid">
+     <div className="highlightsGrid">
             {pastEvents.map((event) => (
             <div className="highlightCard" key={event.title}>
            <div className="highlightImageWrap">
@@ -1978,6 +1978,53 @@ const enterRadio = () => {
   display: block;
   margin-top: 20px;
   color: #888;
+  font-size: 13px;
+}
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.highlightCard {
+  background: rgba(24,24,24,0.96);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(247,198,0,0.15);
+  box-shadow: 0 0 16px rgba(0,0,0,0.35);
+  transition: all 0.3s ease;
+}
+
+.highlightCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(247,198,0,0.22);
+}
+
+.highlightImageWrap {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #090909;
+}
+
+.highlightImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.highlightCard .eventContent {
+  padding: 16px 14px 20px;
+}
+
+.highlightCard .eventContent h3 {
+  font-size: 20px;
+}
+
+.highlightCard .eventContent p {
   font-size: 13px;
 }
         @media (max-width: 700px) {
