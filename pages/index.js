@@ -229,6 +229,12 @@ const enterRadio = () => {
   const upcomingEvents = events.filter(
   (event) => new Date(event.dateTime).getTime() > Date.now()
 );
+  const pastEvents = events.filter(
+  (event) =>
+    new Date(event.dateTime).getTime() <= Date.now() &&
+    event.gallery &&
+    event.gallery.length > 0
+);
 
   const nextEvent = events
     .filter((event) => new Date(event.dateTime).getTime() > Date.now())
@@ -643,7 +649,34 @@ const enterRadio = () => {
           })}
         </div>
       </section>
+      {pastEvents.length > 0 && (
+        <section id="eventhighlights" className="sectionBox">
+          <h2>EVENT HIGHLIGHTS</h2>
+          <p>Photos and memories from events featured by OneForce Radio.</p>
 
+          <div className="eventsGrid">
+            {pastEvents.map((event) => (
+              <div className="eventCard" key={event.title}>
+                <div className="eventFlyerWrap">
+                  <img
+                    src={event.gallery[0]}
+                    alt={`${event.title} gallery`}
+                    className="eventFlyer"
+                  />
+                </div>
+
+                <div className="eventContent">
+                  <div className="eventDate">{event.date}</div>
+                  <h3>{event.title}</h3>
+                  <div className="eventLocation">{event.location}</div>
+                  <p>{event.info}</p>
+                  <p>{event.gallery.length} photos</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       <section id="djs" className="sectionBox">
         <h2>ONEFORCE RADIO DJS</h2>
         <p>Meet the selectors and DJs bringing vibes from around the world.</p>
