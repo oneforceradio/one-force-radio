@@ -592,7 +592,7 @@ const enterRadio = () => {
         <h2>UPCOMING EVENTS</h2>
         <p>Catch OneForce Sound and OneForce Radio energy live at upcoming events.</p>
 
-        <div className="eventsGrid">
+    <div className="highlightsGrid">
 
          {upcomingEvents.map((event, index) => {
             const activeSlide = eventSlide[index] || 0;
@@ -658,12 +658,12 @@ const enterRadio = () => {
 
           <div className="eventsGrid">
             {pastEvents.map((event) => (
-              <div className="eventCard" key={event.title}>
-                <div className="eventFlyerWrap">
+            <div className="highlightCard" key={event.title}>
+           <div className="highlightImageWrap">
                   <img
                     src={event.gallery[0]}
                     alt={`${event.title} gallery`}
-                    className="eventFlyer"
+              className="highlightImage"
                   />
                 </div>
 
