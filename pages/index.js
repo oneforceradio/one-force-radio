@@ -213,6 +213,10 @@ const enterRadio = () => {
   const [activeFlyer, setActiveFlyer] = useState(null);
   const [hoveredEvent, setHoveredEvent] = useState(null);
 
+  const upcomingEvents = events.filter(
+  (event) => new Date(event.dateTime).getTime() > Date.now()
+);
+
   const nextEvent = events
     .filter((event) => new Date(event.dateTime).getTime() > Date.now())
     .sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))[0];
@@ -571,7 +575,7 @@ const enterRadio = () => {
 
         <div className="eventsGrid">
 
-          {events.map((event, index) => {
+         {upcomingEvents.map((event, index) => {
             const activeSlide = eventSlide[index] || 0;
             const hasMultipleFlyers = event.flyers.length > 1;
 
