@@ -652,7 +652,9 @@ const enterRadio = () => {
       {pastEvents.length > 0 && (
         <section id="eventhighlights" className="sectionBox">
           <h2>EVENT HIGHLIGHTS</h2>
-          <p>Photos and memories from events featured by OneForce Radio.</p>
+<p>
+  Captured moments from events attended and supported by OneForce Radio.
+</p>
 
           <div className="eventsGrid">
             {pastEvents.map((event) => (
