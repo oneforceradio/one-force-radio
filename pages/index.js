@@ -629,7 +629,7 @@ const [gallerySlide, setGallerySlide] = useState(0);
                     <>
                       <button
                         className="flyerArrow flyerArrowLeft"
-                  onClick={() => changeEventSlide(index, "prev")}
+                 onClick={() => changeEventSlide(event.title, event.flyers, "prev")}
                         aria-label="Previous flyer"
                       >
                         ‹
@@ -668,7 +668,7 @@ const [gallerySlide, setGallerySlide] = useState(0);
   Captured moments from events attended and supported by OneForce Radio.
 </p>
 
-    <div className="eventsGrid">
+   <div className="highlightsGrid">
             {pastEvents.map((event) => (
        <div
   className="highlightCard"
