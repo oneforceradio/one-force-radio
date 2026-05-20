@@ -279,16 +279,17 @@ const enterRadio = () => {
     window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
   };
 
-  const changeEventSlide = (eventIndex, direction) => {
-    const totalFlyers = events[eventIndex].flyers.length;
-    const currentSlide = eventSlide[eventIndex] || 0;
-    const nextSlide =
-      direction === "next"
-        ? (currentSlide + 1) % totalFlyers
-        : (currentSlide - 1 + totalFlyers) % totalFlyers;
+ const changeEventSlide = (eventTitle, flyers, direction) => {
+  const totalFlyers = flyers.length;
+  const currentSlide = eventSlide[eventTitle] || 0;
 
-    setEventSlide({ ...eventSlide, [eventIndex]: nextSlide });
-  };
+  const nextSlide =
+    direction === "next"
+      ? (currentSlide + 1) % totalFlyers
+      : (currentSlide - 1 + totalFlyers) % totalFlyers;
+
+  setEventSlide({ ...eventSlide, [eventTitle]: nextSlide });
+};
 
   useEffect(() => {
     const countdownTimer = setInterval(() => {
@@ -595,7 +596,7 @@ const enterRadio = () => {
    <div className="eventsGrid">
 
          {upcomingEvents.map((event, index) => {
-            const activeSlide = eventSlide[index] || 0;
+         const activeSlide = eventSlide[event.title] || 0;
             const hasMultipleFlyers = event.flyers.length > 1;
 
             return (
@@ -617,7 +618,7 @@ const enterRadio = () => {
                     <>
                       <button
                         className="flyerArrow flyerArrowLeft"
-                        onClick={() => changeEventSlide(index, "prev")}
+                  onClick={() => changeEventSlide(index, "prev")}
                         aria-label="Previous flyer"
                       >
                         ‹
@@ -625,7 +626,7 @@ const enterRadio = () => {
 
                       <button
                         className="flyerArrow flyerArrowRight"
-                        onClick={() => changeEventSlide(index, "next")}
+                   onClick={() => changeEventSlide(event.title, event.flyers, "next")}
                         aria-label="Next flyer"
                       >
                         ›
@@ -656,7 +657,7 @@ const enterRadio = () => {
   Captured moments from events attended and supported by OneForce Radio.
 </p>
 
-     <div className="highlightsGrid">
+    <div className="eventsGrid">
             {pastEvents.map((event) => (
             <div className="highlightCard" key={event.title}>
            <div className="highlightImageWrap">
