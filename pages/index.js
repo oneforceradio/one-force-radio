@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import Head from "next/head";
 export default function Home() {
   const audioRef = useRef(null);
 
@@ -309,6 +309,55 @@ const enterRadio = () => {
   }, [hoveredEvent, activeFlyer]);
 
   return (
+  <>
+    <Head>
+      <title>ONEFORCE RADIO</title>
+
+      <meta
+        name="description"
+        content="OneForce Radio — Dancehall, Reggae, Afrobeats, Amapiano and Hip Hop live worldwide 24/7."
+      />
+
+      <meta property="og:title" content="ONEFORCE RADIO" />
+
+      <meta
+        property="og:description"
+        content="Less talking • More music. Dancehall, Reggae, Afrobeats, Amapiano and Hip Hop live worldwide 24/7."
+      />
+
+      <meta
+        property="og:image"
+        content="https://oneforceradio.com/social-preview.jpg"
+      />
+
+      <meta
+        property="og:url"
+        content="https://oneforceradio.com"
+      />
+
+      <meta property="og:type" content="website" />
+
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+
+      <meta
+        name="twitter:title"
+        content="ONEFORCE RADIO"
+      />
+
+      <meta
+        name="twitter:description"
+        content="Less talking • More music. Live worldwide 24/7."
+      />
+
+      <meta
+        name="twitter:image"
+        content="https://oneforceradio.com/social-preview.jpg"
+      />
+    </Head>
+
     <div className="pageWrap">
     {showAgeGate && (
   <div className="ageGate">
@@ -2030,5 +2079,6 @@ const enterRadio = () => {
         }
       `}</style>
     </div>
+</>
   );
 }
