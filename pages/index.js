@@ -224,6 +224,8 @@ const enterRadio = () => {
 
   const [eventSlide, setEventSlide] = useState({});
   const [activeFlyer, setActiveFlyer] = useState(null);
+  const [activeGallery, setActiveGallery] = useState(null);
+const [gallerySlide, setGallerySlide] = useState(0);
   const [hoveredEvent, setHoveredEvent] = useState(null);
 
   const upcomingEvents = events.filter(
@@ -659,7 +661,14 @@ const enterRadio = () => {
 
     <div className="eventsGrid">
             {pastEvents.map((event) => (
-            <div className="highlightCard" key={event.title}>
+       <div
+  className="highlightCard"
+  key={event.title}
+  onClick={() => {
+    setActiveGallery(event);
+    setGallerySlide(0);
+  }}
+>
            <div className="highlightImageWrap">
                   <img
                     src={event.gallery[0]}
@@ -855,7 +864,42 @@ const enterRadio = () => {
           <div className="miniShow">{liveShow.show}</div>
         </div>
       </div>
+{activeGallery && (
+  <div className="flyerModal" onClick={() => setActiveGallery(null)}>
+    <button
+      className="flyerArrow flyerArrowLeft"
+      onClick={(e) => {
+        e.stopPropagation();
+        setGallerySlide(
+          (gallerySlide - 1 + activeGallery.gallery.length) %
+            activeGallery.gallery.length
+        );
+      }}
+    >
+      ‹
+    </button>
 
+    <img
+      src={activeGallery.gallery[gallerySlide]}
+      alt={`${activeGallery.title} gallery`}
+      className="flyerModalImage"
+    />
+
+    <button
+      className="flyerArrow flyerArrowRight"
+      onClick={(e) => {
+        e.stopPropagation();
+        setGallerySlide((gallerySlide + 1) % activeGallery.gallery.length);
+      }}
+    >
+      ›
+    </button>
+
+    <div className="flyerCounter">
+      {gallerySlide + 1} / {activeGallery.gallery.length}
+    </div>
+  </div>
+)}
       {activeFlyer && (
         <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
           <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
