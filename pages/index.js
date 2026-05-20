@@ -669,7 +669,8 @@ const [gallerySlide, setGallerySlide] = useState(0);
     setGallerySlide(0);
   }}
 >
-           <div className="highlightImageWrap">
+          <div className="highlightImageWrap">
+  <div className="galleryBadge">VIEW GALLERY</div>
                   <img
                     src={event.gallery[0]}
                     alt={`${event.title} gallery`}
@@ -2047,12 +2048,28 @@ const [gallerySlide, setGallerySlide] = useState(0);
 }
 
 .highlightImageWrap {
+  position: relative;
+  cursor: pointer;
   width: 100%;
   height: 210px;
   overflow: hidden;
   background: #090909;
 }
-
+.galleryBadge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.75);
+  color: #ffd000;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,208,0,0.35);
+  z-index: 2;
+  pointer-events: none;
+}
 .highlightImage {
   width: 100%;
   height: 100%;
