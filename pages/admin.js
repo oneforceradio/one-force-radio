@@ -5,10 +5,19 @@ export default function AdminPage() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [shoutouts, setShoutouts] = useState([]);
 
-  const loadShoutouts = async () => {
+  useEffect(() => {
+    const savedSecret = localStorage.getItem("oneforce_admin_secret");
+
+    if (savedSecret) {
+      setSecret(savedSecret);
+      setLoggedIn(true);
+    }
+  }, []);
+
+  const loadShoutouts = async (password = secret) => {
     const res = await fetch("/api/admin/shoutouts", {
       headers: {
-        authorization: secret,
+        authorization: password,
       },
     });
 
@@ -18,6 +27,18 @@ export default function AdminPage() {
       setShoutouts(data);
     }
   };
+
+  useEffect(() => {
+    if (!loggedIn) return;
+
+    loadShoutouts();
+
+    const interval = setInterval(() => {
+      loadShoutouts();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [loggedIn, secret]);
 
   const approveShoutout = async (id) => {
     await fetch("/api/admin/approve", {
@@ -62,8 +83,9 @@ export default function AdminPage() {
           <button
             style={styles.button}
             onClick={() => {
+              localStorage.setItem("oneforce_admin_secret", secret);
               setLoggedIn(true);
-              loadShoutouts();
+              loadShoutouts(secret);
             }}
           >
             LOGIN
