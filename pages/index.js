@@ -11,6 +11,8 @@ export default function Home() {
   const [name, setName] = useState("");
   const [song, setSong] = useState("");
   const [message, setMessage] = useState("");
+  const [country, setCountry] = useState("");
+const [shoutoutSent, setShoutoutSent] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [showAgeGate, setShowAgeGate] = useState(false);
 
@@ -303,17 +305,12 @@ const scrollToSection = (id) => {
   const sendRequest = async (e) => {
   e.preventDefault();
 
-  const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
-  const whatsappUrl = `${stationInfo.whatsapp}?text=${text}`;
-
-  window.open(whatsappUrl, "_blank");
-
   try {
     const { error } = await supabase.from("shoutouts").insert([
       {
         name,
         message,
-        country: "",
+        country,
         approved: false,
       },
     ]);
@@ -321,6 +318,10 @@ const scrollToSection = (id) => {
     if (error) {
       console.log("Supabase error:", error);
     }
+    setShoutoutSent(true);
+setName("");
+setCountry("");
+setMessage("");
   } catch (error) {
     console.log("Unexpected error:", error);
   }
@@ -562,12 +563,37 @@ const scrollToSection = (id) => {
     ))}
   </div>
 
-  <button
-    className="liveWallBtn"
-    onClick={() => scrollToSection("request")}
-  >
+  <form onSubmit={sendRequest} className="liveWallForm">
+  <input
+    type="text"
+    placeholder="Your name"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+  />
+
+  <input
+    type="text"
+    placeholder="Country"
+    value={country}
+    onChange={(e) => setCountry(e.target.value)}
+  />
+
+  <textarea
+    placeholder="Your shoutout / message"
+    value={message}
+    onChange={(e) => setMessage(e.target.value)}
+  />
+
+  <button type="submit">
     SEND SHOUTOUT
   </button>
+
+  {shoutoutSent && (
+    <div className="shoutoutSuccess">
+      ✅ Shoutout sent! Waiting for approval.
+    </div>
+  )}
+</form>
 </div>
 
         <div className="liveStatusCard">
@@ -1247,6 +1273,63 @@ const scrollToSection = (id) => {
   flex-direction: column-reverse;
   gap: 12px;
   padding-right: 6px;
+}
+.liveWallForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.liveWallForm input,
+.liveWallForm textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background: #181818;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.liveWallForm textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.liveWallForm input:focus,
+.liveWallForm textarea:focus {
+  border-color: #00ff99;
+  box-shadow: 0 0 12px rgba(0,255,153,0.25);
+}
+
+.liveWallForm button {
+  width: 100%;
+  background: #00ff99;
+  color: black;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.liveWallForm button:hover {
+  background: #ffd000;
+}
+
+.shoutoutSuccess {
+  margin-top: 10px;
+  background: rgba(0,255,153,0.12);
+  border: 1px solid rgba(0,255,153,0.4);
+  color: #00ff99;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .liveWallMessage {
