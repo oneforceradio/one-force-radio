@@ -549,27 +549,26 @@ const scrollToSection = (id) => {
         >
           <source src="https://sky.doscast.com/proxy/oneforce/stream" type="audio/mpeg" />
         </audio>
+<div className="liveWall">
+  <div className="liveWallHeader">
+    🔥 ONEFORCE LIVE WALL
+  </div>
 
-        <div className="shoutTicker">
-          <div className="tickerLabel">
-            <span></span>
-            LIVE SHOUTS
-          </div>
+  <div className="liveWallMessages">
+    {shoutouts.map((shout, index) => (
+      <div className="liveWallMessage" key={index}>
+        {shout}
+      </div>
+    ))}
+  </div>
 
-          <div className="tickerTrackWrap">
-            <div className="tickerTrack">
-              {[...shoutouts, ...shoutouts].map((shout, index) => (
-                <div className="tickerItem" key={index}>
-                  {shout}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button className="tickerRequestBtn" onClick={() => scrollToSection("request")}>
-            SEND SHOUTOUT
-          </button>
-        </div>
+  <button
+    className="liveWallBtn"
+    onClick={() => scrollToSection("request")}
+  >
+    SEND SHOUTOUT
+  </button>
+</div>
 
         <div className="liveStatusCard">
           <div className="liveBadge">
