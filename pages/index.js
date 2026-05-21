@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import { createClient } from "@supabase/supabase-js";
 export default function Home() {
+  const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
   const audioRef = useRef(null);
 
   const [name, setName] = useState("");
@@ -297,11 +302,21 @@ const [gallerySlide, setGallerySlide] = useState(0);
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  const sendRequest = (e) => {
-    e.preventDefault();
-    const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
-    window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
-  };
+const sendRequest = async (e) => {
+  e.preventDefault();
+
+  await supabase.from("shoutouts").insert([
+    {
+      name,
+      message,
+      country: "",
+      approved: false,
+    },
+  ]);
+
+  const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
+  window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
+};
 
  const changeEventSlide = (eventTitle, flyers, direction) => {
   const totalFlyers = flyers.length;
