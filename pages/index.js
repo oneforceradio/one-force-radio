@@ -305,16 +305,21 @@ const [gallerySlide, setGallerySlide] = useState(0);
 const sendRequest = async (e) => {
   e.preventDefault();
 
-  await supabase.from("shoutouts").insert([
-    {
-      name,
-      message,
-      country: "",
-      approved: false,
-    },
-  ]);
+  try {
+    await supabase.from("shoutouts").insert([
+      {
+        name,
+        message,
+        country: "",
+        approved: false,
+      },
+    ]);
+  } catch (error) {
+    console.log(error);
+  }
 
   const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
+
   window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
 };
 
