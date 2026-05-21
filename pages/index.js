@@ -1229,6 +1229,7 @@ const scrollToSection = (id) => {
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0,255,153,0.25);
+  box-sizing: border-box;
 }
 
 .liveWallHeader {
