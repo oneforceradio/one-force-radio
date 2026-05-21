@@ -344,7 +344,7 @@ const loadApprovedShoutouts = async () => {
       data.map((shout) => {
         const countryText = shout.country ? ` 🌍 ${shout.country}` : "";
 
-        return `🔥 ${shout.name}${countryText}: ${shout.message}`;
+        return `🔥 ${shout.name}${countryText}: <span class="yellowMessage">${shout.message}</span>`;
       })
     );
   }
@@ -589,9 +589,11 @@ useEffect(() => {
 
   <div className="liveWallMessages">
     {shoutouts.map((shout, index) => (
-      <div className="liveWallMessage" key={index}>
-        {shout}
-      </div>
+      <div
+  className="liveWallMessage"
+  key={index}
+  dangerouslySetInnerHTML={{ __html: shout }}
+/>
     ))}
   </div>
 
@@ -1350,6 +1352,11 @@ useEffect(() => {
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+}
+
+.yellowMessage {
+  color: #ffd000;
+  font-weight: bold;
 }
 
 .liveWallMessage {
