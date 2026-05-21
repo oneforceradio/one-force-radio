@@ -44,7 +44,7 @@ const enterRadio = () => {
     twitch: "https://www.twitch.tv/oneforceradio",
   };
 
-  const shoutouts = [
+  const [shoutouts, setShoutouts] = useState([
     "🔥 bigup busy Signal Gambia",
     "🎧 Zall Bigup Faraba Crew",
     "📢 Muhammad Say More Mavado",
@@ -63,7 +63,7 @@ const enterRadio = () => {
     "🔥 Dj Hansin RQ Busy signal Bully",
     "🎧 Streaming 24/7 Nonstop Music",
     "🌍 OneForce Radio broadcasting worldwide",
-  ];
+ ]);
 
   const workWithUsCards = [
     {
@@ -302,8 +302,11 @@ const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (section) section.scrollIntoView({ behavior: "smooth" });
 };
-  const sendRequest = async (e) => {
+const sendRequest = async (e) => {
   e.preventDefault();
+  if (!name || !message) {
+  return;
+}
 
   try {
     const { error } = await supabase.from("shoutouts").insert([
@@ -318,14 +321,35 @@ const scrollToSection = (id) => {
     if (error) {
       console.log("Supabase error:", error);
     }
+
     setShoutoutSent(true);
-setName("");
-setCountry("");
-setMessage("");
+    setName("");
+    setCountry("");
+    setMessage("");
   } catch (error) {
     console.log("Unexpected error:", error);
   }
 };
+
+const loadApprovedShoutouts = async () => {
+  const { data, error } = await supabase
+    .from("shoutouts")
+    .select("name, country, message, created_at")
+    .eq("approved", true)
+    .order("created_at", { ascending: false })
+    .limit(30);
+
+  if (!error && data) {
+    setShoutouts(
+      data.map((shout) => {
+        const countryText = shout.country ? ` 🌍 ${shout.country}` : "";
+
+        return `🔥 ${shout.name}${countryText}: ${shout.message}`;
+      })
+    );
+  }
+};
+    
  const changeEventSlide = (eventTitle, flyers, direction) => {
   const totalFlyers = flyers.length;
   const currentSlide = eventSlide[eventTitle] || 0;
@@ -337,7 +361,15 @@ setMessage("");
 
   setEventSlide({ ...eventSlide, [eventTitle]: nextSlide });
 };
+useEffect(() => {
+  loadApprovedShoutouts();
 
+  const interval = setInterval(() => {
+    loadApprovedShoutouts();
+  }, 15000);
+
+  return () => clearInterval(interval);
+}, []);
   useEffect(() => {
     const countdownTimer = setInterval(() => {
       const now = new Date().getTime();
@@ -810,7 +842,7 @@ setMessage("");
           <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
           <input type="text" placeholder="Song request" value={song} onChange={(e) => setSong(e.target.value)} />
           <textarea placeholder="Your shoutout / message" value={message} onChange={(e) => setMessage(e.target.value)} />
-          <button type="submit">SEND REQUEST VIA WHATSAPP</button>
+          <button type="submit">SEND REQUEST</button>
         </form>
       </section>
 
