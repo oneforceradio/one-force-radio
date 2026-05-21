@@ -296,7 +296,10 @@ const [gallerySlide, setGallerySlide] = useState(0);
       setIsPlaying(true);
     }
   };
-
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) section.scrollIntoView({ behavior: "smooth" });
+};
   const sendRequest = async (e) => {
   e.preventDefault();
 
