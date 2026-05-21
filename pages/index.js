@@ -38,10 +38,23 @@ const enterRadio = () => {
   };
 
   const shoutouts = [
+    "🔥 bigup busy Signal Gambia",
+    "🎧 Zall Bigup Faraba Crew",
+    "📢 Muhammad Say More Mavado",
+    "🎤 Black Rhino Gambia",
+    "🌍 John.. big up Donfleex Gala King surnamy puyol Ballack Anderson respect to one force to the world",
+    "🔥 Basko Gambia Boy",
+    "🎧 Ghout Pandi WAYUP",
+    "📢 Molamin in the place",
+    "🎤 Robson Crown Love Riddim",
+    "🌍 Kebba Faye more Jah Cure Bigup Wifey Fatou & Omar jnr",
     "🔥 Welcome to OneForce Radio Worldwide",
     "🎧 Streaming 24/7 Nonstop Music",
-    "📢 Promote your events with OneForce Radio",
-    "🎤 Artists can submit music & interviews",
+    "📢 Starboy South Gambia more Masicka bigup Lashes BroGad all Gambians",
+    "🎤 Sonko logged in",
+    "🌍 King Salieu WYFL",
+    "🔥 Dj Hansin RQ Busy signal Bully",
+    "🎧 Streaming 24/7 Nonstop Music",
     "🌍 OneForce Radio broadcasting worldwide",
   ];
 
