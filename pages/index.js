@@ -1275,12 +1275,7 @@ const scrollToSection = (id) => {
 .liveWallBtn:hover {
   background: #ffd000;
 }
-        }
-      `}</style>
-    </div>
-</>
-  );
-}
+
         .shoutTicker {
           width: 100%;
           max-width: 900px;
@@ -2343,3 +2338,8 @@ const scrollToSection = (id) => {
             font-size: 28px;
           }
 
+      `}</style>
+    </div>
+  </>
+);
+}
