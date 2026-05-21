@@ -834,18 +834,6 @@ useEffect(() => {
         <p>Live programming and special broadcasts coming soon.</p>
       </section>
 
-      <section id="request" className="sectionBox">
-        <h2>REQUEST / SHOUTOUT</h2>
-        <p>Send a song request, birthday shoutout, big-up, or message to the station.</p>
-
-        <form onSubmit={sendRequest} className="requestForm">
-          <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
-          <input type="text" placeholder="Song request" value={song} onChange={(e) => setSong(e.target.value)} />
-          <textarea placeholder="Your shoutout / message" value={message} onChange={(e) => setMessage(e.target.value)} />
-          <button type="submit">SEND REQUEST</button>
-        </form>
-      </section>
-
       <section id="workwithus" className="sectionBox">
         <h2>GROW WITH ONEFORCE RADIO</h2>
         <p>
