@@ -297,16 +297,16 @@ const [gallerySlide, setGallerySlide] = useState(0);
     }
   };
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
-
-const sendRequest = async (e) => {
+  const sendRequest = async (e) => {
   e.preventDefault();
 
+  const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
+  const whatsappUrl = `${stationInfo.whatsapp}?text=${text}`;
+
+  window.open(whatsappUrl, "_blank");
+
   try {
-    await supabase.from("shoutouts").insert([
+    const { error } = await supabase.from("shoutouts").insert([
       {
         name,
         message,
@@ -314,15 +314,14 @@ const sendRequest = async (e) => {
         approved: false,
       },
     ]);
+
+    if (error) {
+      console.log("Supabase error:", error);
+    }
   } catch (error) {
-    console.log(error);
+    console.log("Unexpected error:", error);
   }
-
-  const text = `OneForce Radio Request/Shoutout:%0A%0AName: ${name}%0ASong Request: ${song}%0AMessage/Shoutout: ${message}`;
-
-  window.open(`${stationInfo.whatsapp}?text=${text}`, "_blank");
 };
-
  const changeEventSlide = (eventTitle, flyers, direction) => {
   const totalFlyers = flyers.length;
   const currentSlide = eventSlide[eventTitle] || 0;
