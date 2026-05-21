@@ -1220,7 +1220,67 @@ const scrollToSection = (id) => {
         .hiddenAudioPlayer {
           display: none;
         }
+          .liveWall {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid #00ff99;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,255,153,0.25);
+}
 
+.liveWallHeader {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffd000;
+  margin-bottom: 20px;
+}
+
+.liveWallMessages {
+  height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+  padding-right: 6px;
+}
+
+.liveWallMessage {
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid #00ff99;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.liveWallBtn {
+  margin-top: 20px;
+  width: 100%;
+  background: #00ff99;
+  color: black;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.liveWallBtn:hover {
+  background: #ffd000;
+}
+        }
+      `}</style>
+    </div>
+</>
+  );
+}
         .shoutTicker {
           width: 100%;
           max-width: 900px;
@@ -2282,64 +2342,4 @@ const scrollToSection = (id) => {
             height: 36px;
             font-size: 28px;
           }
-          .liveWall {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  background: rgba(0,0,0,0.75);
-  border: 1px solid #00ff99;
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0,255,153,0.25);
-}
 
-.liveWallHeader {
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-  color: #ffd000;
-  margin-bottom: 20px;
-}
-
-.liveWallMessages {
-  height: 320px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 12px;
-  padding-right: 6px;
-}
-
-.liveWallMessage {
-  background: rgba(255,255,255,0.05);
-  border-left: 4px solid #00ff99;
-  padding: 12px 14px;
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.liveWallBtn {
-  margin-top: 20px;
-  width: 100%;
-  background: #00ff99;
-  color: black;
-  border: none;
-  padding: 14px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.liveWallBtn:hover {
-  background: #ffd000;
-}
-        }
-      `}</style>
-    </div>
-</>
-  );
-}
