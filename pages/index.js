@@ -540,11 +540,11 @@ useEffect(() => {
             SCHEDULE
           </button>
           <button onClick={() => {
-            scrollToSection("request");
-            setMobileMenuOpen(false);
-          }}>
-            REQUEST
-          </button>
+  scrollToSection("home");
+  setMobileMenuOpen(false);
+}}>
+  REQUEST
+</button>
           <button onClick={() => {
             scrollToSection("contact");
             setMobileMenuOpen(false);
@@ -924,7 +924,24 @@ useEffect(() => {
           </div>
         </div>
       </section>
+<section className="sectionBox moneyPullUpSection">
+  <h2>🔥 MONEY PULL UP</h2>
 
+  <p>
+    If the vibes nice...
+    <br />
+    Money Pull Up below.
+  </p>
+
+  <a
+    className="moneyPullUpBtn"
+    href="https://paypal.me/Oneforceradio"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    MONEY PULL UP
+  </a>
+</section>
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
         <p>WhatsApp: +39 351 6232824</p>
@@ -1026,7 +1043,33 @@ useEffect(() => {
           font-family: Arial, sans-serif;
           color: white;
         }
+.moneyPullUpSection {
+  border: 1px solid rgba(247,198,0,0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(247,198,0,0.08),
+    rgba(0,255,153,0.05)
+  );
+}
 
+.moneyPullUpBtn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 16px 34px;
+  border-radius: 40px;
+  background: #ffd000;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 0 18px rgba(247,198,0,0.25);
+}
+
+.moneyPullUpBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(247,198,0,0.45);
+}
         .glowOrb {
           position: fixed;
           border-radius: 50%;
