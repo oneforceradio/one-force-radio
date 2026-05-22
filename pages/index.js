@@ -1048,14 +1048,18 @@ useEffect(() => {
 }
 
 .floatingMoneyPull {
-  width: 145px;
-  height: 88px;
-  left: 8px;
-  bottom: 12px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  width: 220px;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(12,12,12,0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(247,198,0,0.28);
+  box-shadow: 0 0 25px rgba(0,0,0,0.45), 0 0 20px rgba(247,198,0,0.14);
+  z-index: 999;
+  text-align: left;
 }
 
 
@@ -2168,9 +2172,9 @@ useEffect(() => {
 }
 @media (max-width: 768px) {
 
-  .floatingMoneyPull {
+ .floatingMoneyPull {
   width: 145px;
-  min-height: 105px;
+  height: 88px;
   left: 8px;
   bottom: 12px;
   padding: 10px;
