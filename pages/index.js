@@ -2079,7 +2079,7 @@ useEffect(() => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 10px;
+          margin-bottom: 6px;
         }
 
         .miniLiveBadge {
@@ -2181,7 +2181,7 @@ useEffect(() => {
 
 .miniPlayer {
   width: 145px;
-  min-height: 120px;
+  min-height: 105px;
   right: 8px;
   bottom: 12px;
   padding: 10px;
@@ -2203,19 +2203,18 @@ useEffect(() => {
     padding: 8px 6px;
   }
 
-  .miniDj {
-    font-size: 12px;
-  }
+ .miniDj {
+  font-size: 10px;
+}
+ .miniShow {
+  font-size: 9px;
+}
 
-  .miniShow {
-    font-size: 10px;
-  }
-
-  .miniPlayerBtn {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-  }
+ .miniPlayerBtn {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+}
 
 }
         @keyframes radioWavePulse {
