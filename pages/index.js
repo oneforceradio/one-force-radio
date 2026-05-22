@@ -2166,7 +2166,50 @@ useEffect(() => {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
+@media (max-width: 768px) {
 
+  .floatingMoneyPull {
+    width: 155px;
+    left: 8px;
+    bottom: 12px;
+    padding: 10px;
+  }
+
+  .miniPlayer {
+    width: 155px;
+    right: 8px;
+    bottom: 12px;
+    padding: 10px;
+  }
+
+  .moneyPullTitle {
+    font-size: 11px;
+  }
+
+  .moneyPullText {
+    font-size: 10px;
+  }
+
+  .floatingMoneyBtn {
+    font-size: 10px;
+    padding: 8px 6px;
+  }
+
+  .miniDj {
+    font-size: 12px;
+  }
+
+  .miniShow {
+    font-size: 10px;
+  }
+
+  .miniPlayerBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+}
         @keyframes radioWavePulse {
           0% { transform: scale(0.55); opacity: 0; }
           25% { opacity: 0.35; }
@@ -2526,7 +2569,35 @@ useEffect(() => {
             height: 36px;
             font-size: 28px;
           }
+@media (max-width: 768px) {
 
+  .floatingMoneyPull {
+    width: 160px;
+    left: 10px;
+    bottom: 14px;
+    padding: 10px;
+  }
+
+  .miniPlayer {
+    width: 160px;
+    right: 10px;
+    bottom: 14px;
+  }
+
+  .moneyPullTitle {
+    font-size: 12px;
+  }
+
+  .moneyPullText {
+    font-size: 11px;
+  }
+
+  .floatingMoneyBtn {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+}
       `}</style>
     </div>
   </>
