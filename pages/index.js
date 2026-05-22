@@ -2173,7 +2173,7 @@ useEffect(() => {
 
   .floatingMoneyPull {
   width: 145px;
-  min-height: 120px;
+  min-height: 105px;
   left: 8px;
   bottom: 12px;
   padding: 10px;
@@ -2184,7 +2184,7 @@ useEffect(() => {
 
 .miniPlayer {
   width: 145px;
-  min-height: 120px;
+  min-height: 105px;
   right: 8px;
   bottom: 12px;
   padding: 10px;
