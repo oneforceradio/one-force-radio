@@ -1048,18 +1048,14 @@ useEffect(() => {
 }
 
 .floatingMoneyPull {
-  position: fixed;
-  left: 18px;
-  bottom: 18px;
-  width: 220px;
-  padding: 14px;
-  border-radius: 20px;
-  background: rgba(12,12,12,0.92);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(247,198,0,0.28);
-  box-shadow: 0 0 25px rgba(0,0,0,0.45), 0 0 20px rgba(247,198,0,0.14);
-  z-index: 999;
-  text-align: left;
+  width: 145px;
+  min-height: 120px;
+  left: 8px;
+  bottom: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .moneyPullTitle {
@@ -2061,19 +2057,13 @@ useEffect(() => {
           background: #f7c600;
         }
 
-        .miniPlayer {
-          position: fixed;
-          right: 18px;
-          bottom: 18px;
-          width: 210px;
-          padding: 14px;
-          border-radius: 20px;
-          background: rgba(12,12,12,0.92);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(0,255,153,0.22);
-          box-shadow: 0 0 25px rgba(0,0,0,0.45), 0 0 20px rgba(0,255,153,0.12);
-          z-index: 999;
-        }
+      .miniPlayer {
+  width: 145px;
+  min-height: 120px;
+  right: 8px;
+  bottom: 12px;
+  padding: 10px;
+}
 
         .miniPlayerTop {
           display: flex;
