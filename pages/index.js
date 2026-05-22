@@ -2102,13 +2102,13 @@ useEffect(() => {
         }
 
         .miniPlayerBtn {
-          width: 42px;
-          height: 42px;
+  width: 30px;
+  height: 30px;
           border-radius: 50%;
           border: none;
           background: linear-gradient(135deg, #00ff99, #f7c600);
           color: #000;
-          font-size: 16px;
+          font-size: 11px;
           font-weight: bold;
           cursor: pointer;
           transition: all 0.25s ease;
@@ -2126,15 +2126,18 @@ useEffect(() => {
 
         .miniDj {
           color: #f7c600;
-          font-size: 16px;
+          font-size: 11px;
           font-weight: bold;
         }
+        .miniPlayerTop {
+  margin-bottom: 4px;
+}
 
         .miniShow {
-          margin-top: 3px;
-          color: #ccc;
-          font-size: 13px;
-        }
+  margin-top: 2px;
+  color: #ccc;
+  font-size: 9px;
+}
 
         .licenseInfo {
           margin-top: 30px;
