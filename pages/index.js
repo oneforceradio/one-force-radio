@@ -2169,18 +2169,26 @@ useEffect(() => {
 @media (max-width: 768px) {
 
   .floatingMoneyPull {
-    width: 155px;
-    left: 8px;
-    bottom: 12px;
-    padding: 10px;
-  }
+  width: 145px;
+  min-height: 120px;
+  left: 8px;
+  bottom: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .miniPlayer {
-    width: 155px;
-    right: 8px;
-    bottom: 12px;
-    padding: 10px;
-  }
+.miniPlayer {
+  width: 145px;
+  min-height: 120px;
+  right: 8px;
+  bottom: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
   .moneyPullTitle {
     font-size: 11px;
