@@ -939,7 +939,7 @@ useEffect(() => {
         </a>
       </section>
 <div className="floatingMoneyPull">
-  <div className="moneyPullTitle">🔥 MONEY PULL UP • PayPal</div>
+  <div className="moneyPullTitle">🔥 MONEY PULL UP</div>
   <div className="moneyPullText">If the vibes nice...</div>
 
   <a
@@ -948,7 +948,7 @@ useEffect(() => {
     rel="noopener noreferrer"
     className="floatingMoneyBtn"
   >
-    MONEY PULL UP
+    MONEY PULL UP • PayPal
   </a>
 </div>
       <div className="miniPlayer">
