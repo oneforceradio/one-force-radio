@@ -924,24 +924,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
-<section className="sectionBox moneyPullUpSection">
-  <h2>🔥 MONEY PULL UP</h2>
 
-  <p>
-    If the vibes nice...
-    <br />
-    Money Pull Up below.
-  </p>
-
-  <a
-    className="moneyPullUpBtn"
-    href="https://paypal.me/Oneforceradio"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    MONEY PULL UP
-  </a>
-</section>
       <section id="contact" className="sectionBox">
         <h2>CONTACT ONEFORCE RADIO</h2>
         <p>WhatsApp: +39 351 6232824</p>
@@ -955,7 +938,19 @@ useEffect(() => {
           SEND EMAIL
         </a>
       </section>
+<div className="floatingMoneyPull">
+  <div className="moneyPullTitle">🔥 MONEY PULL UP</div>
+  <div className="moneyPullText">If the vibes nice...</div>
 
+  <a
+    href="https://paypal.me/Oneforceradio"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="floatingMoneyBtn"
+  >
+    MONEY PULL UP
+  </a>
+</div>
       <div className="miniPlayer">
         <div className="miniPlayerTop">
           <div className="miniLiveBadge">
@@ -1050,6 +1045,46 @@ useEffect(() => {
     rgba(247,198,0,0.08),
     rgba(0,255,153,0.05)
   );
+}
+
+.floatingMoneyPull {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  width: 220px;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(12,12,12,0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(247,198,0,0.28);
+  box-shadow: 0 0 25px rgba(0,0,0,0.45), 0 0 20px rgba(247,198,0,0.14);
+  z-index: 999;
+  text-align: left;
+}
+
+.moneyPullTitle {
+  color: #ffd000;
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.moneyPullText {
+  color: #ccc;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.floatingMoneyBtn {
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #ffd000;
+  color: black;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .moneyPullUpBtn {
@@ -2030,7 +2065,7 @@ useEffect(() => {
           position: fixed;
           right: 18px;
           bottom: 18px;
-          width: 220px;
+          width: 210px;
           padding: 14px;
           border-radius: 20px;
           background: rgba(12,12,12,0.92);
