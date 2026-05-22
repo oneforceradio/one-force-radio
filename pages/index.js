@@ -939,7 +939,7 @@ useEffect(() => {
         </a>
       </section>
 <div className="floatingMoneyPull">
-  <div className="moneyPullTitle">🔥 MONEY PULL UP</div>
+  <div className="moneyPullTitle">🔥 MONEY PULL UP • PayPal</div>
   <div className="moneyPullText">If the vibes nice...</div>
 
   <a
