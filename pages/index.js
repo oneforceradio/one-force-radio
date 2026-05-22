@@ -2184,7 +2184,7 @@ useEffect(() => {
 
 .miniPlayer {
   width: 145px;
-  min-height: 105px;
+  min-height: 120px;
   right: 8px;
   bottom: 12px;
   padding: 10px;
