@@ -218,6 +218,12 @@ const enterRadio = () => {
       link: "https://wa.me/393516232824",
     },
     {
+  title: "An2 Adi Sparky Album Launch Europe",
+  date: "Saturday 06 June 2026",
+  location: "Club 44 Milano • Milan, Italy",
+  image: "/Milan-06-June1.jpg",
+},
+    {
       title: "More Fire Resurrection",
       date: "13 June 2026",
       dateTime: "2026-06-13T22:00:00",
