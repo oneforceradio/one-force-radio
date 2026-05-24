@@ -219,9 +219,12 @@ const enterRadio = () => {
     },
     {
   title: "An2 Adi Sparky Album Launch Europe",
-  date: "Saturday 06 June 2026",
+  date: "06 June 2026",
+  dateTime: "2026-06-06T22:00:00",
   location: "Club 44 Milano • Milan, Italy",
-  image: "/Milan-06-June1.jpg",
+  info: "An2 Adi Sparky album launch Europe featuring DJ Lashes live in Milan.",
+  flyers: ["/Milan-06-June1.jpg"],
+  link: "https://wa.me/393516232824",
 },
     {
       title: "More Fire Resurrection",
