@@ -223,7 +223,7 @@ const enterRadio = () => {
   dateTime: "2026-06-06T22:00:00",
   location: "Club 44 Milano • Milan, Italy",
   info: "An2 Adi Sparky album launch Europe featuring DJ Lashes live in Milan.",
-  flyers: ["/Milan-06-June1.jpg"],
+  flyers: ["/events/Milan-06-June1.jpg"],
   link: "https://wa.me/393516232824",
 },
     {
