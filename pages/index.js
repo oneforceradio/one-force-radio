@@ -209,6 +209,15 @@ const enterRadio = () => {
       link: "https://wa.me/393516232824",
     },
     {
+  title: "Reggae Night",
+  date: "29 May 2026",
+  dateTime: "2026-05-29T19:00:00",
+  location: "Innesto Trionfale • Rome, Italy",
+  info: "Reggae Night vibes in Rome featuring Miss B-Ranks, DJ Priest and Brooks.",
+  flyers: ["/events/Rome-29-may.jpg"],
+  link: "https://wa.me/393516232824",
+},
+    {
       title: "Tobaski Special",
       date: "30 May 2026",
       dateTime: "2026-05-30T22:00:00",
