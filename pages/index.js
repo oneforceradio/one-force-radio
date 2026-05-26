@@ -254,7 +254,7 @@ const enterRadio = () => {
       date: "4 July 2026",
       dateTime: "2026-07-04T22:00:00",
       location: "Bristol, United Kingdom",
-      info: "A night of music, vibes and special guest entertainment in Bristol.",
+      info: "A night of music, vibes and special guest entertainment in Bristol st.pauls .",
       fflyers: [
   "/events/bristol-04-july.jpg",
   "/events/bristol-04b-july.jpg",
