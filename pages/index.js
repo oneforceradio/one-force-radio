@@ -254,7 +254,7 @@ const enterRadio = () => {
       date: "4 July 2026",
       dateTime: "2026-07-04T22:00:00",
       location: "Bristol, United Kingdom",
-      info: "A live event experience with DJ Lashes and special guests.",
+      info: "A night of music, vibes and special guest entertainment in Bristol.",
       fflyers: [
   "/events/bristol-04-july.jpg",
   "/events/bristol-04b-july.jpg",
