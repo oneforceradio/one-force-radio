@@ -740,7 +740,12 @@ useEffect(() => {
                     src={event.flyers[activeSlide]}
                     alt={`${event.title} flyer`}
                     className="eventFlyer"
-                    onClick={() => setActiveFlyer(event.flyers[activeSlide])}
+                  onClick={() =>
+  setActiveFlyer({
+    flyers: event.flyers,
+    index: activeSlide,
+  })
+}
                   />
 
                   {hasMultipleFlyers && (
@@ -1029,10 +1034,53 @@ useEffect(() => {
   </div>
 )}
       {activeFlyer && (
-        <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
-          <img src={activeFlyer} alt="Expanded flyer" className="flyerModalImage" />
-        </div>
-      )}
+  <div className="flyerModal" onClick={() => setActiveFlyer(null)}>
+    {activeFlyer.flyers.length > 1 && (
+      <button
+        className="flyerArrow flyerArrowLeft"
+        onClick={(e) => {
+          e.stopPropagation();
+          setActiveFlyer({
+            flyers: activeFlyer.flyers,
+            index:
+              (activeFlyer.index - 1 + activeFlyer.flyers.length) %
+              activeFlyer.flyers.length,
+          });
+        }}
+      >
+        ‹
+      </button>
+    )}
+
+    <img
+      src={activeFlyer.flyers[activeFlyer.index]}
+      alt="Expanded flyer"
+      className="flyerModalImage"
+      onClick={(e) => e.stopPropagation()}
+    />
+
+    {activeFlyer.flyers.length > 1 && (
+      <button
+        className="flyerArrow flyerArrowRight"
+        onClick={(e) => {
+          e.stopPropagation();
+          setActiveFlyer({
+            flyers: activeFlyer.flyers,
+            index: (activeFlyer.index + 1) % activeFlyer.flyers.length,
+          });
+        }}
+      >
+        ›
+      </button>
+    )}
+
+    {activeFlyer.flyers.length > 1 && (
+      <div className="flyerCounter">
+        {activeFlyer.index + 1} / {activeFlyer.flyers.length}
+      </div>
+    )}
+  </div>
+)}
 
 
       <div className="footer">
