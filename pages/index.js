@@ -44,26 +44,14 @@ const enterRadio = () => {
     twitch: "https://www.twitch.tv/oneforceradio",
   };
 
-  const [shoutouts, setShoutouts] = useState([
-    "🔥 bigup busy Signal Gambia",
-    "🎧 Zall Bigup Faraba Crew",
-    "📢 Muhammad Say More Mavado",
-    "🎤 Black Rhino Gambia",
-    "🌍 John.. big up Donfleex Gala King surnamy puyol Ballack Anderson respect to one force to the world",
-    "🔥 Basko Gambia Boy",
-    "🎧 Ghout Pandi WAYUP",
-    "📢 Molamin in the place",
-    "🎤 Robson Crown Love Riddim",
-    "🌍 Kebba Faye more Jah Cure Bigup Wifey Fatou & Omar jnr",
-    "🔥 Welcome to OneForce Radio Worldwide",
-    "🎧 Streaming 24/7 Nonstop Music",
-    "📢 Starboy South Gambia more Masicka bigup Lashes BroGad all Gambians",
-    "🎤 Sonko logged in",
-    "🌍 King Salieu WYFL",
-    "🔥 Dj Hansin RQ Busy signal Bully",
-    "🎧 Streaming 24/7 Nonstop Music",
-    "🌍 OneForce Radio broadcasting worldwide",
- ]);
+const [shoutouts, setShoutouts] = useState([]);
+  const moneyPullSupporters = [
+  "Thank you Nina 🇮🇹",
+  "Thank you Antonio 🇮🇹",
+  "Thank you Leon 🇬🇧",
+  "Thank you Sandra 🇩🇪",
+];
+  const [moneyPullIndex, setMoneyPullIndex] = useState(0);
 
   const workWithUsCards = [
     {
@@ -394,6 +382,17 @@ useEffect(() => {
 
   return () => clearInterval(interval);
 }, []);
+
+  useEffect(() => {
+  const supporterInterval = setInterval(() => {
+    setMoneyPullIndex((current) =>
+      (current + 1) % moneyPullSupporters.length
+    );
+  }, 4000);
+
+  return () => clearInterval(supporterInterval);
+}, []);
+  
   useEffect(() => {
     const countdownTimer = setInterval(() => {
       const now = new Date().getTime();
@@ -969,7 +968,9 @@ useEffect(() => {
       </section>
 <div className="floatingMoneyPull">
   <div className="moneyPullTitle">🔥 MONEY PULL UP</div>
-  <div className="moneyPullText">If the vibes nice...</div>
+  <div className="moneyPullText">
+  {moneyPullSupporters[moneyPullIndex]}
+</div>
 
   <a
     href="https://paypal.me/Oneforceradio"
