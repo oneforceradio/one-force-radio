@@ -174,37 +174,7 @@ const [shoutouts, setShoutouts] = useState([]);
   ];
 
   const events = [
-    {
-      title: "Upper Tuesday",
-      date: "19 May 2026",
-      dateTime: "2026-05-19T19:00:00",
-      location: "Rome, Italy",
-      info: "Upper Fridays street dancehall vibes live in Rome featuring DJ Priest, Brooks and Miss B-Ranks.",
-      flyers: ["/events/Rome-19-may.jpg"],
-      gallery: [
-  "/gallery/party001001.jpeg",
-  "/gallery/party001002.jpeg",
-  "/gallery/party001003.jpeg",
-  "/gallery/party001004.jpeg",
-  "/gallery/party001005.jpeg",
-  "/gallery/party001006.jpeg",
-  "/gallery/party001007.jpeg",
-  "/gallery/party001008.jpeg",
-  "/gallery/party001009.jpeg",
-  "/gallery/party001010.jpeg",
-  "/gallery/party001011.jpeg",
-],
-      link: "https://wa.me/393516232824",
-    },
-    {
-  title: "Reggae Night",
-  date: "29 May 2026",
-  dateTime: "2026-05-29T19:00:00",
-  location: "Innesto Trionfale • Rome, Italy",
-  info: "Reggae Night vibes in Rome featuring Miss B-Ranks, DJ Priest and Brooks.",
-  flyers: ["/events/Rome-29-may.jpg"],
-  link: "https://wa.me/393516232824",
-},
+   
     {
       title: "Tobaski Special",
       date: "30 May 2026",
@@ -237,6 +207,21 @@ const [shoutouts, setShoutouts] = useState([]);
       ],
       link: "https://wa.me/393516232824",
     },
+
+    {
+  title: "Afro Caribbean Night",
+  date: "19 June 2026",
+  dateTime: "2026-06-19T23:00:00",
+  location: "La Rumba Latin Club • Munich, Germany",
+  info: "Afro Caribbean Night featuring DJ Lashes, OneForce Sound, Kosanostra Sound and special guests.",
+  flyers: [
+    "/events/Mun-19JuneA.jpg",
+    "/events/Mun-19JuneB.jpg",
+    "/events/Mun-19JuneC.jpg",
+  ],
+  link: "https://wa.me/393516232824",
+},
+    
     {
       title: "Luv In The House",
       date: "4 July 2026",
