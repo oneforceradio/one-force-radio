@@ -176,15 +176,6 @@ const [shoutouts, setShoutouts] = useState([]);
   const events = [
    
     {
-      title: "Tobaski Special",
-      date: "30 May 2026",
-      dateTime: "2026-05-30T22:00:00",
-      location: "Vienna, Austria",
-      info: "OneForce Sound live in Vienna with DJ Lashes.",
-      flyers: ["/events/vienna-30-may.jpeg"],
-      link: "https://wa.me/393516232824",
-    },
-    {
   title: "An2 Adi Sparky Album Launch Europe",
   date: "06 June 2026",
   dateTime: "2026-06-06T22:00:00",
@@ -219,6 +210,16 @@ const [shoutouts, setShoutouts] = useState([]);
     "/events/Mun-19JuneB.jpg",
     "/events/Mun-19JuneC.jpg",
   ],
+  link: "https://wa.me/393516232824",
+},
+
+    {
+  title: "Afro Nation Dancehall",
+  date: "26 June 2026",
+  dateTime: "2026-06-26T22:00:00",
+  location: "Nox Club Vienna • Vienna, Austria",
+  info: "Afro Nation Dancehall live in Vienna featuring DJ Lashes, OneForce Sound and DJ Big Joe.",
+  flyers: ["/events/kalmaxJune26.jpg"],
   link: "https://wa.me/393516232824",
 },
     
