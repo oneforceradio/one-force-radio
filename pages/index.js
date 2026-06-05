@@ -216,10 +216,21 @@ const [shoutouts, setShoutouts] = useState([]);
     {
   title: "Afro Nation Dancehall",
   date: "26 June 2026",
-  dateTime: "2026-06-26T22:00:00",
+  dateTime: "2026-06-26T18:00:00",
   location: "Nox Club Vienna • Vienna, Austria",
   info: "Afro Nation Dancehall live in Vienna featuring DJ Lashes, OneForce Sound and DJ Big Joe.",
   flyers: ["/events/kalmaxJune26.jpg"],
+  link: "https://wa.me/393516232824",
+},
+    {
+  title: "Reggae & Dancehall Night",
+  date: "26 June 2026",
+  dateTime: "2026-06-26T19:00:00",
+  location: "Batu Baretto, Rome, Italy",
+  info: "An evening of Reggae and Dancehall vibes featuring DJ Priest (Shashamane Intl) at Batu Baretto in Rome.",
+  flyers: [
+    "/events/Rome-26June.jpg",
+  ],
   link: "https://wa.me/393516232824",
 },
     
