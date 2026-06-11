@@ -174,6 +174,31 @@ const [shoutouts, setShoutouts] = useState([]);
   ];
 
   const events = [
+    {
+  title: "Afro Nation Dancehall",
+  date: "26 April 2026",
+  dateTime: "2026-04-26T23:00:00",
+  location: "Vienna, Austria",
+  info: "Event highlights from Afro Nation Dancehall in Vienna featuring DJ Lashes, OneForce Sound and friends.",
+  flyers: ["/events/kalmaxJune26.jpg"],
+  gallery: [
+    "/gallery/party002001.jpg",
+    "/gallery/party002002.jpg",
+    "/gallery/party002003.jpg",
+    "/gallery/party002004.jpg",
+    "/gallery/party002005.jpg",
+    "/gallery/party002006.jpg",
+    "/gallery/party002007.jpg",
+    "/gallery/party002008.jpg",
+    "/gallery/party002009.jpg",
+    "/gallery/party002010.jpg",
+    "/gallery/party002011.jpg",
+    "/gallery/party002012.jpg",
+    "/gallery/party002013.jpg",
+    "/gallery/party002014.jpg",
+  ],
+  link: "https://wa.me/393516232824",
+},
 {
   title: "Upper Tuesday",
   date: "19 May 2026",
