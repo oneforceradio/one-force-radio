@@ -200,6 +200,21 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/393516232824",
 },
 
+    {
+  title: "Upper Tuesday",
+  date: "19 May 2026",
+  dateTime: "2026-05-19T19:00:00",
+  location: "Rome, Italy",
+  info: "Captured moments from Upper Tuesday in Rome.",
+  flyers: ["/events/Rome-19-may.jpg"],
+  gallery: [
+    "/gallery/party001001.jpeg",
+    "/gallery/party001002.jpeg",
+    "/gallery/party001003.jpeg",
+  ],
+  link: "https://wa.me/393516232824",
+},
+
    {
   title: "Afro Caribbean Night",
   date: "19 June 2026",
