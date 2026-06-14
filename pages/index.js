@@ -199,52 +199,6 @@ const [shoutouts, setShoutouts] = useState([]);
   ],
   link: "https://wa.me/393516232824",
 },
-{
-  title: "Upper Tuesday",
-  date: "19 May 2026",
-  dateTime: "2026-05-19T19:00:00",
-  location: "Rome, Italy",
-  info: "Captured moments from Upper Tuesday in Rome.",
-  flyers: ["/events/Rome-19-may.jpg"],
-  gallery: [
-    "/gallery/party001001.jpeg",
-    "/gallery/party001002.jpeg",
-    "/gallery/party001003.jpeg",
-    "/gallery/party001004.jpeg",
-    "/gallery/party001005.jpeg",
-    "/gallery/party001006.jpeg",
-    "/gallery/party001007.jpeg",
-    "/gallery/party001008.jpeg",
-    "/gallery/party001009.jpeg",
-    "/gallery/party001010.jpeg",
-    "/gallery/party001011.jpeg",
-  ],
-  link: "https://wa.me/393516232824",
-},
-    
-    {
-  title: "An2 Adi Sparky Album Launch Europe",
-  date: "06 June 2026",
-  dateTime: "2026-06-06T22:00:00",
-  location: "Club 44 Milano • Milan, Italy",
-  info: "An2 Adi Sparky album launch Europe featuring DJ Lashes live in Milan.",
-  flyers: ["/events/Milan-06-June1.jpg"],
-  link: "https://wa.me/393516232824",
-},
-    {
-      title: "More Fire Resurrection",
-      date: "13 June 2026",
-      dateTime: "2026-06-13T22:00:00",
-      location: "Hannover, Germany",
-      info: "Dancehall, reggae and sound system energy live in Hannover.",
-      flyers: [
-        "/events/hannover-13-june-1.jpeg",
-        "/events/hannover-13-june-2.jpeg",
-        "/events/hannover-13-june-3.jpeg",
-        "/events/hannover-13-june-4.jpeg",
-      ],
-      link: "https://wa.me/393516232824",
-    },
 
     {
   title: "Afro Caribbean Night",
@@ -313,6 +267,18 @@ const [shoutouts, setShoutouts] = useState([]);
       flyers: ["/events/hannover-01-august.jpg"],
       link: "https://wa.me/393516232824",
     },
+    {
+  title: "Bremen Afropean Kultur Fest",
+  date: "8 August 2026",
+  dateTime: "2026-08-08T15:00:00",
+  location: "Supreme Lounge, Bremen, Germany",
+  info: "One City, Many Cultures, One Celebration. Live performances, DJs, cultural stands, Afro food, dance shows, workshops, drum sessions and more. Featuring DJ Lashes and OneForce Sound.",
+  flyers: [
+    "/events/08th-Aug-Bremen-lashes.jpg",
+    "/events/08th-Aug-Bremen-lashes2.jpg",
+  ],
+  link: "https://www.eventbrite.de",
+},
   ];
 
   const [eventSlide, setEventSlide] = useState({});
