@@ -213,7 +213,15 @@ const [shoutouts, setShoutouts] = useState([]);
   ],
   link: "https://wa.me/393516232824",
 },
-
+{
+  title: "Grow & Sexy",
+  date: "Every Sunday",
+  dateTime: "2026-06-28T22:00:00",
+  location: "Spendaz Bar Lounge • The Gambia",
+  info: "Grow & Sexy after party every Sunday at Spendaz Bar Lounge in The Gambia with music by OneTribe Sound.",
+  flyers: ["/events/pisces002.jpg"],
+  link: "https://wa.me/2207979001",
+},
 {
   title: "Sea Breeze Fridays",
   date: "26 June 2026",
@@ -245,16 +253,6 @@ const [shoutouts, setShoutouts] = useState([]);
 },
 
 {
-  title: "Grow & Sexy",
-  date: "Every Sunday",
-  dateTime: "2026-06-28T22:00:00",
-  location: "Spendaz Bar Lounge • The Gambia",
-  info: "Grow & Sexy after party every Sunday at Spendaz Bar Lounge in The Gambia with music by OneTribe Sound.",
-  flyers: ["/events/pisces002.jpg"],
-  link: "https://wa.me/2207979001",
-},
-
-{
   title: "Hussein Dada Live",
   date: "27 June 2026",
   dateTime: "2026-06-27T22:00:00",
@@ -270,7 +268,7 @@ const [shoutouts, setShoutouts] = useState([]);
   dateTime: "2026-06-28T22:30:00",
   location: "Motherland Nightclub • The Gambia",
   info: "Dancehall Summer 2026 Queen & King competition at Motherland Nightclub in The Gambia with OneTribe Sound and guest DJ Essai.",
-  flyers: ["/events/pisces-DHQ(2).jpg"],
+  flyers: ["/events/pisces-DHQ.jpg"],
   link: "https://wa.me/2207979001",
 },
 
