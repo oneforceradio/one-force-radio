@@ -200,7 +200,7 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/393516232824",
 },
 
-    {
+   {
   title: "Afro Caribbean Night",
   date: "19 June 2026",
   dateTime: "2026-06-19T23:00:00",
@@ -214,7 +214,17 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/393516232824",
 },
 
-    {
+{
+  title: "Sea Breeze Fridays",
+  date: "26 June 2026",
+  dateTime: "2026-06-26T17:00:00",
+  location: "Dominos Beach Bar & Restaurant • Kotu, The Gambia",
+  info: "Sea Breeze Fridays at Dominos Beach Bar & Restaurant in Kotu, The Gambia with OneTribe Sound, Pisces, The New Generation, Baba Blood and The Smiling Coast Band.",
+  flyers: ["/events/pisces-beach.jpg"],
+  link: "https://wa.me/2207979001",
+},
+
+{
   title: "Afro Nation Dancehall",
   date: "26 June 2026",
   dateTime: "2026-06-26T18:00:00",
@@ -223,51 +233,92 @@ const [shoutouts, setShoutouts] = useState([]);
   flyers: ["/events/kalmaxJune26.jpg"],
   link: "https://wa.me/393516232824",
 },
-    {
+
+{
   title: "Reggae & Dancehall Night",
   date: "26 June 2026",
   dateTime: "2026-06-26T19:00:00",
   location: "Batu Baretto, Rome, Italy",
   info: "An evening of Reggae and Dancehall vibes featuring DJ Priest (Shashamane Intl) at Batu Baretto in Rome.",
+  flyers: ["/events/Rome-26June.jpg"],
+  link: "https://wa.me/393516232824",
+},
+
+{
+  title: "Grow & Sexy",
+  date: "Every Sunday",
+  dateTime: "2026-06-28T22:00:00",
+  location: "Spendaz Bar Lounge • The Gambia",
+  info: "Grow & Sexy after party every Sunday at Spendaz Bar Lounge in The Gambia with music by OneTribe Sound.",
+  flyers: ["/events/pisces002.jpg"],
+  link: "https://wa.me/2207979001",
+},
+
+{
+  title: "Hussein Dada Live",
+  date: "27 June 2026",
+  dateTime: "2026-06-27T22:00:00",
+  location: "Farafenni Youth Center • The Gambia",
+  info: "Hussein Dada live at Farafenni Youth Center in The Gambia alongside DJ Rapper and guest artists.",
+  flyers: ["/events/kalmax-hussein.jpg"],
+  link: "https://wa.me/2207969076",
+},
+
+{
+  title: "Dancehall Queen & King",
+  date: "28 June 2026",
+  dateTime: "2026-06-28T22:30:00",
+  location: "Motherland Nightclub • The Gambia",
+  info: "Dancehall Summer 2026 Queen & King competition at Motherland Nightclub in The Gambia with OneTribe Sound and guest DJ Essai.",
+  flyers: ["/events/pisces-DHQ(2).jpg"],
+  link: "https://wa.me/2207979001",
+},
+
+{
+  title: "Luv In The House",
+  date: "4 July 2026",
+  dateTime: "2026-07-04T22:00:00",
+  location: "Bristol, United Kingdom",
+  info: "A night of music, vibes and special guest entertainment in Bristol St. Pauls.",
   flyers: [
-    "/events/Rome-26June.jpg",
+    "/events/bristol-04-july.jpg",
+    "/events/bristol-04b-july.jpg",
+    "/events/bristol-04c-july.jpg",
+    "/events/bristol-04d-july.jpg",
+    "/events/bristol-04e-july.jpg",
+    "/events/bristol-04f-july.jpg",
+    "/events/bristol-04g-july.jpg",
+    "/events/bristol-04h-july.jpg",
+    "/events/bristol-04i-july.jpg",
+    "/events/bristol-04j-july.jpg",
+    "/events/bristol-04k-july.jpg",
+    "/events/bristol-04m-july.jpg",
+    "/events/bristol-04n-july.jpg",
   ],
   link: "https://wa.me/393516232824",
 },
-    
-    {
-      title: "Luv In The House",
-      date: "4 July 2026",
-      dateTime: "2026-07-04T22:00:00",
-      location: "Bristol, United Kingdom",
-      info: "A night of music, vibes and special guest entertainment in Bristol st.pauls .",
-      flyers: [
-  "/events/bristol-04-july.jpg",
-  "/events/bristol-04b-july.jpg",
-  "/events/bristol-04c-july.jpg",
-  "/events/bristol-04d-july.jpg",
-  "/events/bristol-04e-july.jpg",
-  "/events/bristol-04f-july.jpg",
-  "/events/bristol-04g-july.jpg",
-  "/events/bristol-04h-july.jpg",
-  "/events/bristol-04i-july.jpg",
-  "/events/bristol-04j-july.jpg",
-  "/events/bristol-04k-july.jpg",
-  "/events/bristol-04m-july.jpg",
-  "/events/bristol-04n-july.jpg",
-],
-      link: "https://wa.me/393516232824",
-    },
-    {
-      title: "Feels Like Home",
-      date: "1 August 2026",
-      dateTime: "2026-08-01T22:00:00",
-      location: "Hannover, Germany",
-      info: "In and outdoor festival with reggae, dancehall, soca, afrobeat and amapiano vibes.",
-      flyers: ["/events/hannover-01-august.jpg"],
-      link: "https://wa.me/393516232824",
-    },
-    {
+
+{
+  title: "The Return of Pisces",
+  date: "4 July 2026",
+  dateTime: "2026-07-04T22:30:00",
+  location: "Willys Night Club • Lamin Town, The Gambia",
+  info: "The return of DJ Pisces with OneTribe Sound back in Lamin Town, The Gambia.",
+  flyers: ["/events/lamin willy sat 04th june.jpg"],
+  link: "https://wa.me/2207979001",
+},
+
+{
+  title: "Feels Like Home",
+  date: "1 August 2026",
+  dateTime: "2026-08-01T22:00:00",
+  location: "Hannover, Germany",
+  info: "In and outdoor festival with reggae, dancehall, soca, afrobeat and amapiano vibes.",
+  flyers: ["/events/hannover-01-august.jpg"],
+  link: "https://wa.me/393516232824",
+},
+
+{
   title: "Bremen Afropean Kultur Fest",
   date: "8 August 2026",
   dateTime: "2026-08-08T15:00:00",
