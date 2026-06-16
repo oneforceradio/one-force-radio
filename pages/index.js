@@ -30,7 +30,7 @@ const enterRadio = () => {
 };
   const stationInfo = {
     name: "ONEFORCE RADIO",
-    tagline: "DJ Priest Shashamane Intl Sound",
+    tagline: "24/7 music non stop",
     whatsapp: "https://wa.me/393516232824",
     email: "info@oneforceradio.com",
   };
@@ -91,7 +91,7 @@ const [shoutouts, setShoutouts] = useState([]);
 
   const liveShow = {
     dj: "ONEFORCE RADIO LIVE",
-    show: "24/7 Nonstop Music",
+    show: "24/7DJ Priest Shashamane Intl Sound",
     genre: "Dancehall • Reggae • Afrobeat • Amapiano",
     image: "/banner1.png",
     status: "PURE MUSIC • LESS TALKING",
