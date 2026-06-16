@@ -30,7 +30,7 @@ const enterRadio = () => {
 };
   const stationInfo = {
     name: "ONEFORCE RADIO",
-    tagline: "24/7 Nonstop Music",
+    tagline: "DJ Priest Shashamane Intl Sound",
     whatsapp: "https://wa.me/393516232824",
     email: "info@oneforceradio.com",
   };
