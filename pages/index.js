@@ -91,7 +91,7 @@ const [shoutouts, setShoutouts] = useState([]);
 
   const liveShow = {
     dj: "ONEFORCE RADIO LIVE",
-    show: "DJ Priest Shashamane Intl Sound",
+    show: "Your No.1 Deejays In The Mix",
     genre: "Dancehall • Reggae • Afrobeat • Amapiano",
     image: "/banner1.png",
     status: "PURE MUSIC • LESS TALKING",
