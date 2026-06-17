@@ -275,16 +275,6 @@ const [shoutouts, setShoutouts] = useState([]);
 },
 
 {
-  title: "Hussein Dada Live",
-  date: "27 June 2026",
-  dateTime: "2026-06-27T22:00:00",
-  location: "Farafenni Youth Center • The Gambia",
-  info: "Hussein Dada live at Farafenni Youth Center in The Gambia alongside DJ Rapper and guest artists.",
-  flyers: ["/events/kalmax-hussein.jpg"],
-  link: "https://wa.me/2207969076",
-},
-
-{
   title: "Dancehall Queen & King",
   date: "28 June 2026",
   dateTime: "2026-06-28T22:30:00",
@@ -328,6 +318,17 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/2207979001",
 },
 
+    {
+  title: "Hussein Dada Live",
+  date: "11 July 2026",
+  dateTime: "2026-07-11T22:00:00",
+  location: "Farafenni Youth Center • The Gambia",
+  info: "Hussein Dada live at Farafenni Youth Center in The Gambia alongside DJ Rapper and guest artists.",
+  flyers: ["/events/kalmax-hussein.jpg"],
+  link: "https://wa.me/2207969076",
+},
+
+    
 {
   title: "Feels Like Home",
   date: "1 August 2026",
