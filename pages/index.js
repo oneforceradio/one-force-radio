@@ -274,6 +274,14 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/393516232824",
 },
 
+    {
+  title: "Stuck In The 90's",
+  date: "27 June 2026",
+  dateTime: "2026-06-27T23:00:00",
+  location: "Supreme Lounge • Bremen, Germany",
+  info: "A 90s throwback party featuring DJ Lashes (OneForce Sound) playing the best of 90s Dancehall, Old School Hip Hop, R&B Classics, Deutsch Rap, Trap and UK classics.",
+  flyers:
+
 {
   title: "Dancehall Queen & King",
   date: "28 June 2026",
