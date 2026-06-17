@@ -238,7 +238,7 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/393516232824",
 },
 {
-  title: "Grow & Sexy",
+  title: "Grow & Sexy Sundays",
   date: "Every Sunday",
   dateTime: "2026-06-28T22:00:00",
   location: "Spendaz Bar Lounge • The Gambia",
