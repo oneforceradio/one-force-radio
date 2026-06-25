@@ -294,29 +294,6 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/2207979001",
 },
 
-{
-  title: "Luv In The House",
-  date: "4 July 2026",
-  dateTime: "2026-07-04T22:00:00",
-  location: "Bristol, United Kingdom",
-  info: "A night of music, vibes and special guest entertainment in Bristol St. Pauls.",
-  flyers: [
-    "/events/bristol-04-july.jpg",
-    "/events/bristol-04b-july.jpg",
-    "/events/bristol-04c-july.jpg",
-    "/events/bristol-04d-july.jpg",
-    "/events/bristol-04e-july.jpg",
-    "/events/bristol-04f-july.jpg",
-    "/events/bristol-04g-july.jpg",
-    "/events/bristol-04h-july.jpg",
-    "/events/bristol-04i-july.jpg",
-    "/events/bristol-04j-july.jpg",
-    "/events/bristol-04k-july.jpg",
-    "/events/bristol-04m-july.jpg",
-    "/events/bristol-04n-july.jpg",
-  ],
-  link: "https://wa.me/393516232824",
-},
 
 {
   title: "The Return of Pisces",
