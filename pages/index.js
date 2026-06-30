@@ -278,7 +278,7 @@ const [shoutouts, setShoutouts] = useState([]);
   dateTime: "2026-07-25T21:30:00",
   location: "Prato Central • Prato, Italy",
   info: "AN2 featuring Adi Sparky live in Prato with DJ Mirror, DJ Spencer, DJ Lashes and MC Bounty. Special performances by Ceesay K, Chuzziboi and AfroItalianBoy.",
-  flyers: ["/events/25th-Firenze-Italy.jpg"],
+  flyers: ["/events/25th Firenze Italy.jpg"],
   link: "https://wa.me/393289357903",
 },
     
