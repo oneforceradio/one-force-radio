@@ -223,18 +223,13 @@ const [shoutouts, setShoutouts] = useState([]);
   ],
   link: "https://wa.me/393516232824",
 },
-
-   {
-  title: "Afro Caribbean Night",
-  date: "19 June 2026",
-  dateTime: "2026-06-19T23:00:00",
-  location: "La Rumba Latin Club • Munich, Germany",
-  info: "Afro Caribbean Night featuring DJ Lashes, OneForce Sound, Kosanostra Sound and special guests.",
-  flyers: [
-    "/events/Mun-19JuneA.jpg",
-    "/events/Mun-19JuneB.jpg",
-    "/events/Mun-19JuneC.jpg",
-  ],
+{
+  title: "Attack Live In Catania Sicily",
+  date: "4 July 2026",
+  dateTime: "2026-07-04T21:30:00",
+  location: "Mivida Night Club • Catania, Sicily, Italy",
+  info: "Attack Borom Dekabi live in Catania, Sicily with guest artists Delinky, Kamis, MC Blacker and Rockit. Music by DJ Lashes OneForce.",
+  flyers: ["/events/ATTACK LIINO.jpg"],
   link: "https://wa.me/393516232824",
 },
 {
@@ -246,15 +241,7 @@ const [shoutouts, setShoutouts] = useState([]);
   flyers: ["/events/pisces002.jpg"],
   link: "https://wa.me/2207979001",
 },
-    {
-  title: "Afro Nation Dancehall",
-  date: "26 June 2026",
-  dateTime: "2026-06-26T18:00:00",
-  location: "Nox Club Vienna • Vienna, Austria",
-  info: "Afro Nation Dancehall live in Vienna featuring DJ Lashes, OneForce Sound and DJ Big Joe.",
-  flyers: ["/events/kalmaxJune26.jpg"],
-  link: "https://wa.me/393516232824",
-},
+    
 {
   title: "Sea Breeze Fridays",
   date: "26 June 2026",
@@ -263,25 +250,6 @@ const [shoutouts, setShoutouts] = useState([]);
   info: "Sea Breeze Fridays at Dominos Beach Bar & Restaurant in Kotu, The Gambia with OneTribe Sound, Pisces, The New Generation, Baba Blood and The Smiling Coast Band.",
   flyers: ["/events/pisces-beach.jpg"],
   link: "https://wa.me/2207979001",
-},
-{
-  title: "Reggae & Dancehall Night",
-  date: "26 June 2026",
-  dateTime: "2026-06-26T19:00:00",
-  location: "Batu Baretto, Rome, Italy",
-  info: "An evening of Reggae and Dancehall vibes featuring DJ Priest (Shashamane Intl) at Batu Baretto in Rome.",
-  flyers: ["/events/Rome-26June.jpg"],
-  link: "https://wa.me/393516232824",
-},
-
- {
-  title: "Stuck In The 90's",
-  date: "27 June 2026",
-  dateTime: "2026-06-27T23:00:00",
-  location: "Supreme Lounge • Bremen, Germany",
-  info: "A 90s throwback party featuring DJ Lashes (OneForce Sound) playing the best of 90s Dancehall, Old School Hip Hop, R&B Classics, Deutsch Rap, Trap and UK classics.",
-  flyers: ["/events/bremen-27th-june.jpg"],
-  link: "https://wa.me/393516232824",
 },
 
 {
