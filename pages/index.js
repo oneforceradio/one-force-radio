@@ -253,17 +253,6 @@ const [shoutouts, setShoutouts] = useState([]);
 },
 
 {
-  title: "Dancehall Queen & King",
-  date: "28 June 2026",
-  dateTime: "2026-06-28T22:30:00",
-  location: "Motherland Nightclub • The Gambia",
-  info: "Dancehall Summer 2026 Queen & King competition at Motherland Nightclub in The Gambia with OneTribe Sound and guest DJ Essai.",
-  flyers: ["/events/pisces-DHQ.jpg"],
-  link: "https://wa.me/2207979001",
-},
-
-
-{
   title: "The Return of Pisces",
   date: "4 July 2026",
   dateTime: "2026-07-04T22:30:00",
@@ -283,6 +272,15 @@ const [shoutouts, setShoutouts] = useState([]);
   link: "https://wa.me/2207969076",
 },
 
+    {
+  title: "AN2 – Adi Sparky Live In Prato",
+  date: "25 July 2026",
+  dateTime: "2026-07-25T21:30:00",
+  location: "Prato Central • Prato, Italy",
+  info: "AN2 featuring Adi Sparky live in Prato with DJ Mirror, DJ Spencer, DJ Lashes and MC Bounty. Special performances by Ceesay K, Chuzziboi and AfroItalianBoy.",
+  flyers: ["/events/25th-Firenze-Italy.jpg"],
+  link: "https://wa.me/393289357903",
+},
     
 {
   title: "Feels Like Home",
